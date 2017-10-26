@@ -19,6 +19,8 @@ export class AdivinaElNumeroComponent implements OnInit {
     this.nuevoJuego = new JuegoAdivina();
     console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
+    console.log("ocultar Verificar:",this.ocultarVerificar);
+    console.log("Ganó? Constructor componente adivina",this.nuevoJuego.gano);
   }
   generarnumero() {
     this.nuevoJuego.generarnumero();

@@ -11,35 +11,35 @@
   <button  class="cancelbtn"  routerLink="/Principal" style="width:auto;">No acepto</button>
   <div id="id01" class="modal">
     <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-    <form class="modal-content animate" >
+    <form [formGroup]="registroformulario" class="modal-content animate" (ngSubmit)="Registrar()" >
       <div class="container">
         <label><b>Email</b></label>
-        <input type="text" placeholder="Ingresa tu correo" name="email" required>
+        <input [formControl]="emailito" type="text" placeholder="Ingresa tu correo" name="emailix" required>
   
         <label><b>Clave</b></label>
-        <input type="password" placeholder="Aca la clave" name="psw" required>
-  
+        <input [formControl]="password" type="password" placeholder="Acá la clave" name="psw" required>
+        
         <label><b>Repita la clave</b></label>
-        <input type="password" placeholder="Aca repeti la misa clave  de arriba" name="psw-repeat" required>
+        <input [formControl]="passrep" type="password" placeholder="Acá repeti la misa clave  de arriba" name="psw-repeat" required>
         <input type="checkbox" checked="checked">Recordar mis datos
         <p>creando la cuenta aceptando los<a  onclick="document.getElementById('id01').style.display='none'"  >Terminos y condiciones</a>.</p>
   
         <div class="clearfix">
           <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Me arrepenti</button>
-          <button type="submit" class="signupbtn">Registrarme</button>
+          <button type="submit" class="signupbtn"  [disabled]="!registroformulario.valid" >Registrarme</button>
         </div>
-      </div>
+      </div>    
     </form>
   </div>
   
   <script>
   // Get the modal
   var modal = document.getElementById('id01');
-  
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
       if (event.target == modal) {
-          modal.style.display = "none";
+        //document.getElementById('id01').style.display = "none";
+         modal.style.display = "none";
       }
   }
   </script>

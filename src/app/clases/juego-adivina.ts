@@ -1,18 +1,11 @@
 import { Juego } from '../clases/juego'
-/**
- * Juego adivina el Numero
- * la amquina genera un numero secreto ramdom entre 0 y 100.
- * El jugador debe adivinar el numero.
- * la maquina le informa si el numero ingresado es mayor o menor al numero secreto.
- */
+
 export class JuegoAdivina extends  Juego {
     numeroSecreto: number = 0;
     numeroIngresado = 0;
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
         super("Adivina el número",gano,jugador);
-     
-    
-      
+        console.log("Ganó? Constructor juego adivina",this.gano);
       }
     public verificar() {
         if (this.numeroIngresado == this.numeroSecreto) {
