@@ -11,7 +11,7 @@ Para armar el repositorio en el github y funcione:
 1) Para crear la carpeta "dist" ejecutar el comando
 ng build --prod --no-aot ó el solamente el comando ng build
 2) Luego cambiar el nombre de la carpeta "dist" por "docs"
-3) En docs/index.html cambiar  <!--base href="/"--> por <!--base href="/TP_LAV4_2017/"--> para referenciar a la página.
+3) En docs/index.html cambiar  base href="/" por base href="/TP_LAV4_2017/" para referenciar a la página.
 4) Tambien cambiar todos los /assets/imagenes/ por /TP_LAV4_2017/assets/imagenes/
 
 La página a ingresar es https://ccwittv.github.io/TP_LAV4_2017/
