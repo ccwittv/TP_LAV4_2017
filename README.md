@@ -7,6 +7,7 @@ Cuando se clona el proyecto al disco rígido ejecutar los siguientes comandos pa
 3) npm i bootstrap
 4) npm i font-awesome
 
+Para armar el repositorio en el github y funcione:
 1) Para crear la carpeta "dist" ejecutar el comando
 ng build --prod --no-aot ó el solamente el comando ng build
 2) Luego cambiar el nombre de la carpeta "dist" por "docs"
