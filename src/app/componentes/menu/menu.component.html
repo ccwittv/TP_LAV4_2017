@@ -1,32 +1,45 @@
-<!--div>
-    <button routerLink="/Principal">Principal</button>
-    <button (click)="Juego('Adivina')">Adivina</button>
-    <button (click)="Juego('Agilidad')">Agilidad</button>
-    <button (click)="Juego('AdivinaMasListado')">Adivina+listado</button>
-    <button (click)="Juego('AgilidadaMasListado')">Agilidad+listado</button>  
-    <button routerLink="/error">Error</button>
-  
-</div-->
+<!-- Navigation -->
+<a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+  <i class="fa fa-bars"></i>
+</a>
+<nav id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+    <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+      <i class="fa fa-times"></i>
+    </a>
+    <li class="sidebar-brand">
+      <a class="js-scroll-trigger" href="/Principal">Sala de juegos</a>
+    </li>
+    <li>
+      <a class="js-scroll-trigger" routerLink="/Principal">Home</a>
+    </li>
+    <li>
+      <a class="js-scroll-trigger" routerLink="/Juegos">Menú de Juegos</a>
+    </li>
+    <li>
+      <!--a class="js-scroll-trigger" href="#services">Services</a-->
+      <a class="js-scroll-trigger" data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a>
+    </li>
+    <li>
+      <a class="js-scroll-trigger" (click)="Juego('Agilidad')">Agilidad</a>
+    </li>    
+    <li>
+      <a (click)="Juego('AdivinaMasListado')">Adivina+listado</a>
+    </li>
+    <li>
+      <a (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a>
+    </li>
+    <li>
+      <a routerLink="#">Registrarse <span class="glyphicon glyphicon-user"></span></a>
+    </li>
+    <li>
+      <a routerLink="/Login">Salir <span class="glyphicon glyphicon-log-out"></span></a>
+    </li>
 
-<!--nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" routerLink="/Principal">Inicio</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="/Juegos">Juegos</a></li>
-        <li><a data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a></li>
-        <li><a  (click)="Juego('Agilidad')">Agilidad</a></li>
-        <li><a  (click)="Juego('AdivinaMasListado')">Adivina+listado</a></li>
-        <li><a  (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
-        </ul>
-    </div>
-  </nav-->
-  <nav class="navbar navbar-inverse">
+  </ul>
+</nav>
+
+  <!--nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -49,6 +62,6 @@
                 </ul>
         </div>
       </div>
-    </nav>
+    </nav-->
       
    

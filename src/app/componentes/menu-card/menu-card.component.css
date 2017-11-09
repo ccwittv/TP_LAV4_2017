@@ -1,57 +1,50 @@
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    border-radius: 5px; /* 5px rounded corners */
-    max-width: 300px;
-   height: 100%;
-    margin: 10px;
-    padding-bottom: 10px;
-    float: left;
-  background-color: #DEF3A6;
-    text-align: center;
-}
-
-/* Add rounded corners to the top left and the top right corner of the image */
-img {
-    border-radius: 5px 5px 0 0;
-    width: 200px;
-    height: 200px;
-}/* Add some padding inside the card container */
-.container {
-    padding: 2px 16px;
-}
-
-
-.button{
-    margin-left: 1px;
-    display: inline-block;
-    width: 90%;
-    padding: 5px 15px;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-
-    border: none;
-    outline: 0;
- 
-    padding: 8px;
-    color: white;
-   /* background-color: #000;*/
-    text-align: center;
-    cursor: pointer;
+  /*!
+ * Start Bootstrap - Round About (https://startbootstrap.com/template-overviews/round-about)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-round-about/blob/master/LICENSE)
+ */
+ body {
+    padding-top: 54px;
+    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;    
+    position: relative;
+    display: table;
     width: 100%;
+    height: 840px;
+    background: url(../../../assets/img/cielo-1.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
   
-  .button:hover {background-color: #3e8e41}
-  
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+  @media (min-width: 992px) {
+    body {
+      padding-top: 56px;
+    }
   }
+
+/* Custom Button Styles */
+  
+.btn-dark {
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, .4);
+  }
+  
+  .btn-dark:hover, .btn-dark:focus, .btn-dark:active {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .7);
+  }
+  
+  .btn-light {
+    color: #333;
+    border: none;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .btn-light:hover, .btn-light:focus, .btn-light:active {
+    color: #333;
+    background-color: rgba(255, 255, 255, .8);
+  }    

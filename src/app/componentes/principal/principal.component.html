@@ -1,64 +1,66 @@
-<app-cabecera>  </app-cabecera>
 
+<!DOCTYPE html>
+<html lang="en">
 
+  <head>
 
- 
-<div class="container" >
-   
-    <ul class="list-group">
-        <li class="list-group-item list-group-item-danger">
-           
-                <div class="media-body">
-                    <div class="hero-text">
-                        <h4 >Menú Principal</h4>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+
+  </head>
+
+  <body>
+
+    <app-side-menu></app-side-menu>    
+
+    <!-- Header -->
+    <header class="header" id="top">      
+      <div class="text-vertical-center">        
+        <h1>Sala de Juegos</h1>        
+        <h3>Bienvenido</h3>
+        <br>
+        <a href="#about" class="btn btn-dark btn-lg js-scroll-trigger">Acerca de la página</a>
+      </div>
+    </header>    
+
+  <!-- Juegos -->
+  <aside class="callout" id="contenidos" >
+        <div class="text-vertical-center">
+          <h1>Contenidos</h1>
+                <hr class="small">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="portfolio-item">
+                      <a routerLink="/Juegos">
+                        <img class="img-portfolio img-fluid" src="../../../assets/img/puzzle-1.jpg">                        
+                      </a>
+                      <h4 class="media-heading">Juegos</h4>
+                      <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
                     </div>
-                 </div>
-               
-             
-          </li>
-        <li class="list-group-item list-group-item-success">
-          <a routerLink="/Juegos">
-            <div class="media">
-              <div class="media-left">
-                    <img src="../assets/imagenes/saladejuegos.png" class="media-object imagenDeMenu" >
-              </div>
-              <div class="media-body">
-                <h4 class="media-heading">Juegos</h4>
-                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-        <li class="list-group-item list-group-item-info">
-            <a routerLink="/Listado">
-              <div class="media">
-                  <div class="media-left">
-                      <img src="../assets/imagenes/listado.jpg" class="media-object imagenDeMenu" >
-                    </div>
-                <div class="media-body">
-                  <h4 class="media-heading">Listados de resultados</h4>
-                  <p>Los listados de los resultados con ordenamiento y busqueda</p>
-                </div>
-                
-              </div> 
-            </a>
-          </li>
-        <li class="list-group-item list-group-item-warning">
-          <a routerLink="/Juegos">
-            <div class="media">
-                <div class="media-left">
-                    <img src="../assets/imagenes/Configuracion.png" class="media-object imagenDeMenu" >
                   </div>
-              <div class="media-body">
-                <h4 class="media-heading">Configuraci&oacute;n</h4>
-                <p>Ajustes de la aplicacion y los métodos de autentificación</p>
-              </div>
-             
-            </div> 
-          </a>
-        </li>
-       
-        
-      </ul>
-</div>
+                  <div class="col-md-6">
+                      <div class="portfolio-item">
+                        <a routerLink="/Listado">
+                          <img class="img-portfolio img-fluid" src="../../../assets/img/listados-1.png">                        
+                        </a>
+                        <h4 class="media-heading">Listados de resultados</h4>
+                        <p>Los listados de los resultados con ordenamiento y busqueda</p>
+                      </div>
+                    </div>
+                </div>            
+        </div>        
+  </aside>
+
+  <!-- About -->    
+  <section id="about" class="about">              
+      <div class="container text-center">
+          <app-cabecera>  </app-cabecera>        
+      </div>
+      <!-- /.container -->
+  </section>
+
+</body>
+
+</html>

@@ -5,7 +5,9 @@ import { JuegoAdivina } from '../../clases/juego-adivina'
 @Component({
   selector: 'app-adivina-el-numero',
   templateUrl: './adivina-el-numero.component.html',
-  styleUrls: ['./adivina-el-numero.component.css']
+  styleUrls: ['./estilo.css',
+              './animacion.css',
+              './adivina-el-numero.component.css']
 })
 export class AdivinaElNumeroComponent implements OnInit {
  @Output() enviarJuego: EventEmitter<any>= new EventEmitter<any>();

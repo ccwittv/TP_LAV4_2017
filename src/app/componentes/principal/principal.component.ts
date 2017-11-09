@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var $: any;
 
 @Component({
   selector: 'app-principal',
   templateUrl: './principal.component.html',
-  styleUrls: ['./principal.component.css']
+  styleUrls: ['./principal.component.css'] //<!-- Custom Styles CSS and Fonts -->
 })
 export class PrincipalComponent implements OnInit {
  public status: any = {
@@ -15,7 +16,5 @@ export class PrincipalComponent implements OnInit {
 
   ngOnInit() {
   }
-
- 
 
 }

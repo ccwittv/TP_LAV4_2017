@@ -17,6 +17,7 @@ import { MenuCardComponent } from './componentes/menu-card/menu-card.component';
 import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
+import { SideMenuComponent } from './Componentes/side-menu/side-menu.component';
 
 //Modulos
 import { BrowserModule } from '@angular/platform-browser';
@@ -63,7 +64,8 @@ import { JuegoServiceService } from './servicios/juego-service.service';
     MenuCardComponent,
     CabeceraComponent,
     QuienSoyComponent,
-    AnagramaComponent
+    AnagramaComponent,
+    SideMenuComponent
   ],
   imports: [
     BrowserModule,

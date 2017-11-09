@@ -1,8 +1,10 @@
 
 form {
     border: 10px solid #f1f1f1;
-    padding: 10px;
-    background:gray;
+    /*padding: 10px;
+    background:gray;*/
+    background:#f0f0f0;
+    padding:6% 4%;
 }
 
 input[type=text], input[type=password] {
@@ -67,8 +69,6 @@ span.psw {
        width: 100%;
     }
 }
-
-
 
 #snackbar {
     visibility: hidden;

@@ -1,17 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 declare var $: any;
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  selector: 'app-side-menu',
+  templateUrl: './side-menu.component.html',
+  styleUrls: ['./side-menu.component.css']
 })
-export class MenuComponent implements OnInit {
+export class SideMenuComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -76,22 +74,5 @@ ngAfterViewInit() {
   });
 
 }
-
-  Juego(tipo: string) {
-    switch (tipo) {
-      case 'Adivina':
-          this.router.navigate(['/Juegos/Adivina']);
-        break;
-      case 'Agilidad':
-          this.router.navigate(['/Juegos/Agilidad']);
-        break;
-      case 'AdivinaMasListado':
-          this.router.navigate(['/Juegos/AdivinaMasListado']);
-        break;
-      case 'AgilidadaMasListado':
-          this.router.navigate(['/Juegos/AgilidadaMasListado']);
-        break;
-    }
-  }
 
 }
