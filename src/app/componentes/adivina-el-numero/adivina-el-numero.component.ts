@@ -18,11 +18,11 @@ export class AdivinaElNumeroComponent implements OnInit {
   ocultarVerificar:boolean;
  
   constructor() { 
-    this.nuevoJuego = new JuegoAdivina();
+    this.nuevoJuego = new JuegoAdivina("Adivina el número",false,"tito cosa");
     console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
     console.log("ocultar Verificar:",this.ocultarVerificar);
-    console.log("Ganó? Constructor componente adivina",this.nuevoJuego.gano);
+    console.log("Ganó? Constructor componente adivina",this.nuevoJuego.resultado);
   }
   generarnumero() {
     this.nuevoJuego.generarnumero();
@@ -32,7 +32,7 @@ export class AdivinaElNumeroComponent implements OnInit {
   {
     this.contador++;
     this.ocultarVerificar=true;
-    console.info("numero Secreto:",this.nuevoJuego.gano);  
+    console.info("numero Secreto:",this.nuevoJuego.resultado);  
     if (this.nuevoJuego.verificar()){
       
       this.enviarJuego.emit(this.nuevoJuego);
@@ -70,7 +70,7 @@ export class AdivinaElNumeroComponent implements OnInit {
      
 
     }
-    console.info("numero Secreto:",this.nuevoJuego.gano);  
+    console.info("numero Secreto:",this.nuevoJuego.resultado);  
   }  
 
   MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {

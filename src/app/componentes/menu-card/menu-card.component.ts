@@ -3,7 +3,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 @Component({
   selector: 'app-menu-card',
   templateUrl: './menu-card.component.html',
-  styleUrls: ['./menu-card.component.css','./vendor/bootstrap/css/bootstrap.min.css']
+  styleUrls: [ './animacion.css',
+               './menu-card.component.css','./vendor/bootstrap/css/bootstrap.min.css']
 })
 export class MenuCardComponent implements OnInit {
 
@@ -15,18 +16,24 @@ export class MenuCardComponent implements OnInit {
   }
   Juego(tipo: string) {
     switch (tipo) {
-      case 'Adivina':
-          this.router.navigate(['/Juegos/Adivina']);
-        break;
       case 'Agilidad':
           this.router.navigate(['/Juegos/Agilidad']);
-        break;
-      case 'AdivinaMasListado':
-          this.router.navigate(['/Juegos/AdivinaMasListado']);
         break;
       case 'AgilidadaMasListado':
           this.router.navigate(['/Juegos/AgilidadaMasListado']);
         break;
+      case 'PiedraPapelTijera':
+        this.router.navigate(['/Juegos/PiedraPapelTijera']);
+      break;                      
+      case 'Adivina':
+          this.router.navigate(['/Juegos/Adivina']);
+        break;      
+      case 'AdivinaMasListado':
+          this.router.navigate(['/Juegos/AdivinaMasListado']);
+        break;            
+      case 'Anagrama':
+        this.router.navigate(['/Juegos/Anagrama']);
+      break;              
     }
   }
 }

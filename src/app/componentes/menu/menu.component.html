@@ -17,18 +17,24 @@
       <a class="js-scroll-trigger" routerLink="/Juegos">Menú de Juegos</a>
     </li>
     <li>
-      <!--a class="js-scroll-trigger" href="#services">Services</a-->
-      <a class="js-scroll-trigger" data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a>
-    </li>
-    <li>
       <a class="js-scroll-trigger" (click)="Juego('Agilidad')">Agilidad</a>
     </li>    
     <li>
-      <a (click)="Juego('AdivinaMasListado')">Adivina+listado</a>
+      <a class="js-scroll-trigger" (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a>
     </li>
     <li>
-      <a (click)="Juego('AgilidadaMasListado')">Agilidad+listado</a>
+      <!--a class="js-scroll-trigger" href="#services">Services</a-->
+      <a class="js-scroll-trigger" data-toggle="tooltip" title="Hooray!" (click)="Juego('Adivina')">Adivina</a>
+    </li>    
+    <li>
+      <a class="js-scroll-trigger" (click)="Juego('AdivinaMasListado')">Adivina+listado</a>
     </li>
+    <li>
+      <a class="js-scroll-trigger"  (click)="Juego('PiedraPapelTijera')">Piedra, Papel o Tijera</a>
+    </li>        
+    <li>
+      <a class="js-scroll-trigger"  (click)="Juego('Anagrama')">Anagrama</a>
+    </li>        
     <li>
       <a routerLink="#">Registrarse <span class="glyphicon glyphicon-user"></span></a>
     </li>

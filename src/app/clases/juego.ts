@@ -1,14 +1,14 @@
 export abstract class Juego {
-  public nombre = 'Sin Nombre';
+  public nombre:string = 'Sin Nombre';
   public jugador: string;
-  public gano = false;
+  public resultado:any;//lo declaro como any debido a que resultado puede ser diferentes valores segun el juego gano, perdió, empate, correcto, incorrecto etc
 
-  constructor(nombre?: string, gano?: boolean,jugador?:string) {
+  constructor(nombre?: string, resultado?: any,jugador?:string) {
     if (nombre)
       this.nombre = nombre;
 
-    if (gano)
-      this.gano = gano;
+    if (resultado)
+      this.resultado = resultado;
     if(jugador)
       this.jugador=jugador;
     else
@@ -19,6 +19,6 @@ export abstract class Juego {
   
   public retornarAyuda() {
     
-    return "NO hay Ayuda definida";
+    return "NO HAY AYUDA DEFINIDA";
   }
 }

@@ -1,3 +1,40 @@
-<p>
-  anagrama works!
-</p>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>    
+
+  </head>
+
+    <body>
+        
+       <div class="CajaUno animated bounceInLeft">
+
+          <form [formGroup]="registroFormulario" name="juego">
+            <div style="text-align:center">
+              <h2>
+                  {{nuevoJuego.nombre}}!
+              </h2>
+            </div>
+            <br>
+            <h4>Anagrama propuesto: </h4> 
+            <input [ngModelOptions]="{standalone: true}" [(ngModel)]="palabraDesordenada" placeholder="" name="palabraDesordenada" id="palabraDesordenada" type="text" class="form-control" style="width:100%" readonly/>
+              
+            <h4>Respuesta:</h4> 
+            <input [formControl]="respuesta" [(ngModel)]="nuevoJuego.respuestaPalabra" placeholder="ingresar palabra" name="respuestaPalabra" id="respuestaPalabra" type="text" class="form-control" style="width:100%;background:white"/>
+
+            <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg" [disabled]="!registroFormulario.valid">Verificar {{tiempo}}</button></h2>
+            <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo Anagrama</button></h2>
+                            
+            <h4 [hidden]="ocultarVerificar" ><p><i class="fa fa-spinner fa-spin"></i>Esperando palabra...</p></h4>
+            <h4 [hidden]="!ocultarVerificar" ><p><i class="fa fa-spinner fa-spin"></i>Esperando nuevo anagrama...</p></h4>
+            <br>
+          </form>
+
+          </div>            
+          <div class="container">
+            <div id="snackbar">{{Mensajes}}</div>
+          </div> 
+  
+    </body>
+  </html>
+              

@@ -25,8 +25,8 @@
                   
             <h4><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p></h4>
             <br> 
-            <h4 [hidden]="!nuevoJuego.gano">Usted adivino el número</h4>
-            <h4 [hidden]="nuevoJuego.gano">Usted aún no gano </h4>	
+            <h4 [hidden]="!nuevoJuego.resultado">Usted adivinó el número</h4>
+            <h4 [hidden]="nuevoJuego.resultado">Usted aún no ganó </h4>	
           </form>
         </div>
         <div class="container">

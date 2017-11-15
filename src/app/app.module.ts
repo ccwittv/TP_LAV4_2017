@@ -18,6 +18,7 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { SideMenuComponent } from './Componentes/side-menu/side-menu.component';
+import { PiedraPapelTijeraComponent } from './Componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 
 //Modulos
 import { BrowserModule } from '@angular/platform-browser';
@@ -65,7 +66,8 @@ import { JuegoServiceService } from './servicios/juego-service.service';
     CabeceraComponent,
     QuienSoyComponent,
     AnagramaComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    PiedraPapelTijeraComponent
   ],
   imports: [
     BrowserModule,

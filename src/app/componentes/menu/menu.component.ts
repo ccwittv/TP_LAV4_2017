@@ -79,18 +79,24 @@ ngAfterViewInit() {
 
   Juego(tipo: string) {
     switch (tipo) {
-      case 'Adivina':
-          this.router.navigate(['/Juegos/Adivina']);
-        break;
       case 'Agilidad':
-          this.router.navigate(['/Juegos/Agilidad']);
-        break;
-      case 'AdivinaMasListado':
-          this.router.navigate(['/Juegos/AdivinaMasListado']);
-        break;
+        this.router.navigate(['/Juegos/Agilidad']);
+        break;  
       case 'AgilidadaMasListado':
-          this.router.navigate(['/Juegos/AgilidadaMasListado']);
+        this.router.navigate(['/Juegos/AgilidadaMasListado']);
         break;
+      case 'PiedraPapelTijera':
+        this.router.navigate(['/Juegos/PiedraPapelTijera']);
+        break;          
+      case 'Adivina':
+        this.router.navigate(['/Juegos/Adivina']);
+        break;      
+      case 'AdivinaMasListado':
+        this.router.navigate(['/Juegos/AdivinaMasListado']);
+        break;      
+        case 'Anagrama':
+        this.router.navigate(['/Juegos/Anagrama']);
+        break;        
     }
   }
 
