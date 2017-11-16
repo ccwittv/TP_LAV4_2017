@@ -9,7 +9,13 @@ declare var $: any;
 })
 export class SideMenuComponent implements OnInit {
 
-  constructor() { }
+  hayAlguienLogueado:boolean;
+  usuarioLogueado:string;
+  constructor() { 
+    this.usuarioLogueado = localStorage.usuarioLogueado;
+    if ( this.usuarioLogueado != undefined)  
+       this.hayAlguienLogueado = true;
+  }
 
   ngOnInit() {
   }

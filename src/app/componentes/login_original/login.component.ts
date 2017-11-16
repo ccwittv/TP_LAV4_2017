@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { AuthData } from '../../providers/auth-data';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -18,54 +17,24 @@ export class LoginComponent implements OnInit {
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
+
   clase="progress-bar progress-bar-info progress-bar-striped ";
-  public misUsuarios = ['tito@mail.com','jugador1@mail.com','jugador2@mail.com'];
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    public authData: AuthData) {
+    private router: Router) {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
 
   }
 
   ngOnInit() {
-//si ingresa nuevamente al login se desloguea el usuario que estaba logueado previamente    
-    this.desloguear();
   }
 
   Entrar() {
-    /*if (this.usuario === 'admin' && this.clave === 'admin') {
+    if (this.usuario === 'admin' && this.clave === 'admin') {
       this.router.navigate(['/Principal']);
-    }*/
-    // Inicio sesion en Firebase.
-    switch (this.usuario) {
-      case 'tito@mail.com':
-        this.clave = 'titocosa';
-      break;
-      case 'jugador1@mail.com':
-        this.clave = '123456';
-      break;
-      case 'jugador2@mail.com':
-        this.clave = '123456';
-      break;
-      default:
-        break;
     }
-
-     this.authData.loginUser(this.usuario, this.clave).then(authData => {
-      console.log("Se logueo correctamente!");
-      localStorage.usuarioLogueado = this.usuario;
-      this.router.navigate(['/Principal']);
-    },
-    error => { 
-        console.log('loginError: ', error);  
-        alert("Usuario o clave incorrecta");
-        this.logeando=true;  
-    });
-    this.progreso=0;
-    this.ProgresoDeAncho="0%";
   }
   MoverBarraDeProgreso() {
     
@@ -107,19 +76,6 @@ export class LoginComponent implements OnInit {
       }     
     });
     //this.logeando=true;
-  }
-
-  desloguear()
-  {
-      this.authData.logoutUser().then(authData => {
-        console.info("se deslogueó correctamente!");
-        //this.logueando=false;
-        localStorage.removeItem("usuarioLogueado");
-      },
-      error => { 
-          console.log('Error en logout: ', error);  
-          alert("Deslogueo incorrecto del usuario");  
-      });
   }
 
 }

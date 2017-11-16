@@ -4,7 +4,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   selector: 'app-menu-card',
   templateUrl: './menu-card.component.html',
   styleUrls: [ './animacion.css',
-               './menu-card.component.css','./vendor/bootstrap/css/bootstrap.min.css']
+               './menu-card.component.css',
+               /*'./vendor/bootstrap/css/bootstrap.min.css'*/]
 })
 export class MenuCardComponent implements OnInit {
 
@@ -33,6 +34,8 @@ export class MenuCardComponent implements OnInit {
         break;            
       case 'Anagrama':
         this.router.navigate(['/Juegos/Anagrama']);
+      case 'Memotest':
+        this.router.navigate(['/Juegos/Memotest']);  
       break;              
     }
   }

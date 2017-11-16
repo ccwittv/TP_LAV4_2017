@@ -20,6 +20,7 @@ import { CabeceraComponent } from '../componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from '../componentes/quien-soy/quien-soy.component';
 import { PiedraPapelTijeraComponent } from '../Componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { AnagramaComponent } from '../componentes/anagrama/anagrama.component';
+import { MemotestComponent } from '../Componentes/memotest/memotest.component';
 // declaro donde quiero que se dirija
 const MiRuteo = [
 {path: '' , component: PrincipalComponent},
@@ -37,7 +38,9 @@ children:
       {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'PiedraPapelTijera' , component: PiedraPapelTijeraComponent},
-      {path: 'Anagrama' , component: AnagramaComponent}]
+      {path: 'Anagrama' , component: AnagramaComponent},
+      {path: 'Memotest' , component: MemotestComponent}
+    ]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];

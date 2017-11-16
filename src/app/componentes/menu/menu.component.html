@@ -8,7 +8,8 @@
       <i class="fa fa-times"></i>
     </a>
     <li class="sidebar-brand">
-      <a class="js-scroll-trigger" routerLink="/Principal">Sala de juegos</a>
+      <a class="js-scroll-trigger" *ngIf = "hayAlguienLogueado">{{usuarioLogueado}}</a>
+      <a class="js-scroll-trigger" *ngIf = "!hayAlguienLogueado">Sala de juegos</a>
     </li>
     <li>
       <a class="js-scroll-trigger" routerLink="/Principal">Home</a>
@@ -34,12 +35,16 @@
     </li>        
     <li>
       <a class="js-scroll-trigger"  (click)="Juego('Anagrama')">Anagrama</a>
-    </li>        
-    <li>
-      <a routerLink="#">Registrarse <span class="glyphicon glyphicon-user"></span></a>
     </li>
     <li>
-      <a routerLink="/Login">Salir <span class="glyphicon glyphicon-log-out"></span></a>
+      <a class="js-scroll-trigger"  (click)="Juego('Memotest')">Memotest</a>
+    </li>           
+    <li>
+      <a routerLink="#">Registrarse <span class="fa fa-user fa-fw"></span></a>
+    </li>
+    <li>
+      <a routerLink="/Login" *ngIf = "!hayAlguienLogueado">Ingresar <span class="fa fa-sign-in"></span></a>
+      <a routerLink="/Login" *ngIf = "hayAlguienLogueado">Salir <span class="fa fa-sign-out"></span></a>
     </li>
 
   </ul>

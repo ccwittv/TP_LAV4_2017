@@ -9,9 +9,14 @@ declare var $: any;
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
+  
+  hayAlguienLogueado:boolean;
+  usuarioLogueado:string;
   constructor(private route: ActivatedRoute,
-    private router: Router) { }
+              private router: Router) { 
+      this.usuarioLogueado = localStorage.usuarioLogueado;
+      if (this.usuarioLogueado != undefined)  
+          this.hayAlguienLogueado = true;}
 
   ngOnInit() {
   }
@@ -94,9 +99,12 @@ ngAfterViewInit() {
       case 'AdivinaMasListado':
         this.router.navigate(['/Juegos/AdivinaMasListado']);
         break;      
-        case 'Anagrama':
+      case 'Anagrama':
         this.router.navigate(['/Juegos/Anagrama']);
-        break;        
+        break;
+      case 'Memotest':
+        this.router.navigate(['/Juegos/Memotest']);
+        break;               
     }
   }
 

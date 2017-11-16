@@ -19,6 +19,14 @@ import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { SideMenuComponent } from './Componentes/side-menu/side-menu.component';
 import { PiedraPapelTijeraComponent } from './Componentes/piedra-papel-tijera/piedra-papel-tijera.component';
+import { MemotestComponent } from './Componentes/memotest/memotest.component';
+
+//Módulos y configuraciones para conectarse a la base firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import {firebaseconfig} from './firebase/firebaseconfig';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AuthData } from './providers/auth-data';
 
 //Modulos
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,6 +54,7 @@ import { RuteandoModule } from './ruteando/ruteando.module';
 import { MiHttpService } from './servicios/mi-http.service';
 import { JuegoServiceService } from './servicios/juego-service.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,7 +76,8 @@ import { JuegoServiceService } from './servicios/juego-service.service';
     QuienSoyComponent,
     AnagramaComponent,
     SideMenuComponent,
-    PiedraPapelTijeraComponent
+    PiedraPapelTijeraComponent,
+    MemotestComponent
   ],
   imports: [
     BrowserModule,
@@ -78,9 +88,15 @@ import { JuegoServiceService } from './servicios/juego-service.service';
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
+    AngularFireModule.initializeApp(firebaseconfig), //para firebase
+    AngularFireDatabaseModule, //para firebase
+    AngularFireAuthModule, //para firebase
   ],
   providers: [ JuegoServiceService,
-               MiHttpService,],
+               MiHttpService,
+               AngularFireModule,
+               AuthData
+              ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
