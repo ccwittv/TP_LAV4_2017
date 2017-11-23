@@ -1,6 +1,7 @@
 
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
-import { JuegoAdivina } from '../../clases/juego-adivina'
+import { JuegoAdivina } from '../../clases/juego-adivina';
+import { MiFirebaseJuegoServicioService } from '../../servicios/mi-firebase-juego-servicio.service'
 
 @Component({
   selector: 'app-adivina-el-numero',
@@ -14,23 +15,25 @@ export class AdivinaElNumeroComponent implements OnInit {
 
   nuevoJuego: JuegoAdivina;
   Mensajes:string;
-  contador:number;
+  //contador:number;
   ocultarVerificar:boolean;
+  miServicioJuego:MiFirebaseJuegoServicioService
  
-  constructor() { 
+  constructor(servicioJuego:MiFirebaseJuegoServicioService) { 
     this.nuevoJuego = new JuegoAdivina("Adivina el número",false,"tito cosa");
-    console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
+    //console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
     this.ocultarVerificar=false;
-    console.log("ocultar Verificar:",this.ocultarVerificar);
-    console.log("Ganó? Constructor componente adivina",this.nuevoJuego.resultado);
+    /*console.log("ocultar Verificar:",this.ocultarVerificar);
+    console.log("Ganó? Constructor componente adivina",this.nuevoJuego.resultado);*/
+    this.miServicioJuego = servicioJuego;
   }
   generarnumero() {
     this.nuevoJuego.generarnumero();
-    this.contador=0;
+    this.nuevoJuego.contador=0;
   }
   verificar()
   {
-    this.contador++;
+    this.nuevoJuego.contador++;
     this.ocultarVerificar=true;
     console.info("numero Secreto:",this.nuevoJuego.resultado);  
     if (this.nuevoJuego.verificar()){
@@ -38,11 +41,21 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.enviarJuego.emit(this.nuevoJuego);
       this.MostarMensaje("Sos un Genio!!!",true);
       this.nuevoJuego.numeroSecreto=0;
-
+//Se guarda el juego en la base de datos firebase      
+      this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+      let fecha = new Date();
+      this.nuevoJuego.fechajuego = fecha.getDay().toString() +"/"+fecha.getMonth().toString()+"/"+fecha.getFullYear().toString();
+      this.nuevoJuego.horajuego = fecha.getHours().toString()+":"+fecha.getMinutes().toString()+":"+fecha.getSeconds().toString();
+      this.nuevoJuego.identificador = "AN";
+      this.nuevoJuego.resultado = "ganó";
+      this.nuevoJuego.observacion = "en "+this.nuevoJuego.contador.toString()+" intentos";
+      console.log("Ganaste!!!",this.nuevoJuego);
+      this.miServicioJuego.guardarJuego(this.nuevoJuego);      
+      
     }else{
 
       let mensaje:string;
-      switch (this.contador) {
+      switch (this.nuevoJuego.contador) {
         case 1:
           mensaje="No, intento fallido, animo";
           break;
@@ -63,10 +76,10 @@ export class AdivinaElNumeroComponent implements OnInit {
           break;
       
         default:
-            mensaje="Ya le erraste "+ this.contador+" veces";
+            mensaje="Ya le erraste "+ this.nuevoJuego.contador+" veces";
           break;
       }
-      this.MostarMensaje("#"+this.contador+" "+mensaje+" ayuda :"+this.nuevoJuego.retornarAyuda());
+      this.MostarMensaje("#"+this.nuevoJuego.contador+" "+mensaje+" ayuda :"+this.nuevoJuego.retornarAyuda());
      
 
     }

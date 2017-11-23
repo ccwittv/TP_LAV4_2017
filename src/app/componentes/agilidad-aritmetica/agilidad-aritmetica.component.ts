@@ -1,5 +1,6 @@
 import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
 import { JuegoAgilidad } from '../../clases/juego-agilidad';
+import { MiFirebaseJuegoServicioService } from '../../servicios/mi-firebase-juego-servicio.service'
 
 @Component({
   selector: 'app-agilidad-aritmetica',
@@ -13,15 +14,18 @@ export class AgilidadAritmeticaComponent implements OnInit {
   nuevoJuego : JuegoAgilidad;
   ocultarVerificar: boolean;
   Mensajes:string;
+  miServicioJuego:MiFirebaseJuegoServicioService
  //atributos para cronometrar la agilidad del usuario 
   tiempo:number = 0;
   t;
   timer_is_on:number = 0;
+  
   ngOnInit() {
   }
-   constructor() {
+   constructor(servicioJuego:MiFirebaseJuegoServicioService) {
     this.ocultarVerificar=true;
     this.nuevoJuego = new JuegoAgilidad("Agilidad Aritmética",false,"tito cosa");
+    this.miServicioJuego=servicioJuego;
   }
   
   NuevoJuego() {
@@ -38,17 +42,30 @@ export class AgilidadAritmeticaComponent implements OnInit {
     this.stopCount(); // se detiene el cronómetro sea cual sea la respuesta
     if (this.nuevoJuego.verificar()) {
       //alert("Correcto!!");
-      
       this.enviarJuego.emit(this.nuevoJuego);
       this.nuevoJuego.tiempoCalculoSegundos = this.tiempo;
+      this.nuevoJuego.observacion = "con la "+this.nuevoJuego.operacion+" se tardó " + this.nuevoJuego.tiempoCalculoSegundos.toString()+" segundos";
+      this.nuevoJuego.resultado = "ganó";
       this.MostrarMensaje("Correcto!!! Y en solo "+this.nuevoJuego.tiempoCalculoSegundos+" segundos",true);
     }
     else {
       //alert("Incorrecto!!!");
+      this.nuevoJuego.tiempoCalculoSegundos = 0;
+      this.nuevoJuego.observacion = "con la "+this.nuevoJuego.operacion;
+      this.nuevoJuego.resultado = "perdió"
       this.MostrarMensaje("Incorrecto!!! La respuesta era: "+this.nuevoJuego.retornarAyuda(),false);
     }
     this.ocultarVerificar=true;
     this.tiempo = 0; //el cronómetro se tiene que poner en cero
+    
+    //Se guarda el juego en la base de datos firebase      
+    this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+    let fecha = new Date();
+    this.nuevoJuego.fechajuego = fecha.getDay().toString() +"/"+fecha.getMonth().toString()+"/"+fecha.getFullYear().toString();
+    this.nuevoJuego.horajuego = fecha.getHours().toString()+":"+fecha.getMinutes().toString()+":"+fecha.getSeconds().toString();
+    this.nuevoJuego.identificador = "AA";
+    this.miServicioJuego.guardarJuego(this.nuevoJuego);   
+
   }  
 
   MostrarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {

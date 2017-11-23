@@ -12,17 +12,13 @@
       <a class="js-scroll-trigger" *ngIf = "!hayAlguienLogueado">Sala de juegos</a>
     </li>
     <li>
-      <a class="js-scroll-trigger" href="/Principal#top">Home</a>
+      <a class="js-scroll-trigger" href="#top">Home</a>
+    </li>    
+    <li>      
+      <a class="js-scroll-trigger" (click)="llamaService()" >Servicio</a>
     </li>
     <li>
-      <a class="js-scroll-trigger" href="/Principal#about">Acerca de</a>
-    </li>
-    <li>
-      <!--a class="js-scroll-trigger" href="#services">Services</a-->
-      <a class="js-scroll-trigger" routerLink="/Juegos">Menu de Juegos</a>
-    </li>
-    <li>
-      <a class="js-scroll-trigger" routerLink="/Listado">Listados</a>
+      <a class="js-scroll-trigger" (click)="llamaServicePromesa()">Servicio Promesa</a>
     </li>    
     <li>
       <a routerLink="/Registro">Registrarse <span class="fa fa-user fa-fw"></span></a>

@@ -9,6 +9,8 @@ import { ErrorComponent } from '../componentes/error/error.component';
 import { PrincipalComponent } from '../componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from '../componentes/agilidad-aritmetica/agilidad-aritmetica.component';
 import { MenuComponent } from '../componentes/menu/menu.component';
+import { SideMenuComponent } from '../Componentes/side-menu/side-menu.component';
+import { SideMenuListadoComponent } from '../Componentes/side-menu-listado/side-menu-listado.component';
 import { AdivinaMasListadoComponent } from '../componentes/adivina-mas-listado/adivina-mas-listado.component';
 import { AgilidadMasListadoComponent } from '../componentes/agilidad-mas-listado/agilidad-mas-listado.component';
 import { ListadoComponent } from'../componentes/listado/listado.component'
@@ -28,7 +30,7 @@ const MiRuteo = [
 {path: 'QuienSoy' , component: QuienSoyComponent},
 {path: 'Registro' , component: RegistroComponent},
 {path: 'Principal' , component: PrincipalComponent},
-{path: 'Listado' , component: ListadoComponent},
+{path: 'Listado' , component: ListadosComponent},
 { path: 'Juegos' ,
 component: JuegosComponent ,
 children:

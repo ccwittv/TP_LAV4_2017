@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegoAnagrama } from '../../clases/juego-anagrama';
 import { Validators, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { MiFirebaseJuegoServicioService } from '../../servicios/mi-firebase-juego-servicio.service';
 
 @Component({
   selector: 'app-anagrama',
@@ -20,13 +21,14 @@ export class AnagramaComponent implements OnInit {
   ocultarVerificar: boolean;
   Mensajes:string;
   //lista = [1,2,3,4,5,6,7,8,9];
+  miServicioJuego:MiFirebaseJuegoServicioService;
   
   //atributos para cronometrar la agilidad del usuario 
   tiempo:number = 0;
   t;
   timer_is_on:number = 0;
   
-  constructor(private builder:FormBuilder) {
+  constructor(private builder:FormBuilder, servicioJuego:MiFirebaseJuegoServicioService) {
     this.nuevoJuego = new JuegoAnagrama("Anagrama",false,"tito cosa");     
     this.miArrayDePalabras = ["HOLA","ARGENTINO","CARACOL","FACULTAD","MONITOR"];    
     /*console.log(this.miArrayDePalabras);
@@ -46,6 +48,7 @@ export class AnagramaComponent implements OnInit {
     this.palabraDesordenada = this.palabraDesordenada.replace(re,"");
     console.log(this.palabraDesordenada);
     //alert(this.lista); // imprime por ejemplo: 7,9,1,5,2,3,6,4,8*/
+    this.miServicioJuego=servicioJuego;
   }
 
   respuesta = new FormControl('',[Validators.required]);
@@ -74,14 +77,25 @@ export class AnagramaComponent implements OnInit {
       //alert("Correcto!!");
       this.stopCount();
       this.nuevoJuego.tiempoCalculoSegundos = this.tiempo;
+      this.nuevoJuego.resultado = "ganó";
+      this.nuevoJuego.observacion = "en "+this.nuevoJuego.tiempoCalculoSegundos+" segundos"
       this.MostrarMensaje("Correcto!!! Y en solo "+this.nuevoJuego.tiempoCalculoSegundos+" segundos",true);
     }
     else {
       //alert("Incorrecto!!!");
+      this.nuevoJuego.tiempoCalculoSegundos = 0;
+      this.nuevoJuego.resultado = "perdió";
       this.MostrarMensaje("Incorrecto!!! La respuesta era: "+this.nuevoJuego.retornarAyuda(),false);
     }
     this.ocultarVerificar=true;
     this.tiempo = 0; //el cronómetro se tiene que poner en cero
+    //Se guarda el juego en la base de datos firebase      
+    this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+    let fecha = new Date();
+    this.nuevoJuego.fechajuego = fecha.getDay().toString() +"/"+fecha.getMonth().toString()+"/"+fecha.getFullYear().toString();
+    this.nuevoJuego.horajuego = fecha.getHours().toString()+":"+fecha.getMinutes().toString()+":"+fecha.getSeconds().toString();
+    this.nuevoJuego.identificador = "AG";
+    this.miServicioJuego.guardarJuego(this.nuevoJuego);   
   }  
 
   MostrarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {

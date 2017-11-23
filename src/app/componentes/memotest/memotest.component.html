@@ -5,17 +5,20 @@
 
   </head>
 
-    <body>
+    <body style="font-family:comic sans ms;">
         
        <div class="CajaUno animated bounceInLeft">
-          <form name="juego">
-              <div style="text-align:center">
+          <div class=container name="juego">
+             <div style="text-align:center">
                 <h2>
                    <b>{{nuevoJuego.nombre}}!</b>
-                </h2>
-              </div>
+                </h2>                
+              </div>              
+          </div>  
             <br>
-            <!--div id="memory_board"></div-->
+            <a type="text" class="btn btn-success animated bounceInLeft" style="width:50%; font-weight: bold"  readonly> Cronómetro:  {{tiempo}} </a>
+            <br>
+            <br>
             <div id="memory_board">
                 <div id="tile_0" (click)="memoryFlipTile('tile_0',azulejo[0])"></div>
                 <div id="tile_1" (click)="memoryFlipTile('tile_1',azulejo[1])"></div>
@@ -31,9 +34,9 @@
                 <div id="tile_11" (click)="memoryFlipTile('tile_11',azulejo[11])"></div>    
             </div>
             <div class="container">
-                <a class="btn btn-primary animated bounceInLeft" href="/Juegos/Memotest"> <span class="glyphicon glyphicon-th">&nbsp;</span>Nuevo Tablero</a>
-            </div>
-      </form>  
+                <a class="btn btn-primary animated bounceInLeft" (click)="nuevaPartida()"> <span class="glyphicon glyphicon-th">&nbsp;</span>Nuevo Tablero</a>                
+            </div>            
+            
       </div>  
 
   <div class="container">

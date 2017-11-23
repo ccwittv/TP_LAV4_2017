@@ -18,6 +18,7 @@ import { CabeceraComponent } from './componentes/cabecera/cabecera.component';
 import { QuienSoyComponent } from './componentes/quien-soy/quien-soy.component';
 import { AnagramaComponent } from './componentes/anagrama/anagrama.component';
 import { SideMenuComponent } from './Componentes/side-menu/side-menu.component';
+import { SideMenuListadoComponent } from './Componentes/side-menu-listado/side-menu-listado.component';
 import { PiedraPapelTijeraComponent } from './Componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { MemotestComponent } from './Componentes/memotest/memotest.component';
 
@@ -25,7 +26,7 @@ import { MemotestComponent } from './Componentes/memotest/memotest.component';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import {firebaseconfig} from './firebase/firebaseconfig';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AuthData } from './providers/auth-data';
 
 //Modulos
@@ -53,6 +54,7 @@ import { RuteandoModule } from './ruteando/ruteando.module';
 //Servicios
 import { MiHttpService } from './servicios/mi-http.service';
 import { JuegoServiceService } from './servicios/juego-service.service';
+import { MiFirebaseJuegoServicioService } from './servicios/mi-firebase-juego-servicio.service';
 
 
 @NgModule({
@@ -77,7 +79,8 @@ import { JuegoServiceService } from './servicios/juego-service.service';
     AnagramaComponent,
     SideMenuComponent,
     PiedraPapelTijeraComponent,
-    MemotestComponent
+    MemotestComponent,
+    SideMenuListadoComponent
   ],
   imports: [
     BrowserModule,
@@ -90,12 +93,13 @@ import { JuegoServiceService } from './servicios/juego-service.service';
     // RouterModule.forRoot(MiRuteo)
     AngularFireModule.initializeApp(firebaseconfig), //para firebase
     AngularFireDatabaseModule, //para firebase
-    AngularFireAuthModule, //para firebase
+    AngularFireAuthModule //para firebase
   ],
   providers: [ JuegoServiceService,
                MiHttpService,
-               AngularFireModule,
-               AuthData
+               AngularFireModule, //para firebase
+               AuthData, //para firebase, autenticación de usuario 
+               MiFirebaseJuegoServicioService //para firebase 
               ],
   bootstrap: [AppComponent]
 })

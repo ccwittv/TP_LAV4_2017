@@ -7,7 +7,7 @@
 
   </head>
 
-    <body>
+    <body style="font-family:comic sans ms;">
         
        <div class="CajaUno animated bounceInLeft">
           <form name="juego">
@@ -23,7 +23,7 @@
             <h2 [hidden]="ocultarVerificar"><button  *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button></h2>
             <h2><button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()"  class="btn btn-info btn-lg">Nuevo número secreto</button></h2>
                   
-            <h4><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p></h4>
+            <h4><p *ngIf="nuevoJuego.numeroSecreto!=0" ><i class="fa fa-spinner fa-pulse"></i>Esperando que ingrese un número</p></h4>
             <br> 
             <h4 [hidden]="!nuevoJuego.resultado">Usted adivinó el número</h4>
             <h4 [hidden]="nuevoJuego.resultado">Usted aún no ganó </h4>	

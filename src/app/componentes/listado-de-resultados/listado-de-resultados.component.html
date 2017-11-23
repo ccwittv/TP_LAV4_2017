@@ -5,20 +5,65 @@
 
 </div-->
 
-<table class="table table-condensed">
+<table class="table table-condensed" style="font-family:comic sans ms;">
     <thead>
       <tr>
         <th>Juego</th>
         <th>Jugador</th>
         <th>Resultado</th>
+        <th>Observación</th>
+        <th>Fecha de juego</th>
+        <th>Hora de juego</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let juego of listado">
+      <tr *ngFor="let juego of listadoTodo | async">
         <td>{{juego.nombre}} </td>
         <td>{{juego.jugador}} </td> 
-        <td *ngIf="juego.resultado">Gano </td>   
-        <td *ngIf="!juego.resultado">Perdio</td>     
+        <td>{{juego.resultado}} </td> 
+        <td>{{juego.observacion}} </td> 
+        <td>{{juego.fechajuego}} </td> 
+        <td>{{juego.horajuego}} </td>   
+      </tr>
+      <tr *ngFor="let juego of listadoPPT | async">
+        <td *ngIf="juego.identificador == 'PPT'">{{juego.nombre}} </td>
+        <td *ngIf="juego.identificador == 'PPT'">{{juego.jugador}} </td> 
+        <td *ngIf="juego.identificador == 'PPT'">{{juego.resultado}} </td> 
+        <td *ngIf="juego.identificador == 'PPT'">{{juego.observacion}} </td> 
+        <td *ngIf="juego.identificador == 'PPT'">{{juego.fechajuego}} </td> 
+        <td *ngIf="juego.identificador == 'PPT'">{{juego.horajuego}} </td>   
+      </tr>
+      <tr *ngFor="let juego of listadoAA | async">
+        <td *ngIf="juego.identificador == 'AA'">{{juego.nombre}} </td>
+        <td *ngIf="juego.identificador == 'AA'">{{juego.jugador}} </td> 
+        <td *ngIf="juego.identificador == 'AA'">{{juego.resultado}} </td> 
+        <td *ngIf="juego.identificador == 'AA'">{{juego.observacion}} </td> 
+        <td *ngIf="juego.identificador == 'AA'">{{juego.fechajuego}} </td> 
+        <td *ngIf="juego.identificador == 'AA'">{{juego.horajuego}} </td>   
+      </tr>
+      <tr *ngFor="let juego of listadoAN | async">
+        <td *ngIf="juego.identificador == 'AN'">{{juego.nombre}} </td>
+        <td *ngIf="juego.identificador == 'AN'">{{juego.jugador}} </td> 
+        <td *ngIf="juego.identificador == 'AN'">{{juego.resultado}} </td> 
+        <td *ngIf="juego.identificador == 'AN'">{{juego.observacion}} </td> 
+        <td *ngIf="juego.identificador == 'AN'">{{juego.fechajuego}} </td> 
+        <td *ngIf="juego.identificador == 'AN'">{{juego.horajuego}} </td>   
+      </tr>
+      <tr *ngFor="let juego of listadoAG | async">
+        <td *ngIf="juego.identificador == 'AG'">{{juego.nombre}} </td>
+        <td *ngIf="juego.identificador == 'AG'">{{juego.jugador}} </td> 
+        <td *ngIf="juego.identificador == 'AG'">{{juego.resultado}} </td> 
+        <td *ngIf="juego.identificador == 'AG'">{{juego.observacion}} </td> 
+        <td *ngIf="juego.identificador == 'AG'">{{juego.fechajuego}} </td> 
+        <td *ngIf="juego.identificador == 'AG'">{{juego.horajuego}} </td>   
+      </tr>
+      <tr *ngFor="let juego of listadoMT | async">
+        <td *ngIf="juego.identificador == 'MT'">{{juego.nombre}} </td>
+        <td *ngIf="juego.identificador == 'MT'">{{juego.jugador}} </td> 
+        <td *ngIf="juego.identificador == 'MT'">{{juego.resultado}} </td> 
+        <td *ngIf="juego.identificador == 'MT'">{{juego.observacion}} </td> 
+        <td *ngIf="juego.identificador == 'MT'">{{juego.fechajuego}} </td> 
+        <td *ngIf="juego.identificador == 'MT'">{{juego.horajuego}} </td>   
       </tr>
      
     </tbody>

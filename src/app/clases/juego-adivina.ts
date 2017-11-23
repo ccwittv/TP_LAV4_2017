@@ -3,6 +3,7 @@ import { Juego } from '../clases/juego'
 export class JuegoAdivina extends  Juego {
     numeroSecreto: number = 0;
     numeroIngresado:number = 0;
+    contador:number;
     constructor(nombre?: string, gano?: boolean, jugador?:string) {
         super(nombre,gano,jugador);
         console.log("Ganó? Constructor juego adivina",this.resultado);

@@ -5,7 +5,7 @@
 
   </head>
 
-    <body>
+    <body style="font-family:comic sans ms;">
         
        <div class="CajaUno animated bounceInLeft">
 
@@ -25,8 +25,8 @@
             <h2 [hidden]="ocultarVerificar" ><button (click)="verificar()" class="btn btn-success btn-lg" [disabled]="!registroFormulario.valid">Verificar {{tiempo}}</button></h2>
             <h2 [hidden]="!ocultarVerificar"><button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo Anagrama</button></h2>
                             
-            <h4 [hidden]="ocultarVerificar" ><p><i class="fa fa-spinner fa-spin"></i>Esperando palabra...</p></h4>
-            <h4 [hidden]="!ocultarVerificar" ><p><i class="fa fa-spinner fa-spin"></i>Esperando nuevo anagrama...</p></h4>
+            <h4 [hidden]="ocultarVerificar" ><p><i class="fa fa-spinner fa-pulse"></i>Esperando palabra...</p></h4>
+            <h4 [hidden]="!ocultarVerificar" ><p><i class="fa fa-spinner fa-pulse"></i>Esperando nuevo anagrama...</p></h4>
             <br>
           </form>
 

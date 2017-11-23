@@ -8,18 +8,28 @@ import { Component, OnInit , Input, EventEmitter} from '@angular/core';
 })
 export class ListadoDeResultadosComponent implements OnInit {
  @Input()
- listado: Array<any>;
-
+ listadoPPT: Array<any>;
+ @Input() 
+ listadoAA: Array<any>;
+ @Input() 
+ listadoAN: Array<any>;
+ @Input() 
+ listadoAG: Array<any>;
+ @Input() 
+ listadoMT: Array<any>;
+ @Input() 
+ listadoTodo: Array<any>;
 
   constructor() {
+
    }
 
   ngOnInit() {
-
+  
   }
 
   ver() {
-    console.info(this.listado);
+    //console.info(this.listado);
   }
 
 }

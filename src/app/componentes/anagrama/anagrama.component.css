@@ -5,7 +5,7 @@ form {
     background:gray;*/
     background:#f0f0f0;
     padding:6% 4%;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif; 
+    /*font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif; */
 }
 
 input[type=text], input[type=password] {
