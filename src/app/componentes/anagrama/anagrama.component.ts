@@ -95,7 +95,8 @@ export class AnagramaComponent implements OnInit {
     this.nuevoJuego.fechajuego = fecha.getDay().toString() +"/"+fecha.getMonth().toString()+"/"+fecha.getFullYear().toString();
     this.nuevoJuego.horajuego = fecha.getHours().toString()+":"+fecha.getMinutes().toString()+":"+fecha.getSeconds().toString();
     this.nuevoJuego.identificador = "AG";
-    this.miServicioJuego.guardarJuego(this.nuevoJuego);   
+    if (this.nuevoJuego.jugador != null) //se guarda si el jugador no está vacío
+      this.miServicioJuego.guardarJuego(this.nuevoJuego);   
   }  
 
   MostrarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {

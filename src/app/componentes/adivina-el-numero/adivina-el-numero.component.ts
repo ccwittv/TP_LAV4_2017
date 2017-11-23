@@ -50,7 +50,8 @@ export class AdivinaElNumeroComponent implements OnInit {
       this.nuevoJuego.resultado = "ganó";
       this.nuevoJuego.observacion = "en "+this.nuevoJuego.contador.toString()+" intentos";
       console.log("Ganaste!!!",this.nuevoJuego);
-      this.miServicioJuego.guardarJuego(this.nuevoJuego);      
+      if (this.nuevoJuego.jugador != null) //se guarda si el jugador no está vacío
+        this.miServicioJuego.guardarJuego(this.nuevoJuego);      
       
     }else{
 

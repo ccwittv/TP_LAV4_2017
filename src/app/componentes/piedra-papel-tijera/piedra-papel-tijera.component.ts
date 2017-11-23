@@ -115,7 +115,8 @@ export class PiedraPapelTijeraComponent implements OnInit {
       this.nuevoJuego.horajuego = fecha.getHours().toString()+":"+fecha.getMinutes().toString()+":"+fecha.getSeconds().toString();
       console.info("Estado juego al finalizar la jugada",this.nuevoJuego);
       this.nuevoJuego.identificador = "PPT";
-      this.miServicioJuego.guardarJuego(this.nuevoJuego);
+      if (this.nuevoJuego.jugador != null) //se guarda si el jugador no está vacío
+        this.miServicioJuego.guardarJuego(this.nuevoJuego);
   }
 
   MostarMensaje(mensaje:string="este es el mensaje",resultado:string) {

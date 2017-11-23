@@ -126,7 +126,8 @@ export class MemotestComponent implements OnInit {
             this.nuevoJuego.identificador = "MT";
             this.nuevoJuego.resultado = "ganó";
             this.nuevoJuego.observacion = "en "+this.nuevoJuego.tiempoCalculoSegundos+" segundos";
-            this.miServicioJuego.guardarJuego(this.nuevoJuego);   
+            if (this.nuevoJuego.jugador != null) //se guarda si el jugador no está vacío
+              this.miServicioJuego.guardarJuego(this.nuevoJuego);   
           }
         } else {
           //console.log(this.memory_tile_ids);
