@@ -19866,18 +19866,18 @@ var AngularFireAuthModule = (function () {
 
 /***/ }),
 
-/***/ "../../../../angularfire2/database/database.js":
+/***/ "../../../../angularfire2/database-deprecated/database.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AngularFireDatabase; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__("../../../../firebase/database/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_database__ = __webpack_require__("../../../../firebase/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_firebase_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__("../../../../angularfire2/database/utils.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__list_create_reference__ = __webpack_require__("../../../../angularfire2/database/list/create-reference.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__object_create_reference__ = __webpack_require__("../../../../angularfire2/database/object/create-reference.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_list_factory__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_list_factory.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebase_object_factory__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_object_factory.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils__ = __webpack_require__("../../../../angularfire2/database-deprecated/utils.js");
 
 
 
@@ -19889,23 +19889,16 @@ var AngularFireDatabase = (function () {
         this.app = app;
         this.database = app.database();
     }
-    AngularFireDatabase.prototype.list = function (pathOrRef, queryFn) {
-        var ref = Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* getRef */])(this.app, pathOrRef);
-        var query = ref;
-        if (queryFn) {
-            query = queryFn(ref);
-        }
-        return Object(__WEBPACK_IMPORTED_MODULE_4__list_create_reference__["a" /* createListReference */])(query);
+    AngularFireDatabase.prototype.list = function (pathOrRef, opts) {
+        var ref = __WEBPACK_IMPORTED_MODULE_5__utils__["a" /* getRef */](this.app, pathOrRef);
+        return Object(__WEBPACK_IMPORTED_MODULE_3__firebase_list_factory__["a" /* FirebaseListFactory */])(ref, opts);
     };
-    AngularFireDatabase.prototype.object = function (pathOrRef) {
-        var ref = Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* getRef */])(this.app, pathOrRef);
-        return Object(__WEBPACK_IMPORTED_MODULE_5__object_create_reference__["a" /* createObjectReference */])(ref);
-    };
-    AngularFireDatabase.prototype.createPushId = function () {
-        return this.database.ref().push().key;
+    AngularFireDatabase.prototype.object = function (pathOrRef, opts) {
+        var ref = __WEBPACK_IMPORTED_MODULE_5__utils__["a" /* getRef */](this.app, pathOrRef);
+        return Object(__WEBPACK_IMPORTED_MODULE_4__firebase_object_factory__["a" /* FirebaseObjectFactory */])(ref, opts);
     };
     AngularFireDatabase.decorators = [
-        { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */] },
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Injectable */] },
     ];
     AngularFireDatabase.ctorParameters = function () { return [
         { type: __WEBPACK_IMPORTED_MODULE_2_angularfire2__["b" /* FirebaseApp */], },
@@ -19917,7 +19910,7 @@ var AngularFireDatabase = (function () {
 
 /***/ }),
 
-/***/ "../../../../angularfire2/database/database.module.js":
+/***/ "../../../../angularfire2/database-deprecated/database.module.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19929,7 +19922,7 @@ var AngularFireDatabase = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__("../../../../firebase/database/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__database__ = __webpack_require__("../../../../angularfire2/database/database.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__database__ = __webpack_require__("../../../../angularfire2/database-deprecated/database.js");
 
 
 
@@ -19962,430 +19955,484 @@ var AngularFireDatabaseModule = (function () {
 
 /***/ }),
 
-/***/ "../../../../angularfire2/database/index.js":
+/***/ "../../../../angularfire2/database-deprecated/firebase_list_factory.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__public_api__ = __webpack_require__("../../../../angularfire2/database/public_api.js");
+/* harmony export (immutable) */ __webpack_exports__["a"] = FirebaseListFactory;
+/* unused harmony export onChildAdded */
+/* unused harmony export onChildChanged */
+/* unused harmony export onChildRemoved */
+/* unused harmony export onChildUpdated */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__("../../../../angularfire2/database-deprecated/utils.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_database__ = __webpack_require__("../../../../firebase/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_list_observable__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_list_observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_observeOn__ = __webpack_require__("../../../../rxjs/_esm5/operator/observeOn.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__query_observable__ = __webpack_require__("../../../../angularfire2/database-deprecated/query_observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_switchMap__ = __webpack_require__("../../../../rxjs/_esm5/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/operator/map.js");
+
+
+
+
+
+
+
+
+function FirebaseListFactory(ref, _a) {
+    var _b = _a === void 0 ? {} : _a, preserveSnapshot = _b.preserveSnapshot, _c = _b.query, query = _c === void 0 ? {} : _c;
+    if (__WEBPACK_IMPORTED_MODULE_1__utils__["d" /* isEmptyObject */](query)) {
+        return firebaseListObservable(ref, { preserveSnapshot: preserveSnapshot });
+    }
+    var queryObs = Object(__WEBPACK_IMPORTED_MODULE_5__query_observable__["a" /* observeQuery */])(query);
+    return new __WEBPACK_IMPORTED_MODULE_3__firebase_list_observable__["a" /* FirebaseListObservable */](ref, function (subscriber) {
+        var sub = __WEBPACK_IMPORTED_MODULE_6_rxjs_operator_switchMap__["a" /* switchMap */].call(__WEBPACK_IMPORTED_MODULE_7_rxjs_operator_map__["a" /* map */].call(queryObs, function (query) {
+            var queried = ref;
+            if (query.orderByChild) {
+                queried = queried.orderByChild(query.orderByChild);
+            }
+            else if (query.orderByKey) {
+                queried = queried.orderByKey();
+            }
+            else if (query.orderByPriority) {
+                queried = queried.orderByPriority();
+            }
+            else if (query.orderByValue) {
+                queried = queried.orderByValue();
+            }
+            if (__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query, "equalTo")) {
+                if (__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query.equalTo, "value")) {
+                    queried = queried.equalTo(query.equalTo.value, query.equalTo.key);
+                }
+                else {
+                    queried = queried.equalTo(query.equalTo);
+                }
+                if (__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query, "startAt") || __WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query, "endAt")) {
+                    throw new Error('Query Error: Cannot use startAt or endAt with equalTo.');
+                }
+                if (!__WEBPACK_IMPORTED_MODULE_1__utils__["g" /* isNil */](query.limitToFirst)) {
+                    queried = queried.limitToFirst(query.limitToFirst);
+                }
+                if (!__WEBPACK_IMPORTED_MODULE_1__utils__["g" /* isNil */](query.limitToLast)) {
+                    queried = queried.limitToLast(query.limitToLast);
+                }
+                return queried;
+            }
+            if (__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query, "startAt")) {
+                if (__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query.startAt, "value")) {
+                    queried = queried.startAt(query.startAt.value, query.startAt.key);
+                }
+                else {
+                    queried = queried.startAt(query.startAt);
+                }
+            }
+            if (__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query, "endAt")) {
+                if (__WEBPACK_IMPORTED_MODULE_1__utils__["b" /* hasKey */](query.endAt, "value")) {
+                    queried = queried.endAt(query.endAt.value, query.endAt.key);
+                }
+                else {
+                    queried = queried.endAt(query.endAt);
+                }
+            }
+            if (!__WEBPACK_IMPORTED_MODULE_1__utils__["g" /* isNil */](query.limitToFirst) && query.limitToLast) {
+                throw new Error('Query Error: Cannot use limitToFirst with limitToLast.');
+            }
+            if (!__WEBPACK_IMPORTED_MODULE_1__utils__["g" /* isNil */](query.limitToFirst)) {
+                queried = queried.limitToFirst(query.limitToFirst);
+            }
+            if (!__WEBPACK_IMPORTED_MODULE_1__utils__["g" /* isNil */](query.limitToLast)) {
+                queried = queried.limitToLast(query.limitToLast);
+            }
+            return queried;
+        }), function (queryRef, ix) {
+            return firebaseListObservable(queryRef, { preserveSnapshot: preserveSnapshot });
+        })
+            .subscribe(subscriber);
+        return function () { return sub.unsubscribe(); };
+    });
+}
+function firebaseListObservable(ref, _a) {
+    var preserveSnapshot = (_a === void 0 ? {} : _a).preserveSnapshot;
+    var toValue = preserveSnapshot ? (function (snapshot) { return snapshot; }) : __WEBPACK_IMPORTED_MODULE_1__utils__["i" /* unwrapMapFn */];
+    var toKey = preserveSnapshot ? (function (value) { return value.key; }) : (function (value) { return value.$key; });
+    var listObs = new __WEBPACK_IMPORTED_MODULE_3__firebase_list_observable__["a" /* FirebaseListObservable */](ref, function (obs) {
+        var handles = [];
+        var hasLoaded = false;
+        var lastLoadedKey = null;
+        var array = [];
+        ref.once('value', function (snap) {
+            if (snap.exists()) {
+                snap.forEach(function (child) {
+                    lastLoadedKey = child.key;
+                });
+                if (array.find(function (child) { return toKey(child) === lastLoadedKey; })) {
+                    hasLoaded = true;
+                    obs.next(array);
+                }
+            }
+            else {
+                hasLoaded = true;
+                obs.next(array);
+            }
+        }, function (err) {
+            if (err) {
+                obs.error(err);
+                obs.complete();
+            }
+        });
+        var addFn = ref.on('child_added', function (child, prevKey) {
+            array = onChildAdded(array, toValue(child), toKey, prevKey);
+            if (hasLoaded) {
+                obs.next(array);
+            }
+            else if (child.key === lastLoadedKey) {
+                hasLoaded = true;
+                obs.next(array);
+            }
+        }, function (err) {
+            if (err) {
+                obs.error(err);
+                obs.complete();
+            }
+        });
+        handles.push({ event: 'child_added', handle: addFn });
+        var remFn = ref.on('child_removed', function (child) {
+            array = onChildRemoved(array, toValue(child), toKey);
+            if (hasLoaded) {
+                obs.next(array);
+            }
+        }, function (err) {
+            if (err) {
+                obs.error(err);
+                obs.complete();
+            }
+        });
+        handles.push({ event: 'child_removed', handle: remFn });
+        var chgFn = ref.on('child_changed', function (child, prevKey) {
+            array = onChildChanged(array, toValue(child), toKey, prevKey);
+            if (hasLoaded) {
+                obs.next(array);
+            }
+        }, function (err) {
+            if (err) {
+                obs.error(err);
+                obs.complete();
+            }
+        });
+        handles.push({ event: 'child_changed', handle: chgFn });
+        return function () {
+            handles.forEach(function (item) {
+                ref.off(item.event, item.handle);
+            });
+        };
+    });
+    return __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_observeOn__["a" /* observeOn */].call(listObs, new __WEBPACK_IMPORTED_MODULE_0_angularfire2__["c" /* ZoneScheduler */](Zone.current));
+}
+function onChildAdded(arr, child, toKey, prevKey) {
+    if (!arr.length) {
+        return [child];
+    }
+    return arr.reduce(function (accumulator, curr, i) {
+        if (!prevKey && i === 0) {
+            accumulator.push(child);
+        }
+        accumulator.push(curr);
+        if (prevKey && prevKey === toKey(curr)) {
+            accumulator.push(child);
+        }
+        return accumulator;
+    }, []);
+}
+function onChildChanged(arr, child, toKey, prevKey) {
+    var childKey = toKey(child);
+    return arr.reduce(function (accumulator, val, i) {
+        var valKey = toKey(val);
+        if (!prevKey && i == 0) {
+            accumulator.push(child);
+            if (valKey !== childKey) {
+                accumulator.push(val);
+            }
+        }
+        else if (valKey === prevKey) {
+            accumulator.push(val);
+            accumulator.push(child);
+        }
+        else if (valKey !== childKey) {
+            accumulator.push(val);
+        }
+        return accumulator;
+    }, []);
+}
+function onChildRemoved(arr, child, toKey) {
+    var childKey = toKey(child);
+    return arr.filter(function (c) { return toKey(c) !== childKey; });
+}
+function onChildUpdated(arr, child, toKey, prevKey) {
+    return arr.map(function (v, i, arr) {
+        if (!prevKey && !i) {
+            return child;
+        }
+        else if (i > 0 && toKey(arr[i - 1]) === prevKey) {
+            return child;
+        }
+        else {
+            return v;
+        }
+    });
+}
+//# sourceMappingURL=firebase_list_factory.js.map
+
+/***/ }),
+
+/***/ "../../../../angularfire2/database-deprecated/firebase_list_observable.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirebaseListObservable; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__("../../../../firebase/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__("../../../../angularfire2/database-deprecated/utils.js");
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+
+var FirebaseListObservable = (function (_super) {
+    __extends(FirebaseListObservable, _super);
+    function FirebaseListObservable($ref, subscribe) {
+        var _this = _super.call(this, subscribe) || this;
+        _this.$ref = $ref;
+        return _this;
+    }
+    FirebaseListObservable.prototype.lift = function (operator) {
+        var observable = new FirebaseListObservable(this.$ref);
+        observable.source = this;
+        observable.operator = operator;
+        observable.$ref = this.$ref;
+        return observable;
+    };
+    FirebaseListObservable.prototype.push = function (val) {
+        if (!this.$ref) {
+            throw new Error('No ref specified for this Observable!');
+        }
+        return this.$ref.ref.push(val);
+    };
+    FirebaseListObservable.prototype.set = function (item, value) {
+        var _this = this;
+        return this._checkOperationCases(item, {
+            stringCase: function () { return _this.$ref.ref.child(item).set(value); },
+            firebaseCase: function () { return item.set(value); },
+            snapshotCase: function () { return item.ref.set(value); },
+            unwrappedSnapshotCase: function () { return _this.$ref.ref.child(item.$key).set(value); }
+        });
+    };
+    FirebaseListObservable.prototype.update = function (item, value) {
+        var _this = this;
+        return this._checkOperationCases(item, {
+            stringCase: function () { return _this.$ref.ref.child(item).update(value); },
+            firebaseCase: function () { return item.update(value); },
+            snapshotCase: function () { return item.ref.update(value); },
+            unwrappedSnapshotCase: function () { return _this.$ref.ref.child(item.$key).update(value); }
+        });
+    };
+    FirebaseListObservable.prototype.remove = function (item) {
+        var _this = this;
+        if (!item) {
+            return this.$ref.ref.remove();
+        }
+        return this._checkOperationCases(item, {
+            stringCase: function () { return _this.$ref.ref.child(item).remove(); },
+            firebaseCase: function () { return item.remove(); },
+            snapshotCase: function () { return item.ref.remove(); },
+            unwrappedSnapshotCase: function () { return _this.$ref.ref.child(item.$key).remove(); }
+        });
+    };
+    FirebaseListObservable.prototype._checkOperationCases = function (item, cases) {
+        if (__WEBPACK_IMPORTED_MODULE_2__utils__["h" /* isString */](item)) {
+            return cases.stringCase();
+        }
+        else if (__WEBPACK_IMPORTED_MODULE_2__utils__["f" /* isFirebaseRef */](item)) {
+            return cases.firebaseCase();
+        }
+        else if (__WEBPACK_IMPORTED_MODULE_2__utils__["e" /* isFirebaseDataSnapshot */](item)) {
+            return cases.snapshotCase();
+        }
+        else if (__WEBPACK_IMPORTED_MODULE_2__utils__["c" /* isAFUnwrappedSnapshot */](item)) {
+            return cases.unwrappedSnapshotCase();
+        }
+        throw new Error("Method requires a key, snapshot, reference, or unwrapped snapshot. Got: " + typeof item);
+    };
+    return FirebaseListObservable;
+}(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */]));
+
+//# sourceMappingURL=firebase_list_observable.js.map
+
+/***/ }),
+
+/***/ "../../../../angularfire2/database-deprecated/firebase_object_factory.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = FirebaseObjectFactory;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__firebase_object_observable__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_object_observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_observeOn__ = __webpack_require__("../../../../rxjs/_esm5/operator/observeOn.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_database__ = __webpack_require__("../../../../firebase/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase_database__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__("../../../../angularfire2/database-deprecated/utils.js");
+
+
+
+
+
+function FirebaseObjectFactory(ref, _a) {
+    var preserveSnapshot = (_a === void 0 ? {} : _a).preserveSnapshot;
+    var objectObservable = new __WEBPACK_IMPORTED_MODULE_0__firebase_object_observable__["a" /* FirebaseObjectObservable */](function (obs) {
+        var fn = ref.on('value', function (snapshot) {
+            obs.next(preserveSnapshot ? snapshot : __WEBPACK_IMPORTED_MODULE_4__utils__["i" /* unwrapMapFn */](snapshot));
+        }, function (err) {
+            if (err) {
+                obs.error(err);
+                obs.complete();
+            }
+        });
+        return function () { return ref.off('value', fn); };
+    }, ref);
+    return __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_observeOn__["a" /* observeOn */].call(objectObservable, new __WEBPACK_IMPORTED_MODULE_1_angularfire2__["c" /* ZoneScheduler */](Zone.current));
+}
+//# sourceMappingURL=firebase_object_factory.js.map
+
+/***/ }),
+
+/***/ "../../../../angularfire2/database-deprecated/firebase_object_observable.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FirebaseObjectObservable; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database__ = __webpack_require__("../../../../firebase/database/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase_database___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase_database__);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var FirebaseObjectObservable = (function (_super) {
+    __extends(FirebaseObjectObservable, _super);
+    function FirebaseObjectObservable(subscribe, $ref) {
+        var _this = _super.call(this, subscribe) || this;
+        _this.$ref = $ref;
+        return _this;
+    }
+    FirebaseObjectObservable.prototype.lift = function (operator) {
+        var observable = new FirebaseObjectObservable();
+        observable.source = this;
+        observable.operator = operator;
+        observable.$ref = this.$ref;
+        return observable;
+    };
+    FirebaseObjectObservable.prototype.set = function (value) {
+        if (!this.$ref) {
+            throw new Error('No ref specified for this Observable!');
+        }
+        return this.$ref.set(value);
+    };
+    FirebaseObjectObservable.prototype.update = function (value) {
+        if (!this.$ref) {
+            throw new Error('No ref specified for this Observable!');
+        }
+        return this.$ref.update(value);
+    };
+    FirebaseObjectObservable.prototype.remove = function () {
+        if (!this.$ref) {
+            throw new Error('No ref specified for this Observable!');
+        }
+        return this.$ref.remove();
+    };
+    return FirebaseObjectObservable;
+}(__WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */]));
+
+//# sourceMappingURL=firebase_object_observable.js.map
+
+/***/ }),
+
+/***/ "../../../../angularfire2/database-deprecated/index.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__public_api__ = __webpack_require__("../../../../angularfire2/database-deprecated/public_api.js");
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__public_api__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__public_api__["b"]; });
 
 //# sourceMappingURL=index.js.map
 
 /***/ }),
 
-/***/ "../../../../angularfire2/database/list/audit-trail.js":
+/***/ "../../../../angularfire2/database-deprecated/interfaces.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createAuditTrail;
-/* unused harmony export auditTrail */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__state_changes__ = __webpack_require__("../../../../angularfire2/database/list/state-changes.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__observable_fromRef__ = __webpack_require__("../../../../angularfire2/database/observable/fromRef.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_skipWhile__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/skipWhile.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_withLatestFrom__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/withLatestFrom.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-
-
-
-
-
-function createAuditTrail(query) {
-    return function (events) { return auditTrail(query, events); };
-}
-function auditTrail(query, events) {
-    var auditTrail$ = Object(__WEBPACK_IMPORTED_MODULE_0__state_changes__["b" /* stateChanges */])(query, events)
-        .scan(function (current, action) { return current.concat([action]); }, []);
-    return waitForLoaded(query, auditTrail$);
-}
-function loadedData(query) {
-    return Object(__WEBPACK_IMPORTED_MODULE_1__observable_fromRef__["a" /* fromRef */])(query, 'value')
-        .map(function (data) {
-        var lastKeyToLoad;
-        data.payload.forEach(function (child) {
-            lastKeyToLoad = child.key;
-            return false;
-        });
-        return { data: data, lastKeyToLoad: lastKeyToLoad };
-    });
-}
-function waitForLoaded(query, action$) {
-    var loaded$ = loadedData(query);
-    return loaded$
-        .withLatestFrom(action$)
-        .map(function (_a) {
-        var loaded = _a[0], actions = _a[1];
-        var lastKeyToLoad = loaded.lastKeyToLoad;
-        var loadedKeys = actions.map(function (snap) { return snap.key; });
-        return { actions: actions, lastKeyToLoad: lastKeyToLoad, loadedKeys: loadedKeys };
-    })
-        .skipWhile(function (meta) { return meta.loadedKeys.indexOf(meta.lastKeyToLoad) === -1; })
-        .map(function (meta) { return meta.actions; });
-}
-//# sourceMappingURL=audit-trail.js.map
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return OrderByOptions; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LimitToOptions; });
+/* unused harmony export QueryOptions */
+var OrderByOptions;
+(function (OrderByOptions) {
+    OrderByOptions[OrderByOptions["Child"] = 0] = "Child";
+    OrderByOptions[OrderByOptions["Key"] = 1] = "Key";
+    OrderByOptions[OrderByOptions["Value"] = 2] = "Value";
+    OrderByOptions[OrderByOptions["Priority"] = 3] = "Priority";
+})(OrderByOptions || (OrderByOptions = {}));
+var LimitToOptions;
+(function (LimitToOptions) {
+    LimitToOptions[LimitToOptions["First"] = 0] = "First";
+    LimitToOptions[LimitToOptions["Last"] = 1] = "Last";
+})(LimitToOptions || (LimitToOptions = {}));
+var QueryOptions;
+(function (QueryOptions) {
+    QueryOptions[QueryOptions["EqualTo"] = 0] = "EqualTo";
+    QueryOptions[QueryOptions["StartAt"] = 1] = "StartAt";
+    QueryOptions[QueryOptions["EndAt"] = 2] = "EndAt";
+})(QueryOptions || (QueryOptions = {}));
+//# sourceMappingURL=interfaces.js.map
 
 /***/ }),
 
-/***/ "../../../../angularfire2/database/list/changes.js":
+/***/ "../../../../angularfire2/database-deprecated/public_api.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = listChanges;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__observable_fromRef__ = __webpack_require__("../../../../angularfire2/database/observable/fromRef.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__("../../../../angularfire2/database/utils.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_scan__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/scan.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_observable_merge__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/merge.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_of__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/of.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/switchMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_add_operator_filter__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/filter.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_delay__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/delay.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/distinctUntilChanged.js");
-
-
-
-
-
-
-
-
-
-
-function listChanges(ref, events) {
-    return Object(__WEBPACK_IMPORTED_MODULE_0__observable_fromRef__["a" /* fromRef */])(ref, 'value', 'once').switchMap(function (snapshotAction) {
-        var childEvent$ = [__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */].of(snapshotAction)];
-        events.forEach(function (event) { return childEvent$.push(Object(__WEBPACK_IMPORTED_MODULE_0__observable_fromRef__["a" /* fromRef */])(ref, event)); });
-        return __WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */].merge.apply(__WEBPACK_IMPORTED_MODULE_1_rxjs_Observable__["a" /* Observable */], childEvent$).scan(buildView, []);
-    })
-        .distinctUntilChanged();
-}
-function positionFor(changes, key) {
-    var len = changes.length;
-    for (var i = 0; i < len; i++) {
-        if (changes[i].payload.key === key) {
-            return i;
-        }
-    }
-    return -1;
-}
-function positionAfter(changes, prevKey) {
-    if (Object(__WEBPACK_IMPORTED_MODULE_2__utils__["c" /* isNil */])(prevKey)) {
-        return 0;
-    }
-    else {
-        var i = positionFor(changes, prevKey);
-        if (i === -1) {
-            return changes.length;
-        }
-        else {
-            return i + 1;
-        }
-    }
-}
-function buildView(current, action) {
-    var payload = action.payload, type = action.type, prevKey = action.prevKey, key = action.key;
-    var currentKeyPosition = positionFor(current, key);
-    var afterPreviousKeyPosition = positionAfter(current, prevKey);
-    switch (action.type) {
-        case 'value':
-            if (action.payload && action.payload.exists()) {
-                var prevKey_1 = null;
-                action.payload.forEach(function (payload) {
-                    var action = { payload: payload, type: 'value', prevKey: prevKey_1, key: payload.key };
-                    prevKey_1 = payload.key;
-                    current = current.concat([action]);
-                    return false;
-                });
-            }
-            return current;
-        case 'child_added':
-            if (currentKeyPosition > -1) {
-                var previous = current[currentKeyPosition - 1];
-                if ((previous && previous.key || null) != prevKey) {
-                    current = current.filter(function (x) { return x.payload.key !== payload.key; });
-                    current.splice(afterPreviousKeyPosition, 0, action);
-                }
-            }
-            else if (prevKey == null) {
-                return [action].concat(current);
-            }
-            else {
-                current = current.slice();
-                current.splice(afterPreviousKeyPosition, 0, action);
-            }
-            return current;
-        case 'child_removed':
-            return current.filter(function (x) { return x.payload.key !== payload.key; });
-        case 'child_changed':
-            return current.map(function (x) { return x.payload.key === key ? action : x; });
-        case 'child_moved':
-            if (currentKeyPosition > -1) {
-                var data = current.splice(currentKeyPosition, 1)[0];
-                current = current.slice();
-                current.splice(afterPreviousKeyPosition, 0, data);
-                return current;
-            }
-            return current;
-        default:
-            return current;
-    }
-}
-//# sourceMappingURL=changes.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/list/create-reference.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createListReference;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__snapshot_changes__ = __webpack_require__("../../../../angularfire2/database/list/snapshot-changes.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__state_changes__ = __webpack_require__("../../../../angularfire2/database/list/state-changes.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__audit_trail__ = __webpack_require__("../../../../angularfire2/database/list/audit-trail.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_operation__ = __webpack_require__("../../../../angularfire2/database/list/data-operation.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__remove__ = __webpack_require__("../../../../angularfire2/database/list/remove.js");
-
-
-
-
-
-function createListReference(query) {
-    return {
-        query: query,
-        update: Object(__WEBPACK_IMPORTED_MODULE_3__data_operation__["a" /* createDataOperationMethod */])(query.ref, 'update'),
-        set: Object(__WEBPACK_IMPORTED_MODULE_3__data_operation__["a" /* createDataOperationMethod */])(query.ref, 'set'),
-        push: function (data) { return query.ref.push(data); },
-        remove: Object(__WEBPACK_IMPORTED_MODULE_4__remove__["a" /* createRemoveMethod */])(query.ref),
-        snapshotChanges: function (events) {
-            return Object(__WEBPACK_IMPORTED_MODULE_0__snapshot_changes__["a" /* snapshotChanges */])(query, events);
-        },
-        stateChanges: Object(__WEBPACK_IMPORTED_MODULE_1__state_changes__["a" /* createStateChanges */])(query),
-        auditTrail: Object(__WEBPACK_IMPORTED_MODULE_2__audit_trail__["a" /* createAuditTrail */])(query),
-        valueChanges: function (events) {
-            return Object(__WEBPACK_IMPORTED_MODULE_0__snapshot_changes__["a" /* snapshotChanges */])(query, events)
-                .map(function (actions) { return actions.map(function (a) { return a.payload.val(); }); });
-        }
-    };
-}
-//# sourceMappingURL=create-reference.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/list/data-operation.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createDataOperationMethod;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__("../../../../angularfire2/database/utils.js");
-
-function createDataOperationMethod(ref, operation) {
-    return function dataOperation(item, value) {
-        return Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* checkOperationCases */])(item, {
-            stringCase: function () { return ref.child(item)[operation](value); },
-            firebaseCase: function () { return item[operation](value); },
-            snapshotCase: function () { return item.ref[operation](value); }
-        });
-    };
-}
-//# sourceMappingURL=data-operation.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/list/remove.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createRemoveMethod;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__("../../../../angularfire2/database/utils.js");
-
-function createRemoveMethod(ref) {
-    return function remove(item) {
-        if (!item) {
-            return ref.remove();
-        }
-        return Object(__WEBPACK_IMPORTED_MODULE_0__utils__["a" /* checkOperationCases */])(item, {
-            stringCase: function () { return ref.child(item).remove(); },
-            firebaseCase: function () { return item.remove(); },
-            snapshotCase: function () { return item.ref.remove(); }
-        });
-    };
-}
-//# sourceMappingURL=remove.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/list/snapshot-changes.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = snapshotChanges;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__changes__ = __webpack_require__("../../../../angularfire2/database/list/changes.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__("../../../../angularfire2/database/list/utils.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-
-
-
-function snapshotChanges(query, events) {
-    events = Object(__WEBPACK_IMPORTED_MODULE_1__utils__["a" /* validateEventsArray */])(events);
-    return Object(__WEBPACK_IMPORTED_MODULE_0__changes__["a" /* listChanges */])(query, events);
-}
-//# sourceMappingURL=snapshot-changes.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/list/state-changes.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createStateChanges;
-/* harmony export (immutable) */ __webpack_exports__["b"] = stateChanges;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__observable_fromRef__ = __webpack_require__("../../../../angularfire2/database/observable/fromRef.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__("../../../../angularfire2/database/list/utils.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_observable_merge__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/merge.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_scan__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/scan.js");
-
-
-
-
-
-function createStateChanges(query) {
-    return function (events) { return stateChanges(query, events); };
-}
-function stateChanges(query, events) {
-    events = Object(__WEBPACK_IMPORTED_MODULE_1__utils__["a" /* validateEventsArray */])(events);
-    var childEvent$ = events.map(function (event) { return Object(__WEBPACK_IMPORTED_MODULE_0__observable_fromRef__["a" /* fromRef */])(query, event); });
-    return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */].merge.apply(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["a" /* Observable */], childEvent$);
-}
-//# sourceMappingURL=state-changes.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/list/utils.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = validateEventsArray;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__("../../../../angularfire2/database/utils.js");
-
-function validateEventsArray(events) {
-    if (Object(__WEBPACK_IMPORTED_MODULE_0__utils__["c" /* isNil */])(events) || events.length === 0) {
-        events = ['child_added', 'child_removed', 'child_changed', 'child_moved'];
-    }
-    return events;
-}
-//# sourceMappingURL=utils.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/object/create-reference.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createObjectReference;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__snapshot_changes__ = __webpack_require__("../../../../angularfire2/database/object/snapshot-changes.js");
-
-function createObjectReference(query) {
-    return {
-        query: query,
-        snapshotChanges: Object(__WEBPACK_IMPORTED_MODULE_0__snapshot_changes__["a" /* createObjectSnapshotChanges */])(query),
-        update: function (data) { return query.ref.update(data); },
-        set: function (data) { return query.ref.set(data); },
-        remove: function () { return query.ref.remove(); },
-        valueChanges: function () {
-            return Object(__WEBPACK_IMPORTED_MODULE_0__snapshot_changes__["a" /* createObjectSnapshotChanges */])(query)()
-                .map(function (action) { return action.payload.exists() ? action.payload.val() : null; });
-        },
-    };
-}
-//# sourceMappingURL=create-reference.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/object/snapshot-changes.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = createObjectSnapshotChanges;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__observable_fromRef__ = __webpack_require__("../../../../angularfire2/database/observable/fromRef.js");
-
-function createObjectSnapshotChanges(query) {
-    return function snapshotChanges() {
-        return Object(__WEBPACK_IMPORTED_MODULE_0__observable_fromRef__["a" /* fromRef */])(query, 'value');
-    };
-}
-//# sourceMappingURL=snapshot-changes.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/observable/fromRef.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = fromRef;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_observeOn__ = __webpack_require__("../../../../rxjs/_esm5/operator/observeOn.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_delay__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/delay.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_share__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/share.js");
-
-
-
-
-
-
-function fromRef(ref, event, listenType) {
-    if (listenType === void 0) { listenType = 'on'; }
-    var ref$ = new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
-        var fn = ref[listenType](event, function (snapshot, prevKey) {
-            subscriber.next({ snapshot: snapshot, prevKey: prevKey });
-            if (listenType == 'once') {
-                subscriber.complete();
-            }
-        }, subscriber.error.bind(subscriber));
-        if (listenType == 'on') {
-            return { unsubscribe: function () { ref.off(event, fn); } };
-        }
-        else {
-            return { unsubscribe: function () { } };
-        }
-    })
-        .map(function (payload) {
-        var snapshot = payload.snapshot, prevKey = payload.prevKey;
-        var key = null;
-        if (snapshot.exists()) {
-            key = snapshot.key;
-        }
-        return { type: event, payload: snapshot, prevKey: prevKey, key: key };
-    })
-        .delay(0);
-    return __WEBPACK_IMPORTED_MODULE_1_rxjs_operator_observeOn__["a" /* observeOn */].call(ref$, new __WEBPACK_IMPORTED_MODULE_2_angularfire2__["c" /* ZoneScheduler */](Zone.current)).share();
-}
-//# sourceMappingURL=fromRef.js.map
-
-/***/ }),
-
-/***/ "../../../../angularfire2/database/public_api.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__database__ = __webpack_require__("../../../../angularfire2/database/database.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__database__ = __webpack_require__("../../../../angularfire2/database-deprecated/database.js");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__database__["a"]; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__firebase_list_factory__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_list_factory.js");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__list_changes__ = __webpack_require__("../../../../angularfire2/database/list/changes.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__firebase_list_observable__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_list_observable.js");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__list_create_reference__ = __webpack_require__("../../../../angularfire2/database/list/create-reference.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__firebase_object_factory__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_object_factory.js");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__list_snapshot_changes__ = __webpack_require__("../../../../angularfire2/database/list/snapshot-changes.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__firebase_object_observable__ = __webpack_require__("../../../../angularfire2/database-deprecated/firebase_object_observable.js");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__list_state_changes__ = __webpack_require__("../../../../angularfire2/database/list/state-changes.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__query_observable__ = __webpack_require__("../../../../angularfire2/database-deprecated/query_observable.js");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__list_audit_trail__ = __webpack_require__("../../../../angularfire2/database/list/audit-trail.js");
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__observable_fromRef__ = __webpack_require__("../../../../angularfire2/database/observable/fromRef.js");
-/* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__database_module__ = __webpack_require__("../../../../angularfire2/database/database.module.js");
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_7__database_module__["a"]; });
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__database_module__ = __webpack_require__("../../../../angularfire2/database-deprecated/database.module.js");
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_6__database_module__["a"]; });
 
 
 
@@ -20397,43 +20444,311 @@ function fromRef(ref, event, listenType) {
 
 /***/ }),
 
-/***/ "../../../../angularfire2/database/utils.js":
+/***/ "../../../../angularfire2/database-deprecated/query_observable.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export isString */
-/* unused harmony export isFirebaseDataSnapshot */
-/* harmony export (immutable) */ __webpack_exports__["c"] = isNil;
-/* unused harmony export isFirebaseRef */
-/* harmony export (immutable) */ __webpack_exports__["b"] = getRef;
-/* harmony export (immutable) */ __webpack_exports__["a"] = checkOperationCases;
-function isString(value) {
-    return typeof value === 'string';
+/* harmony export (immutable) */ __webpack_exports__["a"] = observeQuery;
+/* unused harmony export getOrderObservables */
+/* unused harmony export getLimitToObservables */
+/* unused harmony export getStartAtObservable */
+/* unused harmony export getEndAtObservable */
+/* unused harmony export getEqualToObservable */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of__ = __webpack_require__("../../../../rxjs/_esm5/observable/of.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_combineLatest__ = __webpack_require__("../../../../rxjs/_esm5/operator/combineLatest.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_merge__ = __webpack_require__("../../../../rxjs/_esm5/operator/merge.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_auditTime__ = __webpack_require__("../../../../rxjs/_esm5/operator/auditTime.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__interfaces__ = __webpack_require__("../../../../angularfire2/database-deprecated/interfaces.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__("../../../../angularfire2/database-deprecated/utils.js");
+
+
+
+
+
+
+
+
+function observeQuery(query, audit) {
+    if (audit === void 0) { audit = true; }
+    if (Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* isNil */])(query)) {
+        return Object(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_of__["a" /* of */])(null);
+    }
+    return __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */].create(function (observer) {
+        var combined = __WEBPACK_IMPORTED_MODULE_2_rxjs_operator_combineLatest__["a" /* combineLatest */].call(getOrderObservables(query), getStartAtObservable(query), getEndAtObservable(query), getEqualToObservable(query), getLimitToObservables(query));
+        if (audit) {
+            combined = __WEBPACK_IMPORTED_MODULE_5_rxjs_operator_auditTime__["a" /* auditTime */].call(combined, 0);
+        }
+        combined
+            .subscribe(function (_a) {
+            var orderBy = _a[0], startAt = _a[1], endAt = _a[2], equalTo = _a[3], limitTo = _a[4];
+            var serializedOrder = {};
+            if (!Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* isNil */])(orderBy) && !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* isNil */])(orderBy.value)) {
+                switch (orderBy.key) {
+                    case __WEBPACK_IMPORTED_MODULE_6__interfaces__["b" /* OrderByOptions */].Key:
+                        serializedOrder = { orderByKey: orderBy.value };
+                        break;
+                    case __WEBPACK_IMPORTED_MODULE_6__interfaces__["b" /* OrderByOptions */].Priority:
+                        serializedOrder = { orderByPriority: orderBy.value };
+                        break;
+                    case __WEBPACK_IMPORTED_MODULE_6__interfaces__["b" /* OrderByOptions */].Value:
+                        serializedOrder = { orderByValue: orderBy.value };
+                        break;
+                    case __WEBPACK_IMPORTED_MODULE_6__interfaces__["b" /* OrderByOptions */].Child:
+                        serializedOrder = { orderByChild: orderBy.value };
+                        break;
+                }
+            }
+            if (!Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* isNil */])(limitTo) && !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* isNil */])(limitTo.value)) {
+                switch (limitTo.key) {
+                    case __WEBPACK_IMPORTED_MODULE_6__interfaces__["a" /* LimitToOptions */].First:
+                        serializedOrder.limitToFirst = limitTo.value;
+                        break;
+                    case __WEBPACK_IMPORTED_MODULE_6__interfaces__["a" /* LimitToOptions */].Last: {
+                        serializedOrder.limitToLast = limitTo.value;
+                        break;
+                    }
+                }
+            }
+            if (startAt !== undefined) {
+                serializedOrder.startAt = startAt;
+            }
+            if (endAt !== undefined) {
+                serializedOrder.endAt = endAt;
+            }
+            if (equalTo !== undefined) {
+                serializedOrder.equalTo = equalTo;
+            }
+            observer.next(serializedOrder);
+        });
+    });
 }
-function isFirebaseDataSnapshot(value) {
-    return typeof value.exportVal === 'function';
+function getOrderObservables(query) {
+    var observables = ['orderByChild', 'orderByKey', 'orderByValue', 'orderByPriority']
+        .map(function (key, option) {
+        return ({ key: key, option: option });
+    })
+        .filter(function (_a) {
+        var key = _a.key, option = _a.option;
+        return !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* isNil */])(query[key]);
+    })
+        .map(function (_a) {
+        var key = _a.key, option = _a.option;
+        return mapToOrderBySelection(query[key], option);
+    });
+    if (observables.length === 1) {
+        return observables[0];
+    }
+    else if (observables.length > 1) {
+        return __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_merge__["a" /* merge */].apply(observables[0], observables.slice(1));
+    }
+    else {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(null);
+        });
+    }
 }
+function getLimitToObservables(query) {
+    var observables = ['limitToFirst', 'limitToLast']
+        .map(function (key, option) { return ({ key: key, option: option }); })
+        .filter(function (_a) {
+        var key = _a.key, option = _a.option;
+        return !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* isNil */])(query[key]);
+    })
+        .map(function (_a) {
+        var key = _a.key, option = _a.option;
+        return mapToLimitToSelection(query[key], option);
+    });
+    if (observables.length === 1) {
+        return observables[0];
+    }
+    else if (observables.length > 1) {
+        var mergedObs = __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_merge__["a" /* merge */].apply(observables[0], observables.slice(1));
+        return mergedObs;
+    }
+    else {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(null);
+        });
+    }
+}
+function getStartAtObservable(query) {
+    if (query.startAt instanceof __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */]) {
+        return query.startAt;
+    }
+    else if (Object(__WEBPACK_IMPORTED_MODULE_7__utils__["b" /* hasKey */])(query, 'startAt')) {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(query.startAt);
+        });
+    }
+    else {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(undefined);
+        });
+    }
+}
+function getEndAtObservable(query) {
+    if (query.endAt instanceof __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */]) {
+        return query.endAt;
+    }
+    else if (Object(__WEBPACK_IMPORTED_MODULE_7__utils__["b" /* hasKey */])(query, 'endAt')) {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(query.endAt);
+        });
+    }
+    else {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(undefined);
+        });
+    }
+}
+function getEqualToObservable(query) {
+    if (query.equalTo instanceof __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */]) {
+        return query.equalTo;
+    }
+    else if (Object(__WEBPACK_IMPORTED_MODULE_7__utils__["b" /* hasKey */])(query, 'equalTo')) {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(query.equalTo);
+        });
+    }
+    else {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next(undefined);
+        });
+    }
+}
+function mapToOrderBySelection(value, key) {
+    if (value instanceof __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */]) {
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__["a" /* map */]
+            .call(value, function (value) {
+            return ({ value: value, key: key });
+        });
+    }
+    else {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next({ key: key, value: value });
+        });
+    }
+}
+function mapToLimitToSelection(value, key) {
+    if (value instanceof __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */]) {
+        return __WEBPACK_IMPORTED_MODULE_4_rxjs_operator_map__["a" /* map */]
+            .call(value, function (value) { return ({ value: value, key: key }); });
+    }
+    else {
+        return new __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */](function (subscriber) {
+            subscriber.next({ key: key, value: value });
+        });
+    }
+}
+function hasObservableProperties(query) {
+    if (query.orderByKey instanceof __WEBPACK_IMPORTED_MODULE_0_rxjs_Observable__["a" /* Observable */])
+        return true;
+    return false;
+}
+//# sourceMappingURL=query_observable.js.map
+
+/***/ }),
+
+/***/ "../../../../angularfire2/database-deprecated/utils.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["g"] = isNil;
+/* harmony export (immutable) */ __webpack_exports__["b"] = hasKey;
+/* harmony export (immutable) */ __webpack_exports__["h"] = isString;
+/* harmony export (immutable) */ __webpack_exports__["f"] = isFirebaseRef;
+/* harmony export (immutable) */ __webpack_exports__["e"] = isFirebaseDataSnapshot;
+/* harmony export (immutable) */ __webpack_exports__["c"] = isAFUnwrappedSnapshot;
+/* unused harmony export isFirebaseQuery */
+/* harmony export (immutable) */ __webpack_exports__["d"] = isEmptyObject;
+/* harmony export (immutable) */ __webpack_exports__["i"] = unwrapMapFn;
+/* unused harmony export stripTrailingSlash */
+/* unused harmony export stripLeadingSlash */
+/* unused harmony export isAbsoluteUrl */
+/* harmony export (immutable) */ __webpack_exports__["a"] = getRef;
+var REGEX_ABSOLUTE_URL = /^[a-z]+:\/\/.*/;
 function isNil(obj) {
     return obj === undefined || obj === null;
+}
+function hasKey(obj, key) {
+    return obj && obj[key] !== undefined;
+}
+function isString(value) {
+    return typeof value === 'string';
 }
 function isFirebaseRef(value) {
     return typeof value.set === 'function';
 }
-function getRef(app, pathRef) {
-    return isFirebaseRef(pathRef) ? pathRef
-        : app.database().ref(pathRef);
+function isFirebaseDataSnapshot(value) {
+    return typeof value.exportVal === 'function';
 }
-function checkOperationCases(item, cases) {
-    if (isString(item)) {
-        return cases.stringCase();
+function isAFUnwrappedSnapshot(value) {
+    return typeof value.$key === 'string';
+}
+function isFirebaseQuery(value) {
+    return typeof value.orderByChild === 'function';
+}
+function isEmptyObject(obj) {
+    if (isNil(obj)) {
+        return false;
     }
-    else if (isFirebaseRef(item)) {
-        return cases.firebaseCase();
+    return Object.keys(obj).length === 0 && JSON.stringify(obj) === JSON.stringify({});
+}
+function unwrapMapFn(snapshot) {
+    var unwrapped = !isNil(snapshot.val()) ? snapshot.val() : { $value: null };
+    if ((/string|number|boolean/).test(typeof unwrapped)) {
+        unwrapped = {
+            $value: unwrapped
+        };
     }
-    else if (isFirebaseDataSnapshot(item)) {
-        return cases.snapshotCase();
+    Object.defineProperty(unwrapped, '$key', {
+        value: snapshot.ref.key,
+        enumerable: false
+    });
+    Object.defineProperty(unwrapped, '$exists', {
+        value: function () {
+            return snapshot.exists();
+        },
+        enumerable: false
+    });
+    return unwrapped;
+}
+function stripTrailingSlash(value) {
+    if (value.substring(value.length - 1, value.length) === '/') {
+        return value.substring(0, value.length - 1);
     }
-    throw new Error("Expects a string, snapshot, or reference. Got: " + typeof item);
+    else {
+        return value;
+    }
+}
+function getAbsUrl(root, url) {
+    if (!(/^[a-z]+:\/\/.*/.test(url))) {
+        url = root + '/' + stripLeadingSlash(url);
+    }
+    return url;
+}
+function stripLeadingSlash(value) {
+    if (value.substring(0, 1) === '/') {
+        return value.substring(1, value.length);
+    }
+    else {
+        return value;
+    }
+}
+function isAbsoluteUrl(url) {
+    return REGEX_ABSOLUTE_URL.test(url);
+}
+function getRef(app, pathRef) {
+    if (isFirebaseRef(pathRef)) {
+        return pathRef;
+    }
+    var path = pathRef;
+    if (isAbsoluteUrl(pathRef)) {
+        return app.database().refFromURL(path);
+    }
+    return app.database().ref(path);
 }
 //# sourceMappingURL=utils.js.map
 
@@ -22508,21 +22823,6 @@ __WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].fromPromise = __
 
 /***/ }),
 
-/***/ "../../../../rxjs/_esm5/add/observable/merge.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__observable_merge__ = __webpack_require__("../../../../rxjs/_esm5/observable/merge.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._observable_merge PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].merge = __WEBPACK_IMPORTED_MODULE_1__observable_merge__["a" /* merge */];
-//# sourceMappingURL=merge.js.map 
-
-
-/***/ }),
-
 /***/ "../../../../rxjs/_esm5/add/observable/of.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -22534,111 +22834,6 @@ __WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].merge = __WEBPAC
 
 __WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].of = __WEBPACK_IMPORTED_MODULE_1__observable_of__["a" /* of */];
 //# sourceMappingURL=of.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/delay.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_delay__ = __webpack_require__("../../../../rxjs/_esm5/operator/delay.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_delay PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.delay = __WEBPACK_IMPORTED_MODULE_1__operator_delay__["a" /* delay */];
-//# sourceMappingURL=delay.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/distinctUntilChanged.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/operator/distinctUntilChanged.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_distinctUntilChanged PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.distinctUntilChanged = __WEBPACK_IMPORTED_MODULE_1__operator_distinctUntilChanged__["a" /* distinctUntilChanged */];
-//# sourceMappingURL=distinctUntilChanged.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/filter.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_filter__ = __webpack_require__("../../../../rxjs/_esm5/operator/filter.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_filter PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.filter = __WEBPACK_IMPORTED_MODULE_1__operator_filter__["a" /* filter */];
-//# sourceMappingURL=filter.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/map.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_map__ = __webpack_require__("../../../../rxjs/_esm5/operator/map.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_map PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.map = __WEBPACK_IMPORTED_MODULE_1__operator_map__["a" /* map */];
-//# sourceMappingURL=map.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/scan.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_scan__ = __webpack_require__("../../../../rxjs/_esm5/operator/scan.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_scan PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.scan = __WEBPACK_IMPORTED_MODULE_1__operator_scan__["a" /* scan */];
-//# sourceMappingURL=scan.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/share.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_share__ = __webpack_require__("../../../../rxjs/_esm5/operator/share.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_share PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.share = __WEBPACK_IMPORTED_MODULE_1__operator_share__["a" /* share */];
-//# sourceMappingURL=share.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/skipWhile.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_skipWhile__ = __webpack_require__("../../../../rxjs/_esm5/operator/skipWhile.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_skipWhile PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.skipWhile = __WEBPACK_IMPORTED_MODULE_1__operator_skipWhile__["a" /* skipWhile */];
-//# sourceMappingURL=skipWhile.js.map 
 
 
 /***/ }),
@@ -22664,21 +22859,6 @@ __WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.switch
 // HACK: does nothing, because `toPromise` now lives on the `Observable` itself.
 // leaving this module here to prevent breakage.
 //# sourceMappingURL=toPromise.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/add/operator/withLatestFrom.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operator_withLatestFrom__ = __webpack_require__("../../../../rxjs/_esm5/operator/withLatestFrom.js");
-/** PURE_IMPORTS_START .._.._Observable,.._.._operator_withLatestFrom PURE_IMPORTS_END */
-
-
-__WEBPACK_IMPORTED_MODULE_0__Observable__["a" /* Observable */].prototype.withLatestFrom = __WEBPACK_IMPORTED_MODULE_1__operator_withLatestFrom__["a" /* withLatestFrom */];
-//# sourceMappingURL=withLatestFrom.js.map 
 
 
 /***/ }),
@@ -24102,7 +24282,7 @@ var fromPromise = __WEBPACK_IMPORTED_MODULE_0__PromiseObservable__["a" /* Promis
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operator_merge__ = __webpack_require__("../../../../rxjs/_esm5/operator/merge.js");
 /** PURE_IMPORTS_START .._operator_merge PURE_IMPORTS_END */
 
-var merge = __WEBPACK_IMPORTED_MODULE_0__operator_merge__["a" /* mergeStatic */];
+var merge = __WEBPACK_IMPORTED_MODULE_0__operator_merge__["b" /* mergeStatic */];
 //# sourceMappingURL=merge.js.map 
 
 
@@ -24118,6 +24298,83 @@ var merge = __WEBPACK_IMPORTED_MODULE_0__operator_merge__["a" /* mergeStatic */]
 
 var of = __WEBPACK_IMPORTED_MODULE_0__ArrayObservable__["a" /* ArrayObservable */].of;
 //# sourceMappingURL=of.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/observable/timer.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return timer; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__TimerObservable__ = __webpack_require__("../../../../rxjs/_esm5/observable/TimerObservable.js");
+/** PURE_IMPORTS_START ._TimerObservable PURE_IMPORTS_END */
+
+var timer = __WEBPACK_IMPORTED_MODULE_0__TimerObservable__["a" /* TimerObservable */].create;
+//# sourceMappingURL=timer.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operator/auditTime.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = auditTime;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scheduler_async__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/async.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operators_auditTime__ = __webpack_require__("../../../../rxjs/_esm5/operators/auditTime.js");
+/** PURE_IMPORTS_START .._scheduler_async,.._operators_auditTime PURE_IMPORTS_END */
+
+
+/**
+ * Ignores source values for `duration` milliseconds, then emits the most recent
+ * value from the source Observable, then repeats this process.
+ *
+ * <span class="informal">When it sees a source values, it ignores that plus
+ * the next ones for `duration` milliseconds, and then it emits the most recent
+ * value from the source.</span>
+ *
+ * <img src="./img/auditTime.png" width="100%">
+ *
+ * `auditTime` is similar to `throttleTime`, but emits the last value from the
+ * silenced time window, instead of the first value. `auditTime` emits the most
+ * recent value from the source Observable on the output Observable as soon as
+ * its internal timer becomes disabled, and ignores source values while the
+ * timer is enabled. Initially, the timer is disabled. As soon as the first
+ * source value arrives, the timer is enabled. After `duration` milliseconds (or
+ * the time unit determined internally by the optional `scheduler`) has passed,
+ * the timer is disabled, then the most recent source value is emitted on the
+ * output Observable, and this process repeats for the next source value.
+ * Optionally takes a {@link IScheduler} for managing timers.
+ *
+ * @example <caption>Emit clicks at a rate of at most one click per second</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var result = clicks.auditTime(1000);
+ * result.subscribe(x => console.log(x));
+ *
+ * @see {@link audit}
+ * @see {@link debounceTime}
+ * @see {@link delay}
+ * @see {@link sampleTime}
+ * @see {@link throttleTime}
+ *
+ * @param {number} duration Time to wait before emitting the most recent source
+ * value, measured in milliseconds or the time unit determined internally
+ * by the optional `scheduler`.
+ * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
+ * managing the timers that handle the rate-limiting behavior.
+ * @return {Observable<T>} An Observable that performs rate-limiting of
+ * emissions from the source Observable.
+ * @method auditTime
+ * @owner Observable
+ */
+function auditTime(duration, scheduler) {
+    if (scheduler === void 0) {
+        scheduler = __WEBPACK_IMPORTED_MODULE_0__scheduler_async__["a" /* async */];
+    }
+    return Object(__WEBPACK_IMPORTED_MODULE_1__operators_auditTime__["a" /* auditTime */])(duration, scheduler)(this);
+}
+//# sourceMappingURL=auditTime.js.map 
 
 
 /***/ }),
@@ -24193,6 +24450,70 @@ function _catch(selector) {
     return Object(__WEBPACK_IMPORTED_MODULE_0__operators_catchError__["a" /* catchError */])(selector)(this);
 }
 //# sourceMappingURL=catch.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operator/combineLatest.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = combineLatest;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_combineLatest__ = __webpack_require__("../../../../rxjs/_esm5/operators/combineLatest.js");
+/** PURE_IMPORTS_START .._operators_combineLatest PURE_IMPORTS_END */
+
+/* tslint:enable:max-line-length */
+/**
+ * Combines multiple Observables to create an Observable whose values are
+ * calculated from the latest values of each of its input Observables.
+ *
+ * <span class="informal">Whenever any input Observable emits a value, it
+ * computes a formula using the latest values from all the inputs, then emits
+ * the output of that formula.</span>
+ *
+ * <img src="./img/combineLatest.png" width="100%">
+ *
+ * `combineLatest` combines the values from this Observable with values from
+ * Observables passed as arguments. This is done by subscribing to each
+ * Observable, in order, and collecting an array of each of the most recent
+ * values any time any of the input Observables emits, then either taking that
+ * array and passing it as arguments to an optional `project` function and
+ * emitting the return value of that, or just emitting the array of recent
+ * values directly if there is no `project` function.
+ *
+ * @example <caption>Dynamically calculate the Body-Mass Index from an Observable of weight and one for height</caption>
+ * var weight = Rx.Observable.of(70, 72, 76, 79, 75);
+ * var height = Rx.Observable.of(1.76, 1.77, 1.78);
+ * var bmi = weight.combineLatest(height, (w, h) => w / (h * h));
+ * bmi.subscribe(x => console.log('BMI is ' + x));
+ *
+ * // With output to console:
+ * // BMI is 24.212293388429753
+ * // BMI is 23.93948099205209
+ * // BMI is 23.671253629592222
+ *
+ * @see {@link combineAll}
+ * @see {@link merge}
+ * @see {@link withLatestFrom}
+ *
+ * @param {ObservableInput} other An input Observable to combine with the source
+ * Observable. More than one input Observables may be given as argument.
+ * @param {function} [project] An optional function to project the values from
+ * the combined latest values into a new value on the output Observable.
+ * @return {Observable} An Observable of projected values from the most recent
+ * values from each input Observable, or an array of the most recent values from
+ * each input Observable.
+ * @method combineLatest
+ * @owner Observable
+ */
+function combineLatest() {
+    var observables = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        observables[_i - 0] = arguments[_i];
+    }
+    return __WEBPACK_IMPORTED_MODULE_0__operators_combineLatest__["a" /* combineLatest */].apply(void 0, observables)(this);
+}
+//# sourceMappingURL=combineLatest.js.map 
 
 
 /***/ }),
@@ -24334,122 +24655,6 @@ function concatMap(project, resultSelector) {
     return Object(__WEBPACK_IMPORTED_MODULE_0__operators_concatMap__["a" /* concatMap */])(project, resultSelector)(this);
 }
 //# sourceMappingURL=concatMap.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/operator/delay.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = delay;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scheduler_async__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/async.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__operators_delay__ = __webpack_require__("../../../../rxjs/_esm5/operators/delay.js");
-/** PURE_IMPORTS_START .._scheduler_async,.._operators_delay PURE_IMPORTS_END */
-
-
-/**
- * Delays the emission of items from the source Observable by a given timeout or
- * until a given Date.
- *
- * <span class="informal">Time shifts each item by some specified amount of
- * milliseconds.</span>
- *
- * <img src="./img/delay.png" width="100%">
- *
- * If the delay argument is a Number, this operator time shifts the source
- * Observable by that amount of time expressed in milliseconds. The relative
- * time intervals between the values are preserved.
- *
- * If the delay argument is a Date, this operator time shifts the start of the
- * Observable execution until the given date occurs.
- *
- * @example <caption>Delay each click by one second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var delayedClicks = clicks.delay(1000); // each click emitted after 1 second
- * delayedClicks.subscribe(x => console.log(x));
- *
- * @example <caption>Delay all clicks until a future date happens</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var date = new Date('March 15, 2050 12:00:00'); // in the future
- * var delayedClicks = clicks.delay(date); // click emitted only after that date
- * delayedClicks.subscribe(x => console.log(x));
- *
- * @see {@link debounceTime}
- * @see {@link delayWhen}
- *
- * @param {number|Date} delay The delay duration in milliseconds (a `number`) or
- * a `Date` until which the emission of the source items is delayed.
- * @param {Scheduler} [scheduler=async] The IScheduler to use for
- * managing the timers that handle the time-shift for each item.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by the specified timeout or Date.
- * @method delay
- * @owner Observable
- */
-function delay(delay, scheduler) {
-    if (scheduler === void 0) {
-        scheduler = __WEBPACK_IMPORTED_MODULE_0__scheduler_async__["a" /* async */];
-    }
-    return Object(__WEBPACK_IMPORTED_MODULE_1__operators_delay__["a" /* delay */])(delay, scheduler)(this);
-}
-//# sourceMappingURL=delay.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/operator/distinctUntilChanged.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = distinctUntilChanged;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/operators/distinctUntilChanged.js");
-/** PURE_IMPORTS_START .._operators_distinctUntilChanged PURE_IMPORTS_END */
-
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
- *
- * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
- *
- * If a comparator function is not provided, an equality check is used by default.
- *
- * @example <caption>A simple example with numbers</caption>
- * Observable.of(1, 1, 2, 2, 2, 1, 1, 2, 3, 3, 4)
- *   .distinctUntilChanged()
- *   .subscribe(x => console.log(x)); // 1, 2, 1, 2, 3, 4
- *
- * @example <caption>An example using a compare function</caption>
- * interface Person {
- *    age: number,
- *    name: string
- * }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo'})
- *     { age: 6, name: 'Foo'})
- *     .distinctUntilChanged((p: Person, q: Person) => p.name === q.name)
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo' }
- * // { age: 7, name: 'Bar' }
- * // { age: 5, name: 'Foo' }
- *
- * @see {@link distinct}
- * @see {@link distinctUntilKeyChanged}
- *
- * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
- * @return {Observable} An Observable that emits items from the source Observable with distinct values.
- * @method distinctUntilChanged
- * @owner Observable
- */
-function distinctUntilChanged(compare, keySelector) {
-    return Object(__WEBPACK_IMPORTED_MODULE_0__operators_distinctUntilChanged__["a" /* distinctUntilChanged */])(compare, keySelector)(this);
-}
-//# sourceMappingURL=distinctUntilChanged.js.map 
 
 
 /***/ }),
@@ -24692,9 +24897,9 @@ function map(project, thisArg) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export merge */
+/* harmony export (immutable) */ __webpack_exports__["a"] = merge;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_merge__ = __webpack_require__("../../../../rxjs/_esm5/operators/merge.js");
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__operators_merge__["b"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__operators_merge__["b"]; });
 /** PURE_IMPORTS_START .._operators_merge PURE_IMPORTS_END */
 
 
@@ -25032,63 +25237,6 @@ function reduce(accumulator, seed) {
 
 /***/ }),
 
-/***/ "../../../../rxjs/_esm5/operator/scan.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = scan;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_scan__ = __webpack_require__("../../../../rxjs/_esm5/operators/scan.js");
-/** PURE_IMPORTS_START .._operators_scan PURE_IMPORTS_END */
-
-/* tslint:enable:max-line-length */
-/**
- * Applies an accumulator function over the source Observable, and returns each
- * intermediate result, with an optional seed value.
- *
- * <span class="informal">It's like {@link reduce}, but emits the current
- * accumulation whenever the source emits a value.</span>
- *
- * <img src="./img/scan.png" width="100%">
- *
- * Combines together all values emitted on the source, using an accumulator
- * function that knows how to join a new source value into the accumulation from
- * the past. Is similar to {@link reduce}, but emits the intermediate
- * accumulations.
- *
- * Returns an Observable that applies a specified `accumulator` function to each
- * item emitted by the source Observable. If a `seed` value is specified, then
- * that value will be used as the initial value for the accumulator. If no seed
- * value is specified, the first item of the source is used as the seed.
- *
- * @example <caption>Count the number of click events</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var ones = clicks.mapTo(1);
- * var seed = 0;
- * var count = ones.scan((acc, one) => acc + one, seed);
- * count.subscribe(x => console.log(x));
- *
- * @see {@link expand}
- * @see {@link mergeScan}
- * @see {@link reduce}
- *
- * @param {function(acc: R, value: T, index: number): R} accumulator
- * The accumulator function called on each source value.
- * @param {T|R} [seed] The initial accumulation value.
- * @return {Observable<R>} An observable of the accumulated values.
- * @method scan
- * @owner Observable
- */
-function scan(accumulator, seed) {
-    if (arguments.length >= 2) {
-        return Object(__WEBPACK_IMPORTED_MODULE_0__operators_scan__["a" /* scan */])(accumulator, seed)(this);
-    }
-    return Object(__WEBPACK_IMPORTED_MODULE_0__operators_scan__["a" /* scan */])(accumulator)(this);
-}
-//# sourceMappingURL=scan.js.map 
-
-
-/***/ }),
-
 /***/ "../../../../rxjs/_esm5/operator/share.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -25118,34 +25266,6 @@ function share() {
 }
 ;
 //# sourceMappingURL=share.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/operator/skipWhile.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = skipWhile;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_skipWhile__ = __webpack_require__("../../../../rxjs/_esm5/operators/skipWhile.js");
-/** PURE_IMPORTS_START .._operators_skipWhile PURE_IMPORTS_END */
-
-/**
- * Returns an Observable that skips all items emitted by the source Observable as long as a specified condition holds
- * true, but emits all further source items as soon as the condition becomes false.
- *
- * <img src="./img/skipWhile.png" width="100%">
- *
- * @param {Function} predicate - A function to test each item emitted from the source Observable.
- * @return {Observable<T>} An Observable that begins emitting items emitted by the source Observable when the
- * specified predicate becomes false.
- * @method skipWhile
- * @owner Observable
- */
-function skipWhile(predicate) {
-    return Object(__WEBPACK_IMPORTED_MODULE_0__operators_skipWhile__["a" /* skipWhile */])(predicate)(this);
-}
-//# sourceMappingURL=skipWhile.js.map 
 
 
 /***/ }),
@@ -25214,61 +25334,199 @@ function switchMap(project, resultSelector) {
 
 /***/ }),
 
-/***/ "../../../../rxjs/_esm5/operator/withLatestFrom.js":
+/***/ "../../../../rxjs/_esm5/operators/audit.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = withLatestFrom;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__operators_withLatestFrom__ = __webpack_require__("../../../../rxjs/_esm5/operators/withLatestFrom.js");
-/** PURE_IMPORTS_START .._operators_withLatestFrom PURE_IMPORTS_END */
+/* harmony export (immutable) */ __webpack_exports__["a"] = audit;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__util_tryCatch__ = __webpack_require__("../../../../rxjs/_esm5/util/tryCatch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_errorObject__ = __webpack_require__("../../../../rxjs/_esm5/util/errorObject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__OuterSubscriber__ = __webpack_require__("../../../../rxjs/_esm5/OuterSubscriber.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_subscribeToResult__ = __webpack_require__("../../../../rxjs/_esm5/util/subscribeToResult.js");
+/** PURE_IMPORTS_START .._util_tryCatch,.._util_errorObject,.._OuterSubscriber,.._util_subscribeToResult PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
 
-/* tslint:enable:max-line-length */
+
+
+
 /**
- * Combines the source Observable with other Observables to create an Observable
- * whose values are calculated from the latest values of each, only when the
- * source emits.
+ * Ignores source values for a duration determined by another Observable, then
+ * emits the most recent value from the source Observable, then repeats this
+ * process.
  *
- * <span class="informal">Whenever the source Observable emits a value, it
- * computes a formula using that value plus the latest values from other input
- * Observables, then emits the output of that formula.</span>
+ * <span class="informal">It's like {@link auditTime}, but the silencing
+ * duration is determined by a second Observable.</span>
  *
- * <img src="./img/withLatestFrom.png" width="100%">
+ * <img src="./img/audit.png" width="100%">
  *
- * `withLatestFrom` combines each value from the source Observable (the
- * instance) with the latest values from the other input Observables only when
- * the source emits a value, optionally using a `project` function to determine
- * the value to be emitted on the output Observable. All input Observables must
- * emit at least one value before the output Observable will emit a value.
+ * `audit` is similar to `throttle`, but emits the last value from the silenced
+ * time window, instead of the first value. `audit` emits the most recent value
+ * from the source Observable on the output Observable as soon as its internal
+ * timer becomes disabled, and ignores source values while the timer is enabled.
+ * Initially, the timer is disabled. As soon as the first source value arrives,
+ * the timer is enabled by calling the `durationSelector` function with the
+ * source value, which returns the "duration" Observable. When the duration
+ * Observable emits a value or completes, the timer is disabled, then the most
+ * recent source value is emitted on the output Observable, and this process
+ * repeats for the next source value.
  *
- * @example <caption>On every click event, emit an array with the latest timer event plus the click event</caption>
+ * @example <caption>Emit clicks at a rate of at most one click per second</caption>
  * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var timer = Rx.Observable.interval(1000);
- * var result = clicks.withLatestFrom(timer);
+ * var result = clicks.audit(ev => Rx.Observable.interval(1000));
  * result.subscribe(x => console.log(x));
  *
- * @see {@link combineLatest}
+ * @see {@link auditTime}
+ * @see {@link debounce}
+ * @see {@link delayWhen}
+ * @see {@link sample}
+ * @see {@link throttle}
  *
- * @param {ObservableInput} other An input Observable to combine with the source
- * Observable. More than one input Observables may be given as argument.
- * @param {Function} [project] Projection function for combining values
- * together. Receives all values in order of the Observables passed, where the
- * first parameter is a value from the source Observable. (e.g.
- * `a.withLatestFrom(b, c, (a1, b1, c1) => a1 + b1 + c1)`). If this is not
- * passed, arrays will be emitted on the output Observable.
- * @return {Observable} An Observable of projected values from the most recent
- * values from each input Observable, or an array of the most recent values from
- * each input Observable.
- * @method withLatestFrom
+ * @param {function(value: T): SubscribableOrPromise} durationSelector A function
+ * that receives a value from the source Observable, for computing the silencing
+ * duration, returned as an Observable or a Promise.
+ * @return {Observable<T>} An Observable that performs rate-limiting of
+ * emissions from the source Observable.
+ * @method audit
  * @owner Observable
  */
-function withLatestFrom() {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i - 0] = arguments[_i];
-    }
-    return __WEBPACK_IMPORTED_MODULE_0__operators_withLatestFrom__["a" /* withLatestFrom */].apply(void 0, args)(this);
+function audit(durationSelector) {
+    return function auditOperatorFunction(source) {
+        return source.lift(new AuditOperator(durationSelector));
+    };
 }
-//# sourceMappingURL=withLatestFrom.js.map 
+var AuditOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
+    function AuditOperator(durationSelector) {
+        this.durationSelector = durationSelector;
+    }
+    AuditOperator.prototype.call = function (subscriber, source) {
+        return source.subscribe(new AuditSubscriber(subscriber, this.durationSelector));
+    };
+    return AuditOperator;
+}());
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var AuditSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(AuditSubscriber, _super);
+    function AuditSubscriber(destination, durationSelector) {
+        _super.call(this, destination);
+        this.durationSelector = durationSelector;
+        this.hasValue = false;
+    }
+    AuditSubscriber.prototype._next = function (value) {
+        this.value = value;
+        this.hasValue = true;
+        if (!this.throttled) {
+            var duration = Object(__WEBPACK_IMPORTED_MODULE_0__util_tryCatch__["a" /* tryCatch */])(this.durationSelector)(value);
+            if (duration === __WEBPACK_IMPORTED_MODULE_1__util_errorObject__["a" /* errorObject */]) {
+                this.destination.error(__WEBPACK_IMPORTED_MODULE_1__util_errorObject__["a" /* errorObject */].e);
+            }
+            else {
+                var innerSubscription = Object(__WEBPACK_IMPORTED_MODULE_3__util_subscribeToResult__["a" /* subscribeToResult */])(this, duration);
+                if (innerSubscription.closed) {
+                    this.clearThrottle();
+                }
+                else {
+                    this.add(this.throttled = innerSubscription);
+                }
+            }
+        }
+    };
+    AuditSubscriber.prototype.clearThrottle = function () {
+        var _a = this, value = _a.value, hasValue = _a.hasValue, throttled = _a.throttled;
+        if (throttled) {
+            this.remove(throttled);
+            this.throttled = null;
+            throttled.unsubscribe();
+        }
+        if (hasValue) {
+            this.value = null;
+            this.hasValue = false;
+            this.destination.next(value);
+        }
+    };
+    AuditSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex) {
+        this.clearThrottle();
+    };
+    AuditSubscriber.prototype.notifyComplete = function () {
+        this.clearThrottle();
+    };
+    return AuditSubscriber;
+}(__WEBPACK_IMPORTED_MODULE_2__OuterSubscriber__["a" /* OuterSubscriber */]));
+//# sourceMappingURL=audit.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operators/auditTime.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = auditTime;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scheduler_async__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/async.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__audit__ = __webpack_require__("../../../../rxjs/_esm5/operators/audit.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__observable_timer__ = __webpack_require__("../../../../rxjs/_esm5/observable/timer.js");
+/** PURE_IMPORTS_START .._scheduler_async,._audit,.._observable_timer PURE_IMPORTS_END */
+
+
+
+/**
+ * Ignores source values for `duration` milliseconds, then emits the most recent
+ * value from the source Observable, then repeats this process.
+ *
+ * <span class="informal">When it sees a source values, it ignores that plus
+ * the next ones for `duration` milliseconds, and then it emits the most recent
+ * value from the source.</span>
+ *
+ * <img src="./img/auditTime.png" width="100%">
+ *
+ * `auditTime` is similar to `throttleTime`, but emits the last value from the
+ * silenced time window, instead of the first value. `auditTime` emits the most
+ * recent value from the source Observable on the output Observable as soon as
+ * its internal timer becomes disabled, and ignores source values while the
+ * timer is enabled. Initially, the timer is disabled. As soon as the first
+ * source value arrives, the timer is enabled. After `duration` milliseconds (or
+ * the time unit determined internally by the optional `scheduler`) has passed,
+ * the timer is disabled, then the most recent source value is emitted on the
+ * output Observable, and this process repeats for the next source value.
+ * Optionally takes a {@link IScheduler} for managing timers.
+ *
+ * @example <caption>Emit clicks at a rate of at most one click per second</caption>
+ * var clicks = Rx.Observable.fromEvent(document, 'click');
+ * var result = clicks.auditTime(1000);
+ * result.subscribe(x => console.log(x));
+ *
+ * @see {@link audit}
+ * @see {@link debounceTime}
+ * @see {@link delay}
+ * @see {@link sampleTime}
+ * @see {@link throttleTime}
+ *
+ * @param {number} duration Time to wait before emitting the most recent source
+ * value, measured in milliseconds or the time unit determined internally
+ * by the optional `scheduler`.
+ * @param {Scheduler} [scheduler=async] The {@link IScheduler} to use for
+ * managing the timers that handle the rate-limiting behavior.
+ * @return {Observable<T>} An Observable that performs rate-limiting of
+ * emissions from the source Observable.
+ * @method auditTime
+ * @owner Observable
+ */
+function auditTime(duration, scheduler) {
+    if (scheduler === void 0) {
+        scheduler = __WEBPACK_IMPORTED_MODULE_0__scheduler_async__["a" /* async */];
+    }
+    return Object(__WEBPACK_IMPORTED_MODULE_1__audit__["a" /* audit */])(function () { return Object(__WEBPACK_IMPORTED_MODULE_2__observable_timer__["a" /* timer */])(duration, scheduler); });
+}
+//# sourceMappingURL=auditTime.js.map 
 
 
 /***/ }),
@@ -25397,6 +25655,171 @@ var CatchSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return CatchSubscriber;
 }(__WEBPACK_IMPORTED_MODULE_0__OuterSubscriber__["a" /* OuterSubscriber */]));
 //# sourceMappingURL=catchError.js.map 
+
+
+/***/ }),
+
+/***/ "../../../../rxjs/_esm5/operators/combineLatest.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = combineLatest;
+/* unused harmony export CombineLatestOperator */
+/* unused harmony export CombineLatestSubscriber */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__observable_ArrayObservable__ = __webpack_require__("../../../../rxjs/_esm5/observable/ArrayObservable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_isArray__ = __webpack_require__("../../../../rxjs/_esm5/util/isArray.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__OuterSubscriber__ = __webpack_require__("../../../../rxjs/_esm5/OuterSubscriber.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__util_subscribeToResult__ = __webpack_require__("../../../../rxjs/_esm5/util/subscribeToResult.js");
+/** PURE_IMPORTS_START .._observable_ArrayObservable,.._util_isArray,.._OuterSubscriber,.._util_subscribeToResult PURE_IMPORTS_END */
+var __extends = (this && this.__extends) || function (d, b) {
+    for (var p in b)
+        if (b.hasOwnProperty(p))
+            d[p] = b[p];
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+};
+
+
+
+
+var none = {};
+/* tslint:enable:max-line-length */
+/**
+ * Combines multiple Observables to create an Observable whose values are
+ * calculated from the latest values of each of its input Observables.
+ *
+ * <span class="informal">Whenever any input Observable emits a value, it
+ * computes a formula using the latest values from all the inputs, then emits
+ * the output of that formula.</span>
+ *
+ * <img src="./img/combineLatest.png" width="100%">
+ *
+ * `combineLatest` combines the values from this Observable with values from
+ * Observables passed as arguments. This is done by subscribing to each
+ * Observable, in order, and collecting an array of each of the most recent
+ * values any time any of the input Observables emits, then either taking that
+ * array and passing it as arguments to an optional `project` function and
+ * emitting the return value of that, or just emitting the array of recent
+ * values directly if there is no `project` function.
+ *
+ * @example <caption>Dynamically calculate the Body-Mass Index from an Observable of weight and one for height</caption>
+ * var weight = Rx.Observable.of(70, 72, 76, 79, 75);
+ * var height = Rx.Observable.of(1.76, 1.77, 1.78);
+ * var bmi = weight.combineLatest(height, (w, h) => w / (h * h));
+ * bmi.subscribe(x => console.log('BMI is ' + x));
+ *
+ * // With output to console:
+ * // BMI is 24.212293388429753
+ * // BMI is 23.93948099205209
+ * // BMI is 23.671253629592222
+ *
+ * @see {@link combineAll}
+ * @see {@link merge}
+ * @see {@link withLatestFrom}
+ *
+ * @param {ObservableInput} other An input Observable to combine with the source
+ * Observable. More than one input Observables may be given as argument.
+ * @param {function} [project] An optional function to project the values from
+ * the combined latest values into a new value on the output Observable.
+ * @return {Observable} An Observable of projected values from the most recent
+ * values from each input Observable, or an array of the most recent values from
+ * each input Observable.
+ * @method combineLatest
+ * @owner Observable
+ */
+function combineLatest() {
+    var observables = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        observables[_i - 0] = arguments[_i];
+    }
+    var project = null;
+    if (typeof observables[observables.length - 1] === 'function') {
+        project = observables.pop();
+    }
+    // if the first and only other argument besides the resultSelector is an array
+    // assume it's been called with `combineLatest([obs1, obs2, obs3], project)`
+    if (observables.length === 1 && Object(__WEBPACK_IMPORTED_MODULE_1__util_isArray__["a" /* isArray */])(observables[0])) {
+        observables = observables[0].slice();
+    }
+    return function (source) { return source.lift.call(new __WEBPACK_IMPORTED_MODULE_0__observable_ArrayObservable__["a" /* ArrayObservable */]([source].concat(observables)), new CombineLatestOperator(project)); };
+}
+var CombineLatestOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
+    function CombineLatestOperator(project) {
+        this.project = project;
+    }
+    CombineLatestOperator.prototype.call = function (subscriber, source) {
+        return source.subscribe(new CombineLatestSubscriber(subscriber, this.project));
+    };
+    return CombineLatestOperator;
+}());
+/**
+ * We need this JSDoc comment for affecting ESDoc.
+ * @ignore
+ * @extends {Ignored}
+ */
+var CombineLatestSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
+    __extends(CombineLatestSubscriber, _super);
+    function CombineLatestSubscriber(destination, project) {
+        _super.call(this, destination);
+        this.project = project;
+        this.active = 0;
+        this.values = [];
+        this.observables = [];
+    }
+    CombineLatestSubscriber.prototype._next = function (observable) {
+        this.values.push(none);
+        this.observables.push(observable);
+    };
+    CombineLatestSubscriber.prototype._complete = function () {
+        var observables = this.observables;
+        var len = observables.length;
+        if (len === 0) {
+            this.destination.complete();
+        }
+        else {
+            this.active = len;
+            this.toRespond = len;
+            for (var i = 0; i < len; i++) {
+                var observable = observables[i];
+                this.add(Object(__WEBPACK_IMPORTED_MODULE_3__util_subscribeToResult__["a" /* subscribeToResult */])(this, observable, observable, i));
+            }
+        }
+    };
+    CombineLatestSubscriber.prototype.notifyComplete = function (unused) {
+        if ((this.active -= 1) === 0) {
+            this.destination.complete();
+        }
+    };
+    CombineLatestSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex, innerSub) {
+        var values = this.values;
+        var oldVal = values[outerIndex];
+        var toRespond = !this.toRespond
+            ? 0
+            : oldVal === none ? --this.toRespond : this.toRespond;
+        values[outerIndex] = innerValue;
+        if (toRespond === 0) {
+            if (this.project) {
+                this._tryProject(values);
+            }
+            else {
+                this.destination.next(values.slice());
+            }
+        }
+    };
+    CombineLatestSubscriber.prototype._tryProject = function (values) {
+        var result;
+        try {
+            result = this.project.apply(this, values);
+        }
+        catch (err) {
+            this.destination.error(err);
+            return;
+        }
+        this.destination.next(result);
+    };
+    return CombineLatestSubscriber;
+}(__WEBPACK_IMPORTED_MODULE_2__OuterSubscriber__["a" /* OuterSubscriber */]));
+//# sourceMappingURL=combineLatest.js.map 
 
 
 /***/ }),
@@ -25627,278 +26050,6 @@ var DefaultIfEmptySubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return DefaultIfEmptySubscriber;
 }(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
 //# sourceMappingURL=defaultIfEmpty.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/operators/delay.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = delay;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__scheduler_async__ = __webpack_require__("../../../../rxjs/_esm5/scheduler/async.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_isDate__ = __webpack_require__("../../../../rxjs/_esm5/util/isDate.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Subscriber__ = __webpack_require__("../../../../rxjs/_esm5/Subscriber.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Notification__ = __webpack_require__("../../../../rxjs/_esm5/Notification.js");
-/** PURE_IMPORTS_START .._scheduler_async,.._util_isDate,.._Subscriber,.._Notification PURE_IMPORTS_END */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b)
-        if (b.hasOwnProperty(p))
-            d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-
-
-/**
- * Delays the emission of items from the source Observable by a given timeout or
- * until a given Date.
- *
- * <span class="informal">Time shifts each item by some specified amount of
- * milliseconds.</span>
- *
- * <img src="./img/delay.png" width="100%">
- *
- * If the delay argument is a Number, this operator time shifts the source
- * Observable by that amount of time expressed in milliseconds. The relative
- * time intervals between the values are preserved.
- *
- * If the delay argument is a Date, this operator time shifts the start of the
- * Observable execution until the given date occurs.
- *
- * @example <caption>Delay each click by one second</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var delayedClicks = clicks.delay(1000); // each click emitted after 1 second
- * delayedClicks.subscribe(x => console.log(x));
- *
- * @example <caption>Delay all clicks until a future date happens</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var date = new Date('March 15, 2050 12:00:00'); // in the future
- * var delayedClicks = clicks.delay(date); // click emitted only after that date
- * delayedClicks.subscribe(x => console.log(x));
- *
- * @see {@link debounceTime}
- * @see {@link delayWhen}
- *
- * @param {number|Date} delay The delay duration in milliseconds (a `number`) or
- * a `Date` until which the emission of the source items is delayed.
- * @param {Scheduler} [scheduler=async] The IScheduler to use for
- * managing the timers that handle the time-shift for each item.
- * @return {Observable} An Observable that delays the emissions of the source
- * Observable by the specified timeout or Date.
- * @method delay
- * @owner Observable
- */
-function delay(delay, scheduler) {
-    if (scheduler === void 0) {
-        scheduler = __WEBPACK_IMPORTED_MODULE_0__scheduler_async__["a" /* async */];
-    }
-    var absoluteDelay = Object(__WEBPACK_IMPORTED_MODULE_1__util_isDate__["a" /* isDate */])(delay);
-    var delayFor = absoluteDelay ? (+delay - scheduler.now()) : Math.abs(delay);
-    return function (source) { return source.lift(new DelayOperator(delayFor, scheduler)); };
-}
-var DelayOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
-    function DelayOperator(delay, scheduler) {
-        this.delay = delay;
-        this.scheduler = scheduler;
-    }
-    DelayOperator.prototype.call = function (subscriber, source) {
-        return source.subscribe(new DelaySubscriber(subscriber, this.delay, this.scheduler));
-    };
-    return DelayOperator;
-}());
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var DelaySubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
-    __extends(DelaySubscriber, _super);
-    function DelaySubscriber(destination, delay, scheduler) {
-        _super.call(this, destination);
-        this.delay = delay;
-        this.scheduler = scheduler;
-        this.queue = [];
-        this.active = false;
-        this.errored = false;
-    }
-    DelaySubscriber.dispatch = function (state) {
-        var source = state.source;
-        var queue = source.queue;
-        var scheduler = state.scheduler;
-        var destination = state.destination;
-        while (queue.length > 0 && (queue[0].time - scheduler.now()) <= 0) {
-            queue.shift().notification.observe(destination);
-        }
-        if (queue.length > 0) {
-            var delay_1 = Math.max(0, queue[0].time - scheduler.now());
-            this.schedule(state, delay_1);
-        }
-        else {
-            source.active = false;
-        }
-    };
-    DelaySubscriber.prototype._schedule = function (scheduler) {
-        this.active = true;
-        this.add(scheduler.schedule(DelaySubscriber.dispatch, this.delay, {
-            source: this, destination: this.destination, scheduler: scheduler
-        }));
-    };
-    DelaySubscriber.prototype.scheduleNotification = function (notification) {
-        if (this.errored === true) {
-            return;
-        }
-        var scheduler = this.scheduler;
-        var message = new DelayMessage(scheduler.now() + this.delay, notification);
-        this.queue.push(message);
-        if (this.active === false) {
-            this._schedule(scheduler);
-        }
-    };
-    DelaySubscriber.prototype._next = function (value) {
-        this.scheduleNotification(__WEBPACK_IMPORTED_MODULE_3__Notification__["a" /* Notification */].createNext(value));
-    };
-    DelaySubscriber.prototype._error = function (err) {
-        this.errored = true;
-        this.queue = [];
-        this.destination.error(err);
-    };
-    DelaySubscriber.prototype._complete = function () {
-        this.scheduleNotification(__WEBPACK_IMPORTED_MODULE_3__Notification__["a" /* Notification */].createComplete());
-    };
-    return DelaySubscriber;
-}(__WEBPACK_IMPORTED_MODULE_2__Subscriber__["a" /* Subscriber */]));
-var DelayMessage = /*@__PURE__*/ (/*@__PURE__*/ function () {
-    function DelayMessage(time, notification) {
-        this.time = time;
-        this.notification = notification;
-    }
-    return DelayMessage;
-}());
-//# sourceMappingURL=delay.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/operators/distinctUntilChanged.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = distinctUntilChanged;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Subscriber__ = __webpack_require__("../../../../rxjs/_esm5/Subscriber.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_tryCatch__ = __webpack_require__("../../../../rxjs/_esm5/util/tryCatch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__util_errorObject__ = __webpack_require__("../../../../rxjs/_esm5/util/errorObject.js");
-/** PURE_IMPORTS_START .._Subscriber,.._util_tryCatch,.._util_errorObject PURE_IMPORTS_END */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b)
-        if (b.hasOwnProperty(p))
-            d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-
-/* tslint:enable:max-line-length */
-/**
- * Returns an Observable that emits all items emitted by the source Observable that are distinct by comparison from the previous item.
- *
- * If a comparator function is provided, then it will be called for each item to test for whether or not that value should be emitted.
- *
- * If a comparator function is not provided, an equality check is used by default.
- *
- * @example <caption>A simple example with numbers</caption>
- * Observable.of(1, 1, 2, 2, 2, 1, 1, 2, 3, 3, 4)
- *   .distinctUntilChanged()
- *   .subscribe(x => console.log(x)); // 1, 2, 1, 2, 3, 4
- *
- * @example <caption>An example using a compare function</caption>
- * interface Person {
- *    age: number,
- *    name: string
- * }
- *
- * Observable.of<Person>(
- *     { age: 4, name: 'Foo'},
- *     { age: 7, name: 'Bar'},
- *     { age: 5, name: 'Foo'})
- *     { age: 6, name: 'Foo'})
- *     .distinctUntilChanged((p: Person, q: Person) => p.name === q.name)
- *     .subscribe(x => console.log(x));
- *
- * // displays:
- * // { age: 4, name: 'Foo' }
- * // { age: 7, name: 'Bar' }
- * // { age: 5, name: 'Foo' }
- *
- * @see {@link distinct}
- * @see {@link distinctUntilKeyChanged}
- *
- * @param {function} [compare] Optional comparison function called to test if an item is distinct from the previous item in the source.
- * @return {Observable} An Observable that emits items from the source Observable with distinct values.
- * @method distinctUntilChanged
- * @owner Observable
- */
-function distinctUntilChanged(compare, keySelector) {
-    return function (source) { return source.lift(new DistinctUntilChangedOperator(compare, keySelector)); };
-}
-var DistinctUntilChangedOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
-    function DistinctUntilChangedOperator(compare, keySelector) {
-        this.compare = compare;
-        this.keySelector = keySelector;
-    }
-    DistinctUntilChangedOperator.prototype.call = function (subscriber, source) {
-        return source.subscribe(new DistinctUntilChangedSubscriber(subscriber, this.compare, this.keySelector));
-    };
-    return DistinctUntilChangedOperator;
-}());
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var DistinctUntilChangedSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
-    __extends(DistinctUntilChangedSubscriber, _super);
-    function DistinctUntilChangedSubscriber(destination, compare, keySelector) {
-        _super.call(this, destination);
-        this.keySelector = keySelector;
-        this.hasKey = false;
-        if (typeof compare === 'function') {
-            this.compare = compare;
-        }
-    }
-    DistinctUntilChangedSubscriber.prototype.compare = function (x, y) {
-        return x === y;
-    };
-    DistinctUntilChangedSubscriber.prototype._next = function (value) {
-        var keySelector = this.keySelector;
-        var key = value;
-        if (keySelector) {
-            key = Object(__WEBPACK_IMPORTED_MODULE_1__util_tryCatch__["a" /* tryCatch */])(this.keySelector)(value);
-            if (key === __WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */]) {
-                return this.destination.error(__WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */].e);
-            }
-        }
-        var result = false;
-        if (this.hasKey) {
-            result = Object(__WEBPACK_IMPORTED_MODULE_1__util_tryCatch__["a" /* tryCatch */])(this.compare)(this.key, key);
-            if (result === __WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */]) {
-                return this.destination.error(__WEBPACK_IMPORTED_MODULE_2__util_errorObject__["a" /* errorObject */].e);
-            }
-        }
-        else {
-            this.hasKey = true;
-        }
-        if (Boolean(result) === false) {
-            this.key = key;
-            this.destination.next(value);
-        }
-    };
-    return DistinctUntilChangedSubscriber;
-}(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
-//# sourceMappingURL=distinctUntilChanged.js.map 
 
 
 /***/ }),
@@ -27403,83 +27554,6 @@ function share() {
 
 /***/ }),
 
-/***/ "../../../../rxjs/_esm5/operators/skipWhile.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = skipWhile;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Subscriber__ = __webpack_require__("../../../../rxjs/_esm5/Subscriber.js");
-/** PURE_IMPORTS_START .._Subscriber PURE_IMPORTS_END */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b)
-        if (b.hasOwnProperty(p))
-            d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-/**
- * Returns an Observable that skips all items emitted by the source Observable as long as a specified condition holds
- * true, but emits all further source items as soon as the condition becomes false.
- *
- * <img src="./img/skipWhile.png" width="100%">
- *
- * @param {Function} predicate - A function to test each item emitted from the source Observable.
- * @return {Observable<T>} An Observable that begins emitting items emitted by the source Observable when the
- * specified predicate becomes false.
- * @method skipWhile
- * @owner Observable
- */
-function skipWhile(predicate) {
-    return function (source) { return source.lift(new SkipWhileOperator(predicate)); };
-}
-var SkipWhileOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
-    function SkipWhileOperator(predicate) {
-        this.predicate = predicate;
-    }
-    SkipWhileOperator.prototype.call = function (subscriber, source) {
-        return source.subscribe(new SkipWhileSubscriber(subscriber, this.predicate));
-    };
-    return SkipWhileOperator;
-}());
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var SkipWhileSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
-    __extends(SkipWhileSubscriber, _super);
-    function SkipWhileSubscriber(destination, predicate) {
-        _super.call(this, destination);
-        this.predicate = predicate;
-        this.skipping = true;
-        this.index = 0;
-    }
-    SkipWhileSubscriber.prototype._next = function (value) {
-        var destination = this.destination;
-        if (this.skipping) {
-            this.tryCallPredicate(value);
-        }
-        if (!this.skipping) {
-            destination.next(value);
-        }
-    };
-    SkipWhileSubscriber.prototype.tryCallPredicate = function (value) {
-        try {
-            var result = this.predicate(value, this.index++);
-            this.skipping = Boolean(result);
-        }
-        catch (err) {
-            this.destination.error(err);
-        }
-    };
-    return SkipWhileSubscriber;
-}(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
-//# sourceMappingURL=skipWhile.js.map 
-
-
-/***/ }),
-
 /***/ "../../../../rxjs/_esm5/operators/switchMap.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -27752,150 +27826,6 @@ var TakeLastSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
     return TakeLastSubscriber;
 }(__WEBPACK_IMPORTED_MODULE_0__Subscriber__["a" /* Subscriber */]));
 //# sourceMappingURL=takeLast.js.map 
-
-
-/***/ }),
-
-/***/ "../../../../rxjs/_esm5/operators/withLatestFrom.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = withLatestFrom;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__OuterSubscriber__ = __webpack_require__("../../../../rxjs/_esm5/OuterSubscriber.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__util_subscribeToResult__ = __webpack_require__("../../../../rxjs/_esm5/util/subscribeToResult.js");
-/** PURE_IMPORTS_START .._OuterSubscriber,.._util_subscribeToResult PURE_IMPORTS_END */
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b)
-        if (b.hasOwnProperty(p))
-            d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
-
-
-/* tslint:enable:max-line-length */
-/**
- * Combines the source Observable with other Observables to create an Observable
- * whose values are calculated from the latest values of each, only when the
- * source emits.
- *
- * <span class="informal">Whenever the source Observable emits a value, it
- * computes a formula using that value plus the latest values from other input
- * Observables, then emits the output of that formula.</span>
- *
- * <img src="./img/withLatestFrom.png" width="100%">
- *
- * `withLatestFrom` combines each value from the source Observable (the
- * instance) with the latest values from the other input Observables only when
- * the source emits a value, optionally using a `project` function to determine
- * the value to be emitted on the output Observable. All input Observables must
- * emit at least one value before the output Observable will emit a value.
- *
- * @example <caption>On every click event, emit an array with the latest timer event plus the click event</caption>
- * var clicks = Rx.Observable.fromEvent(document, 'click');
- * var timer = Rx.Observable.interval(1000);
- * var result = clicks.withLatestFrom(timer);
- * result.subscribe(x => console.log(x));
- *
- * @see {@link combineLatest}
- *
- * @param {ObservableInput} other An input Observable to combine with the source
- * Observable. More than one input Observables may be given as argument.
- * @param {Function} [project] Projection function for combining values
- * together. Receives all values in order of the Observables passed, where the
- * first parameter is a value from the source Observable. (e.g.
- * `a.withLatestFrom(b, c, (a1, b1, c1) => a1 + b1 + c1)`). If this is not
- * passed, arrays will be emitted on the output Observable.
- * @return {Observable} An Observable of projected values from the most recent
- * values from each input Observable, or an array of the most recent values from
- * each input Observable.
- * @method withLatestFrom
- * @owner Observable
- */
-function withLatestFrom() {
-    var args = [];
-    for (var _i = 0; _i < arguments.length; _i++) {
-        args[_i - 0] = arguments[_i];
-    }
-    return function (source) {
-        var project;
-        if (typeof args[args.length - 1] === 'function') {
-            project = args.pop();
-        }
-        var observables = args;
-        return source.lift(new WithLatestFromOperator(observables, project));
-    };
-}
-var WithLatestFromOperator = /*@__PURE__*/ (/*@__PURE__*/ function () {
-    function WithLatestFromOperator(observables, project) {
-        this.observables = observables;
-        this.project = project;
-    }
-    WithLatestFromOperator.prototype.call = function (subscriber, source) {
-        return source.subscribe(new WithLatestFromSubscriber(subscriber, this.observables, this.project));
-    };
-    return WithLatestFromOperator;
-}());
-/**
- * We need this JSDoc comment for affecting ESDoc.
- * @ignore
- * @extends {Ignored}
- */
-var WithLatestFromSubscriber = /*@__PURE__*/ (/*@__PURE__*/ function (_super) {
-    __extends(WithLatestFromSubscriber, _super);
-    function WithLatestFromSubscriber(destination, observables, project) {
-        _super.call(this, destination);
-        this.observables = observables;
-        this.project = project;
-        this.toRespond = [];
-        var len = observables.length;
-        this.values = new Array(len);
-        for (var i = 0; i < len; i++) {
-            this.toRespond.push(i);
-        }
-        for (var i = 0; i < len; i++) {
-            var observable = observables[i];
-            this.add(Object(__WEBPACK_IMPORTED_MODULE_1__util_subscribeToResult__["a" /* subscribeToResult */])(this, observable, observable, i));
-        }
-    }
-    WithLatestFromSubscriber.prototype.notifyNext = function (outerValue, innerValue, outerIndex, innerIndex, innerSub) {
-        this.values[outerIndex] = innerValue;
-        var toRespond = this.toRespond;
-        if (toRespond.length > 0) {
-            var found = toRespond.indexOf(outerIndex);
-            if (found !== -1) {
-                toRespond.splice(found, 1);
-            }
-        }
-    };
-    WithLatestFromSubscriber.prototype.notifyComplete = function () {
-        // noop
-    };
-    WithLatestFromSubscriber.prototype._next = function (value) {
-        if (this.toRespond.length === 0) {
-            var args = [value].concat(this.values);
-            if (this.project) {
-                this._tryProject(args);
-            }
-            else {
-                this.destination.next(args);
-            }
-        }
-    };
-    WithLatestFromSubscriber.prototype._tryProject = function (args) {
-        var result;
-        try {
-            result = this.project.apply(this, args);
-        }
-        catch (err) {
-            this.destination.error(err);
-            return;
-        }
-        this.destination.next(result);
-    };
-    return WithLatestFromSubscriber;
-}(__WEBPACK_IMPORTED_MODULE_0__OuterSubscriber__["a" /* OuterSubscriber */]));
-//# sourceMappingURL=withLatestFrom.js.map 
 
 
 /***/ }),

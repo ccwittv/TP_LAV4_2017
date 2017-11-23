@@ -61,7 +61,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "div#memory_board{\r\n\tbackground:#CCC;\r\n\tborder:#999 1px solid;\r\n\twidth:440px;\r\n\theight:340px;\r\n\tpadding:24px;\r\n\tmargin:0px auto;\r\n}\r\ndiv#memory_board > div{\r\n\tbackground: url(" + __webpack_require__("/TP_LAV4_2017/assets/img/tile_bg.jpg") + ") no-repeat;\r\n\tborder:#000 1px solid;\r\n\twidth:71px;\r\n\theight:71px;\r\n\tfloat:left;\r\n\tmargin:10px;\r\n\tpadding:5px;\r\n\tfont-size:40px;\r\n\tcursor:pointer;\r\n\ttext-align:center;\r\n}", ""]);
+exports.push([module.i, "div#memory_board{\r\n\tbackground:#CCC;\r\n\tborder:#999 1px solid;\r\n\twidth:440px;\r\n\theight:340px;\r\n\tpadding:24px;\r\n\tmargin:0px auto;\r\n}\r\ndiv#memory_board > div{\r\n\tbackground: url(" + __webpack_require__("/TP_LAV4_2017/assets/img/tile_bg.jpg") + ") no-repeat;\r\n\tborder:#000 1px solid;\r\n\twidth:71px;\r\n\theight:71px;\r\n\tfloat:left;\r\n\tmargin:10px;\r\n\tpadding:5px;\r\n\tfont-size:40px;\r\n\tcursor:pointer;\r\n\ttext-align:center;\r\n}\r\n\r\nform {\r\n    border: 10px solid #f1f1f1;\r\n    /*padding: 10px;\r\n    background:gray;*/\r\n    background:#f0f0f0;\r\n    padding:6% 4%;\r\n    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif; \r\n}\r\n\r\ninput[type=text], input[type=password] {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n    /*background-color: #4CAF50;*/\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n#snackbar.Perdedor {\r\n    background-color: #FF0000;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}", ""]);
 
 // exports
 
@@ -74,7 +74,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/Componentes/memotest/memotest.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body>\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n          <form name=\"juego\">\n              <div style=\"text-align:center\">\n                <h2>\n                   <b>{{nuevoJuego.nombre}}!</b>\n                </h2>\n              </div>\n            <br>\n            <!--div id=\"memory_board\"></div-->\n            <div id=\"memory_board\">\n                <div id=\"tile_0\" (click)=\"memoryFlipTile('tile_0',azulejo[0])\"></div>\n                <div id=\"tile_1\" (click)=\"memoryFlipTile('tile_1',azulejo[1])\"></div>\n                <div id=\"tile_2\" (click)=\"memoryFlipTile('tile_2',azulejo[2])\"></div>\n                <div id=\"tile_3\" (click)=\"memoryFlipTile('tile_3',azulejo[3])\"></div>\n                <div id=\"tile_4\" (click)=\"memoryFlipTile('tile_4',azulejo[4])\"></div>\n                <div id=\"tile_5\" (click)=\"memoryFlipTile('tile_5',azulejo[5])\"></div>\n                <div id=\"tile_6\" (click)=\"memoryFlipTile('tile_6',azulejo[6])\"></div>\n                <div id=\"tile_7\" (click)=\"memoryFlipTile('tile_7',azulejo[7])\"></div>\n                <div id=\"tile_8\" (click)=\"memoryFlipTile('tile_8',azulejo[8])\"></div>\n                <div id=\"tile_9\" (click)=\"memoryFlipTile('tile_9',azulejo[9])\"></div>\n                <div id=\"tile_10\" (click)=\"memoryFlipTile('tile_10',azulejo[10])\"></div>\n                <div id=\"tile_11\" (click)=\"memoryFlipTile('tile_11',azulejo[11])\"></div>    \n            </div>\n            <div class=\"container\">\n                <a class=\"btn btn-primary animated bounceInLeft\" href=\"/Juegos/Memotest\"> <span class=\"glyphicon glyphicon-th\">&nbsp;</span>Nuevo Tablero</a>\n            </div>\n      </form>  \n      </div>  \n\n  <div class=\"container\">\n    <div id=\"snackbar\">{{Mensajes}}</div>\n  </div> \n\n</body>\n</html>\n          \n    \n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body style=\"font-family:comic sans ms;\">\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n          <div class=container name=\"juego\">\n             <div style=\"text-align:center\">\n                <h2>\n                   <b>{{nuevoJuego.nombre}}!</b>\n                </h2>                \n              </div>              \n          </div>  \n            <br>\n            <a type=\"text\" class=\"btn btn-success animated bounceInLeft\" style=\"width:50%; font-weight: bold\"  readonly> Cronómetro:  {{tiempo}} </a>\n            <br>\n            <br>\n            <div id=\"memory_board\">\n                <div id=\"tile_0\" (click)=\"memoryFlipTile('tile_0',azulejo[0])\"></div>\n                <div id=\"tile_1\" (click)=\"memoryFlipTile('tile_1',azulejo[1])\"></div>\n                <div id=\"tile_2\" (click)=\"memoryFlipTile('tile_2',azulejo[2])\"></div>\n                <div id=\"tile_3\" (click)=\"memoryFlipTile('tile_3',azulejo[3])\"></div>\n                <div id=\"tile_4\" (click)=\"memoryFlipTile('tile_4',azulejo[4])\"></div>\n                <div id=\"tile_5\" (click)=\"memoryFlipTile('tile_5',azulejo[5])\"></div>\n                <div id=\"tile_6\" (click)=\"memoryFlipTile('tile_6',azulejo[6])\"></div>\n                <div id=\"tile_7\" (click)=\"memoryFlipTile('tile_7',azulejo[7])\"></div>\n                <div id=\"tile_8\" (click)=\"memoryFlipTile('tile_8',azulejo[8])\"></div>\n                <div id=\"tile_9\" (click)=\"memoryFlipTile('tile_9',azulejo[9])\"></div>\n                <div id=\"tile_10\" (click)=\"memoryFlipTile('tile_10',azulejo[10])\"></div>\n                <div id=\"tile_11\" (click)=\"memoryFlipTile('tile_11',azulejo[11])\"></div>    \n            </div>\n            <div class=\"container\">\n                <a class=\"btn btn-primary animated bounceInLeft\" (click)=\"nuevaPartida()\"> <span class=\"glyphicon glyphicon-th\">&nbsp;</span>Nuevo Tablero</a>                \n            </div>            \n            \n      </div>  \n\n  <div class=\"container\">\n    <div id=\"snackbar\">{{Mensajes}}</div>\n  </div> \n\n</body>\n</html>\n          \n    \n"
 
 /***/ }),
 
@@ -86,6 +86,7 @@ module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </hea
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clases_juego_memotest__ = __webpack_require__("../../../../../src/app/clases/juego-memotest.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__servicios_mi_firebase_juego_servicio_service__ = __webpack_require__("../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -98,10 +99,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MemotestComponent = (function () {
-    /*output = '';
-    htmlSnippet:string;*/
-    function MemotestComponent(route, router) {
+    function MemotestComponent(route, router, servicioJuego) {
         this.route = route;
         this.router = router;
         this.memory_array = ['A', 'A', 'B', 'B', 'C', 'C', 'D', 'D', 'E', 'E', 'F', 'F'];
@@ -109,12 +109,19 @@ var MemotestComponent = (function () {
         this.memory_tile_ids = [];
         this.tiles_flipped = 0;
         this.azulejo = [];
+        //atributos para cronometrar la agilidad del usuario 
+        this.tiempo = 0;
+        this.timer_is_on = 0;
         this.nuevoJuego = new __WEBPACK_IMPORTED_MODULE_2__clases_juego_memotest__["a" /* JuegoMemotest */]("Memotest", false, "tito cosa");
+        this.miServicioJuego = servicioJuego;
+        this.esPartidaNueva = true;
         this.newBoard();
     }
     MemotestComponent.prototype.ngOnInit = function () {
+        //console.log("estoy en ngOnInit");
     };
     MemotestComponent.prototype.ngAfterViewInit = function () {
+        //console.log("estoy en ngAfterViewInit");
     };
     MemotestComponent.prototype.memory_tile_shuffle = function (memoria_cadena) {
         var i = memoria_cadena.length, j, temp;
@@ -131,10 +138,26 @@ var MemotestComponent = (function () {
         this.memory_array = this.memory_tile_shuffle(this.memory_array);
         for (var i = 0; i < this.memory_array.length; i++) {
             this.azulejo[i] = this.memory_array[i];
-            //console.log(this.azulejo[i]);
+            //console.log(this.azulejo[i]);     
         }
     };
+    MemotestComponent.prototype.nuevaPartida = function () {
+        for (var i = 0; i < this.memory_array.length; i++) {
+            var tile_1 = document.getElementById("tile_" + i);
+            tile_1.style.background = 'url(/TP_LAV4_2017/assets/img/tile_bg.jpg) no-repeat';
+            tile_1.innerHTML = "";
+        }
+        this.newBoard();
+        this.stopCount();
+        this.tiempo = 0;
+        this.esPartidaNueva = true;
+    };
     MemotestComponent.prototype.memoryFlipTile = function (x, val) {
+        var _this = this;
+        if (this.esPartidaNueva) {
+            this.startCount();
+            this.esPartidaNueva = false;
+        }
         var tile = document.getElementById(x);
         console.log(tile);
         if (tile.innerHTML == "" && this.memory_values.length < 2) {
@@ -160,27 +183,68 @@ var MemotestComponent = (function () {
                     // Verificar juego completado
                     if (this.tiles_flipped == this.memory_array.length) {
                         console.log("Juego Completado... presione 'Nuevo Tablero' si quire jugar de nuevo");
-                        alert("Juego Completado... presione 'Nuevo Tablero' si quire jugar de nuevo");
+                        //alert("Juego Completado... presione 'Nuevo Tablero' si quire jugar de nuevo");            
+                        this.nuevoJuego.tiempoCalculoSegundos = this.tiempo;
+                        this.stopCount();
+                        this.tiempo = 0;
+                        //this.nuevoJuego.resultado = true;            
+                        this.MostrarMensaje("Juego Completado!!! Y en solo " + this.nuevoJuego.tiempoCalculoSegundos + " segundos", true);
+                        //Se guarda el juego en la base de datos firebase      
+                        this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+                        var fecha = new Date();
+                        this.nuevoJuego.fechajuego = fecha.getDay().toString() + "/" + fecha.getMonth().toString() + "/" + fecha.getFullYear().toString();
+                        this.nuevoJuego.horajuego = fecha.getHours().toString() + ":" + fecha.getMinutes().toString() + ":" + fecha.getSeconds().toString();
+                        this.nuevoJuego.identificador = "MT";
+                        this.nuevoJuego.resultado = "ganó";
+                        this.nuevoJuego.observacion = "en " + this.nuevoJuego.tiempoCalculoSegundos + " segundos";
+                        if (this.nuevoJuego.jugador != null)
+                            this.miServicioJuego.guardarJuego(this.nuevoJuego);
                     }
                 }
                 else {
                     //console.log(this.memory_tile_ids);
-                    localStorage.tile_id_0 = this.memory_tile_ids[0];
-                    localStorage.tile_id_1 = this.memory_tile_ids[1];
-                    this.flip2Back;
-                    setTimeout(this.flip2Back, 700);
+                    //Tengo que usar el localStorage porque el setTimeout me hace perder el scope cuando se ejecuta la función flip2Back. 
+                    //La pérdida del scope hace que this.memory_tile_ids[0] y this.memory_tile_ids[0] queden vacías entonces tile_1 y tile_2 contienen
+                    //valores undefined o null.
+                    /*localStorage.tile_id_0 = this.memory_tile_ids[0];
+                    localStorage.tile_id_1 = this.memory_tile_ids[1];*/
+                    /*this.flip2Back;
+                    setTimeout(this.flip2Back, 700);*/
                     // Borrar los vectores
-                    this.memory_values = [];
-                    this.memory_tile_ids = [];
+                    /* this.memory_values = [];
+                     this.memory_tile_ids = [];*/
+                    //con el setTimeout el método flip2Back se tiene que llamar de esta de esta manera (usando ()=>) sino pierde el scope dentro de la función.
+                    //La pérdida del scope hace que las variable/metodo this.memory_tile_ids esten en estado undefinned dentro del método flip2Back,
+                    //produciendo un error cuando se intenta poner en espera volver a dar vuelta los dos azulejos que no coinciden.
+                    setTimeout(function () { _this.flip2Back(); }, 700);
+                    /*setTimeout(function(){
+                      var tile_1 = document.getElementById(this.memory_tile_ids[0]);
+                      var tile_2 = document.getElementById(this.memory_tile_ids[1]);
+                      //var tile_1 = document.getElementById(localStorage.tile_id_0);
+                      //var tile_2 = document.getElementById(localStorage.tile_id_1);
+                      console.log(tile_1);
+                      console.log(tile_2);
+                      tile_1.style.background = 'url(../../../assets/img/tile_bg.jpg) no-repeat';
+                            tile_1.innerHTML = "";
+                      tile_2.style.background = 'url(../../../assets/img/tile_bg.jpg) no-repeat';
+                            tile_2.innerHTML = "";
+                      // Borrar ambos vectores
+                      this.memory_values = [];
+                      this.memory_tile_ids = [];
+                     }, 700);      */
                 }
             }
         }
     };
     MemotestComponent.prototype.flip2Back = function () {
-        var tile_1 = document.getElementById(localStorage.tile_id_0);
-        var tile_2 = document.getElementById(localStorage.tile_id_1);
-        console.log(tile_1);
-        console.log(tile_2);
+        //La pérdida del scope hace que this.memory_tile_ids[0] y this.memory_tile_ids[0] queden vacías entonces tile_1 y tile_2 contienen
+        //valores undefined o null.
+        var tile_1 = document.getElementById(this.memory_tile_ids[0]);
+        var tile_2 = document.getElementById(this.memory_tile_ids[1]);
+        //var tile_1 = document.getElementById(localStorage.tile_id_0);
+        //var tile_2 = document.getElementById(localStorage.tile_id_1);
+        //console.log(tile_1);
+        //console.log(tile_2);
         tile_1.style.background = 'url(/TP_LAV4_2017/assets/img/tile_bg.jpg) no-repeat';
         tile_1.innerHTML = "";
         tile_2.style.background = 'url(/TP_LAV4_2017/assets/img/tile_bg.jpg) no-repeat';
@@ -188,6 +252,40 @@ var MemotestComponent = (function () {
         // Borrar ambos vectores
         this.memory_values = [];
         this.memory_tile_ids = [];
+    };
+    MemotestComponent.prototype.MostrarMensaje = function (mensaje, ganador) {
+        if (mensaje === void 0) { mensaje = "este es el mensaje"; }
+        if (ganador === void 0) { ganador = false; }
+        this.Mensajes = mensaje;
+        var x = document.getElementById("snackbar");
+        if (ganador) {
+            x.className = "show Ganador";
+        }
+        else {
+            x.className = "show Perdedor";
+        }
+        var modelo = this;
+        setTimeout(function () {
+            x.className = x.className.replace("show", "");
+            //modelo.ocultarVerificar=false;
+        }, 3000);
+        console.info("objeto", x);
+    };
+    //métodos para cronometrar la agilidad del usuario   
+    MemotestComponent.prototype.timedCount = function () {
+        var _this = this;
+        this.tiempo++;
+        this.t = setTimeout(function () { _this.timedCount(); }, 1000);
+    };
+    MemotestComponent.prototype.startCount = function () {
+        if (!this.timer_is_on) {
+            this.timer_is_on = 1;
+            this.timedCount();
+        }
+    };
+    MemotestComponent.prototype.stopCount = function () {
+        clearTimeout(this.t);
+        this.timer_is_on = 0;
     };
     return MemotestComponent;
 }());
@@ -197,10 +295,10 @@ MemotestComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/Componentes/memotest/memotest.component.html"),
         styles: [__webpack_require__("../../../../../src/app/Componentes/memotest/estilo.css"), __webpack_require__("../../../../../src/app/Componentes/memotest/animacion.css"), __webpack_require__("../../../../../src/app/Componentes/memotest/memotest.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */]) === "function" && _c || Object])
 ], MemotestComponent);
 
-var _a, _b;
+var _a, _b, _c;
 //# sourceMappingURL=memotest.component.js.map
 
 /***/ }),
@@ -262,7 +360,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/Componentes/piedra-papel-tijera/piedra-papel-tijera.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body>\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n          <form name=\"juego\">            \n            <div style=\"text-align:center\">\n               <h1>\n                  {{nuevoJuego.nombre}}!\n               </h1>\n            </div>\n            <br>\n            <h4><label>{{mensajeCantidadGanadas}}</label></h4>\n            <h4><label>{{mensajeCantidadPerdidas}}</label></h4>\n            <h4><label>{{mensajeCantidadEmpatadas}}</label></h4>            \n            <br>\n            <button  class=\"btn btn-success btn-lg\" (click)=\"jugar('piedra')\">  \n            <img class=\"PiedraPapelTijera animated zoomInRight \" src=\"/TP_LAV4_2017/assets/img/piedra.jpg\" style=\"width:75px;height:75px;\">            \n            </button>\n            <button class=\"btn btn-primary btn-lg\" (click)=\"jugar('papel')\">\n            <img class=\"PiedraPapelTijera animated zoomInUp\" src=\"/TP_LAV4_2017/assets/img/papel.jpg\" style=\"width:75px;height:75px;\">\n            </button>\n            <button class=\"btn btn-info btn-lg\" (click)=\"jugar('tijera')\">\n            <img class=\"PiedraPapelTijera animated zoomInLeft\"  src=\"/TP_LAV4_2017/assets/img/tijera.jpg\" style=\"width:75px;height:75px;\">\t\n            </button>\n            <br/>\n            <!--h3><label>Ingrese número:  </label></h3>\n            <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:100%\"/>\n          \n            <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar</button></h2>\n            <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\"  class=\"btn btn-info btn-lg\">Nuevo número secreto</button></h2-->\n                  \n            <!--h4><p *ngIf=\"nuevoJuego.numeroSecreto!=0\" ><i class=\"fa fa-spinner fa-spin\"></i> Haz tu jugada, humano.</p></h4-->\n            <h4 [hidden]=\"ocultarJuegaHumano\" ><i class=\"fa fa-spinner fa-spin\"></i> Haz tu jugada, humano.</h4>\n            <!--h4 [hidden]=\"!nuevoJuego.resultado\">Usted adivinó el número</h4>\n            <h4 [hidden]=\"nuevoJuego.resultado\">Usted aún no ganó </h4-->\t\n          </form>\n        </div>            \n        <!--div style=\"text-align:center\"-->\n        <div class=\"container\">\n          <div id=\"snackbar\">{{Mensajes}}</div>\n        </div> \n\n  </body>\n</html>\n"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body style=\"font-family:comic sans ms;\">\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n          <form name=\"juego\">            \n            <div style=\"text-align:center\">\n               <h1>\n                  {{nuevoJuego.nombre}}!\n               </h1>\n            </div>\n            <br>\n            <h4><label>{{mensajeCantidadGanadas}}</label></h4>\n            <h4><label>{{mensajeCantidadPerdidas}}</label></h4>\n            <h4><label>{{mensajeCantidadEmpatadas}}</label></h4>            \n            <br>\n            <button  class=\"btn btn-success btn-lg\" (click)=\"jugar('piedra')\">  \n            <img class=\"PiedraPapelTijera animated zoomInRight \" src=\"/TP_LAV4_2017/assets/img/piedra.jpg\" style=\"width:75px;height:75px;\">            \n            </button>\n            <button class=\"btn btn-primary btn-lg\" (click)=\"jugar('papel')\">\n            <img class=\"PiedraPapelTijera animated zoomInUp\" src=\"/TP_LAV4_2017/assets/img/papel.jpg\" style=\"width:75px;height:75px;\">\n            </button>\n            <button class=\"btn btn-info btn-lg\" (click)=\"jugar('tijera')\">\n            <img class=\"PiedraPapelTijera animated zoomInLeft\"  src=\"/TP_LAV4_2017/assets/img/tijera.jpg\" style=\"width:75px;height:75px;\">\t\n            </button>\n            <br/>\n            <!--h3><label>Ingrese número:  </label></h3>\n            <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:100%\"/>\n          \n            <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar</button></h2>\n            <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\"  class=\"btn btn-info btn-lg\">Nuevo número secreto</button></h2-->\n                  \n            <!--h4><p *ngIf=\"nuevoJuego.numeroSecreto!=0\" ><i class=\"fa fa-spinner fa-spin\"></i> Haz tu jugada, humano.</p></h4-->\n            <h4 [hidden]=\"ocultarJuegaHumano\" ><i class=\"fa fa-spinner fa-pulse\"></i> Haz tu jugada, humano.</h4>\n            <!--h4 [hidden]=\"!nuevoJuego.resultado\">Usted adivinó el número</h4>\n            <h4 [hidden]=\"nuevoJuego.resultado\">Usted aún no ganó </h4-->\t\n          </form>\n        </div>            \n        <!--div style=\"text-align:center\"-->\n        <div class=\"container\">\n          <div id=\"snackbar\">{{Mensajes}}</div>\n        </div> \n\n  </body>\n</html>\n"
 
 /***/ }),
 
@@ -273,6 +371,7 @@ module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </hea
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PiedraPapelTijeraComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clases_juego_piedra_papel_tijera__ = __webpack_require__("../../../../../src/app/clases/juego-piedra-papel-tijera.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__ = __webpack_require__("../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -284,68 +383,87 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var PiedraPapelTijeraComponent = (function () {
-    function PiedraPapelTijeraComponent() {
-        this.nuevoJuego = new __WEBPACK_IMPORTED_MODULE_1__clases_juego_piedra_papel_tijera__["a" /* JuegoPiedraPapelTijera */]("Piedra, Papel o Tijera", "perdio", "tito cosa");
+    function PiedraPapelTijeraComponent(servicioJuego) {
+        this.nuevoJuego = new __WEBPACK_IMPORTED_MODULE_1__clases_juego_piedra_papel_tijera__["a" /* JuegoPiedraPapelTijera */]("Piedra, Papel o Tijera", "perdió", "tito cosa");
         this.ocultarJuegaHumano = false;
         this.cantidadGanadas = 0;
         this.cantidadPerdidas = 0;
         this.cantidadEmpatadas = 0;
+        console.info("Estado juego en el constructor", this.nuevoJuego);
+        this.miServicioJuego = servicioJuego;
     }
     PiedraPapelTijeraComponent.prototype.jugar = function (eleccion) {
         var mensaje;
         this.nuevoJuego.eleccionHumano = eleccion;
         this.nuevoJuego.generarEleccionMaquina();
-        console.log("Elección Humano ", this.nuevoJuego.eleccionHumano);
-        console.log("Elección Maquina ", this.nuevoJuego.eleccionMaquina);
+        //console.log("Elección Humano ", this.nuevoJuego.eleccionHumano);
+        //console.log("Elección Maquina ", this.nuevoJuego.eleccionMaquina);
         if (this.nuevoJuego.eleccionHumano == this.nuevoJuego.eleccionMaquina) {
             mensaje = "Los dos eligieron " + this.nuevoJuego.eleccionHumano + ": EMPATE";
             this.MostarMensaje(mensaje, 'empate');
             this.cantidadEmpatadas++;
             this.mensajeCantidadEmpatadas = this.cantidadEmpatadas + " partidas empatadas";
+            this.nuevoJuego.resultado = 'empate';
         }
         if (this.nuevoJuego.eleccionHumano == 'papel') {
             if (this.nuevoJuego.eleccionMaquina == 'piedra') {
                 mensaje = "Elegiste 'papel' y la máquina 'piedra': GANASTE";
-                this.MostarMensaje(mensaje, 'gano');
+                this.MostarMensaje(mensaje, 'ganó');
                 this.cantidadGanadas++;
                 this.mensajeCantidadGanadas = this.cantidadGanadas + " partidas ganadas";
+                this.nuevoJuego.resultado = 'ganó';
             }
             if (this.nuevoJuego.eleccionMaquina == 'tijera') {
                 mensaje = "Elegiste 'papel' y la máquina 'tijera': PERDISTE";
-                this.MostarMensaje(mensaje, 'perdio');
+                this.MostarMensaje(mensaje, 'perdió');
                 this.cantidadPerdidas++;
                 this.mensajeCantidadPerdidas = this.cantidadPerdidas + " partidas perdidas";
+                this.nuevoJuego.resultado = 'perdió';
             }
         }
         if (this.nuevoJuego.eleccionHumano == 'piedra') {
             if (this.nuevoJuego.eleccionMaquina == 'papel') {
                 mensaje = "Elegiste 'piedra' y la máquina 'papel': PERDISTE";
-                this.MostarMensaje(mensaje, 'perdio');
+                this.MostarMensaje(mensaje, 'perdió');
                 this.cantidadPerdidas++;
                 this.mensajeCantidadPerdidas = this.cantidadPerdidas + " partidas perdidas";
+                this.nuevoJuego.resultado = 'perdió';
             }
             if (this.nuevoJuego.eleccionMaquina == 'tijera') {
                 mensaje = "Elegiste 'piedra' y la máquina 'tijera': GANASTE";
-                this.MostarMensaje(mensaje, 'gano');
+                this.MostarMensaje(mensaje, 'ganó');
                 this.cantidadGanadas++;
                 this.mensajeCantidadGanadas = this.cantidadGanadas + " partidas ganadas";
+                this.nuevoJuego.resultado = 'ganó';
             }
         }
         if (this.nuevoJuego.eleccionHumano == 'tijera') {
             if (this.nuevoJuego.eleccionMaquina == 'papel') {
                 mensaje = "Elegiste 'tijera' y la máquina 'papel': GANASTE";
-                this.MostarMensaje(mensaje, 'gano');
+                this.MostarMensaje(mensaje, 'ganó');
                 this.cantidadGanadas++;
                 this.mensajeCantidadGanadas = this.cantidadGanadas + " partidas ganadas";
+                this.nuevoJuego.resultado = 'ganó';
             }
             if (this.nuevoJuego.eleccionMaquina == 'piedra') {
                 mensaje = "Elegiste 'tijera' y la máquina 'piedra': PERDISTE";
-                this.MostarMensaje(mensaje, 'perdio');
+                this.MostarMensaje(mensaje, 'perdió');
                 this.cantidadPerdidas++;
                 this.mensajeCantidadPerdidas = this.cantidadPerdidas + " partidas perdidas";
+                this.nuevoJuego.resultado = 'perdió';
             }
         }
+        //Se guarda el juego en la base de datos firebase      
+        this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+        var fecha = new Date();
+        this.nuevoJuego.fechajuego = fecha.getDay().toString() + "/" + fecha.getMonth().toString() + "/" + fecha.getFullYear().toString();
+        this.nuevoJuego.horajuego = fecha.getHours().toString() + ":" + fecha.getMinutes().toString() + ":" + fecha.getSeconds().toString();
+        console.info("Estado juego al finalizar la jugada", this.nuevoJuego);
+        this.nuevoJuego.identificador = "PPT";
+        if (this.nuevoJuego.jugador != null)
+            this.miServicioJuego.guardarJuego(this.nuevoJuego);
     };
     PiedraPapelTijeraComponent.prototype.MostarMensaje = function (mensaje, resultado) {
         if (mensaje === void 0) { mensaje = "este es el mensaje"; }
@@ -354,10 +472,10 @@ var PiedraPapelTijeraComponent = (function () {
         this.Mensajes = mensaje;
         var x = document.getElementById("snackbar");
         switch (resultado) {
-            case 'gano':
+            case 'ganó':
                 x.className = "show Ganador";
                 break;
-            case 'perdio':
+            case 'perdió':
                 x.className = "show Perdedor";
                 break;
             case 'empate':
@@ -370,7 +488,7 @@ var PiedraPapelTijeraComponent = (function () {
             x.className = x.className.replace("show", "");
             modelo.ocultarJuegaHumano = false;
         }, 3000);
-        console.info("objeto", x);
+        //console.info("objeto",x);
     };
     PiedraPapelTijeraComponent.prototype.ngOnInit = function () {
     };
@@ -382,10 +500,131 @@ PiedraPapelTijeraComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/Componentes/piedra-papel-tijera/piedra-papel-tijera.component.html"),
         styles: [__webpack_require__("../../../../../src/app/Componentes/piedra-papel-tijera/estilo.css"), __webpack_require__("../../../../../src/app/Componentes/piedra-papel-tijera/animacion.css"), __webpack_require__("../../../../../src/app/Componentes/piedra-papel-tijera/piedra-papel-tijera.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */]) === "function" && _a || Object])
 ], PiedraPapelTijeraComponent);
 
+var _a;
 //# sourceMappingURL=piedra-papel-tijera.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/Componentes/side-menu-listado/side-menu-listado.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "/*!\r\n * Start Bootstrap - Stylish Portfolio (https://startbootstrap.com/template-overviews/stylish-portfolio)\r\n * Copyright 2013-2017 Start Bootstrap\r\n * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-stylish-portfolio/blob/master/LICENSE)\r\n */\r\n\r\n/* Global Styles */\r\n\r\nhtml, body {\r\n    width: 100%;\r\n    height: 100%;\r\n  }\r\n  \r\n  body {\r\n    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  }\r\n  \r\n  .text-vertical-center {\r\n    display: table-cell;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n  }\r\n  \r\n  .text-vertical-center h1 {\r\n    font-size: 4.5em;\r\n    font-weight: 700;\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n  \r\n  \r\n  /* Custom Button Styles */\r\n  \r\n  .btn-dark {\r\n    color: #fff;\r\n    border: none;\r\n    border-radius: 0;\r\n    background-color: rgba(0, 0, 0, .4);\r\n  }\r\n  \r\n  .btn-dark:hover, .btn-dark:focus, .btn-dark:active {\r\n    color: #fff;\r\n    background-color: rgba(0, 0, 0, .7);\r\n  }\r\n  \r\n  .btn-light {\r\n    color: #333;\r\n    border: none;\r\n    border-radius: 0;\r\n    background-color: rgb(255, 255, 255);\r\n  }\r\n  \r\n  .btn-light:hover, .btn-light:focus, .btn-light:active {\r\n    color: #333;\r\n    background-color: rgba(255, 255, 255, .8);\r\n  }\r\n  \r\n  \r\n  /* Custom Horizontal Rule */\r\n  \r\n  hr.small {\r\n    max-width: 100px;\r\n  }\r\n  \r\n  \r\n  /* Side Menu */\r\n  \r\n  #sidebar-wrapper {\r\n    position: fixed;\r\n    z-index: 1000;\r\n    right: 0;\r\n    overflow-y: auto;\r\n    width: 250px;\r\n    height: 100%;\r\n    transition: all .4s ease 0s;\r\n    -webkit-transform: translateX(250px);\r\n            transform: translateX(250px);\r\n    background: #222;\r\n  }\r\n  \r\n  .sidebar-nav {\r\n    position: absolute;\r\n    top: 0;\r\n    width: 250px;\r\n    margin: 0;\r\n    padding: 0;\r\n    list-style: none;\r\n  }\r\n  \r\n  .sidebar-nav li {\r\n    line-height: 40px;\r\n    text-indent: 20px;\r\n  }\r\n  \r\n  .sidebar-nav li a {\r\n    display: block;\r\n    text-decoration: none;\r\n    color: #999;\r\n  }\r\n  \r\n  .sidebar-nav li a:hover {\r\n    text-decoration: none;\r\n    color: #fff;\r\n    background: rgba(255, 255, 255, .2);\r\n  }\r\n  \r\n  .sidebar-nav li a:active, .sidebar-nav li a:focus {\r\n    text-decoration: none;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand {\r\n    font-size: 18px;\r\n    line-height: 55px;\r\n    height: 55px;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand a {\r\n    color: #999;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand a:hover {\r\n    color: #fff;\r\n    background: none;\r\n  }\r\n  \r\n  #menu-toggle {\r\n    position: fixed;\r\n    z-index: 1;\r\n    top: 0;\r\n    right: 0;\r\n  }\r\n  \r\n  #sidebar-wrapper.active {\r\n    right: 250px;\r\n    width: 250px;\r\n    transition: all .4s ease 0s;\r\n  }\r\n  \r\n  .toggle {\r\n    font-size: 1em;\r\n    margin: 5px 5px 0 0;\r\n    padding: 15px 20px;\r\n  }\r\n  \r\n  /* About */\r\n  \r\n  .about {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  \r\n  /* Services */\r\n  \r\n  .services {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  .service-item {\r\n    margin-bottom: 30px;\r\n  }\r\n    \r\n  /* Portfolio */\r\n  \r\n  .portfolio {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  .portfolio-item {\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  .img-portfolio {\r\n    margin: 0 auto;\r\n  }\r\n  \r\n  .img-portfolio:hover {\r\n    opacity: .8;\r\n  }\r\n  \r\n  \r\n  /* Call to Action */\r\n  \r\n  .call-to-action {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  .call-to-action .btn {\r\n    margin: 10px;\r\n  }\r\n  \r\n  \r\n  /* Map */\r\n  \r\n  .map {\r\n    height: 500px;\r\n  }\r\n  \r\n  @media(max-width:768px) {\r\n    .map {\r\n      height: 75%;\r\n    }\r\n  }\r\n  \r\n  .map iframe {\r\n    pointer-events: none;\r\n  }\r\n  \r\n  \r\n  /* Footer */\r\n  \r\n  footer {\r\n    padding: 100px 0;\r\n  }\r\n  \r\n  #to-top {\r\n    font-size: 1em;\r\n    position: fixed;\r\n    right: 5px;\r\n    bottom: 5px;\r\n    display: none;\r\n    padding: 15px 20px;\r\n  }\r\n  \r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6AWFB719wL-IHEnSF8-2rFs.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6OVZ3CCwM_Xw90386HKrPvM.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Lx9L3-3Kr6jyUBO7E3vK30.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6C_jRg-drP9kJc3iu_jpocg.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6E78GtRp3lhchupCJNw8t58.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Lpx497t94oDua8KfAL9f-E.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6MAjkyiewWYrWZc50I8hK7I.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMzH9_sidkFTxRpx-nVOZt1g.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMywVDUTj8DgJRSuHEKdySfs.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM7Y_mfr7j0PatIrZBoJCV9E.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM2qPyaMejTZ925Ro5CnyJwc.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM7YHq4FgHI02B8rPccK0FJQ.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM40tgx99jmYGv_xzYuwd1rU.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMxgy2Fsj5sj3EzlXpqVXRKo.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6JqP6xWf9Yk-m0jBjmerUXc.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6EV4woOUTFhIhLb1QSWCKuw.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6B697u9NcGP3e5023qcgQ9Y.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6C68B3wi5NSSuXaI5ma6QYk.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6J-EY3txTwhUdSs_eHhDaJM.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Kr3NmSntz3GE6rIpxOPZGY.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Nnl6YROR5rHLkdLoHwoOWA.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGKhisFFF-0ifc-Simo8uwJs.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGNJvocFWY_5VFjYFbAOOIik.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGLGN1mc631ObjHzqJB_dFFA.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGI3P6ux3HwbL10a8ofNXGLA.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGD_j0nMiB9fPhg_k1wdK2h0.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGDRVvBvQIc1z78c__uoBcyI.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlAC5S7WFEeHRqL6ObGQGT8o.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMgmx_L9kV4w6g8dYQOLFUI.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMODs9238LZG2v64UiBIjng.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlFjqPhnWKseBf12Mt9_m7kc.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNOAHFN6BivSraYkjhveRHY.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlC2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGH2tx1iQUBYLA4fTJZSoO3U.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGJaoTU19aO7Bfv-FLfOt5YM.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGHvBSgOUtlSCpvi6_8Wv308.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGO4f2SQTi4oYi3kh3bYmG2Y.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGDovqjS_dXPZszO_XltPdNg.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGFxe-GPfKKFmiXaJ_Q0GFr8.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGEo0As1BFRXtCDhS66znb_k.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/Componentes/side-menu-listado/side-menu-listado.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<!-- Navigation -->\n<a id=\"menu-toggle\" href=\"#\" class=\"btn btn-dark btn-lg toggle\">\n  <i class=\"fa fa-bars\"></i>\n</a>\n<nav id=\"sidebar-wrapper\">\n  <ul class=\"sidebar-nav\">\n    <a id=\"menu-close\" href=\"#\" class=\"btn btn-light btn-lg pull-right toggle\">\n      <i class=\"fa fa-times\"></i>\n    </a>\n    <li class=\"sidebar-brand\">\n      <a class=\"js-scroll-trigger\" *ngIf = \"hayAlguienLogueado\">{{usuarioLogueado}}</a>\n      <a class=\"js-scroll-trigger\" *ngIf = \"!hayAlguienLogueado\">Sala de juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" href=\"#top\">Home</a>\n    </li>    \n    <li>      \n      <a class=\"js-scroll-trigger\" (click)=\"llamaService()\" >Servicio</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" (click)=\"llamaServicePromesa()\">Servicio Promesa</a>\n    </li>    \n    <li>\n      <a routerLink=\"/Registro\">Registrarse <span class=\"fa fa-user fa-fw\"></span></a>\n    </li>\n    <li>\n      <a routerLink=\"/Login\" *ngIf = \"!hayAlguienLogueado\">Ingresar <span class=\"fa fa-sign-in\"></span></a>\n      <a routerLink=\"/Login\" *ngIf = \"hayAlguienLogueado\">Salir <span class=\"fa fa-sign-out\"></span></a>\n    </li>\n\n  </ul>\n</nav>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/Componentes/side-menu-listado/side-menu-listado.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SideMenuListadoComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var SideMenuListadoComponent = (function () {
+    function SideMenuListadoComponent() {
+        this.usuarioLogueado = localStorage.usuarioLogueado;
+        if (this.usuarioLogueado != undefined)
+            this.hayAlguienLogueado = true;
+    }
+    SideMenuListadoComponent.prototype.ngOnInit = function () {
+    };
+    //Custom scripts for this template  
+    SideMenuListadoComponent.prototype.ngAfterViewInit = function () {
+        // Closes the sidebar menu
+        $("#menu-close").click(function (e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Opens the sidebar menu
+        $("#menu-toggle").click(function (e) {
+            //alert("hola tarolas");
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+        });
+        // Smooth scrolling using jQuery easing
+        $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function () {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, "easeInOutExpo");
+                    return false;
+                }
+            }
+        });
+        // Closes responsive menu when a scroll trigger link is clicked
+        $('.js-scroll-trigger').click(function () {
+            $("#sidebar-wrapper").removeClass("active");
+        });
+        //#to-top button appears after scrolling
+        var fixed = false;
+        $(document).scroll(function () {
+            if ($(this).scrollTop() > 250) {
+                if (!fixed) {
+                    fixed = true;
+                    $('#to-top').show("slow", function () {
+                        $('#to-top').css({
+                            position: 'fixed',
+                            display: 'block'
+                        });
+                    });
+                }
+            }
+            else {
+                if (fixed) {
+                    fixed = false;
+                    $('#to-top').hide("slow", function () {
+                        $('#to-top').css({
+                            display: 'none'
+                        });
+                    });
+                }
+            }
+        });
+    };
+    return SideMenuListadoComponent;
+}());
+SideMenuListadoComponent = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
+        selector: 'app-side-menu-listado',
+        template: __webpack_require__("../../../../../src/app/Componentes/side-menu-listado/side-menu-listado.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/Componentes/side-menu-listado/side-menu-listado.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], SideMenuListadoComponent);
+
+//# sourceMappingURL=side-menu-listado.component.js.map
 
 /***/ }),
 
@@ -410,7 +649,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/Componentes/side-menu/side-menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation -->\n<a id=\"menu-toggle\" href=\"#\" class=\"btn btn-dark btn-lg toggle\">\n  <i class=\"fa fa-bars\"></i>\n</a>\n<nav id=\"sidebar-wrapper\">\n  <ul class=\"sidebar-nav\">\n    <a id=\"menu-close\" href=\"#\" class=\"btn btn-light btn-lg pull-right toggle\">\n      <i class=\"fa fa-times\"></i>\n    </a>\n    <li class=\"sidebar-brand\">\n      <a class=\"js-scroll-trigger\" *ngIf = \"hayAlguienLogueado\">{{usuarioLogueado}}</a>\n      <a class=\"js-scroll-trigger\" *ngIf = \"!hayAlguienLogueado\">Sala de juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" href=\"#top\">Home</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" routerLink=\"/QuienSoy\">Quién soy?</a>\n    </li>\n    <li>\n      <!--a class=\"js-scroll-trigger\" href=\"#services\">Services</a-->\n      <a class=\"js-scroll-trigger\" routerLink=\"/Juegos\">Menu de Juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" routerLink=\"/Listado\">Listados</a>\n    </li>    \n    <li>\n      <a routerLink=\"/Registro\">Registrarse <span class=\"fa fa-user fa-fw\"></span></a>\n    </li>\n    <li>\n      <a routerLink=\"/Login\" *ngIf = \"!hayAlguienLogueado\">Ingresar <span class=\"fa fa-sign-in\"></span></a>\n      <a routerLink=\"/Login\" *ngIf = \"hayAlguienLogueado\">Salir <span class=\"fa fa-sign-out\"></span></a>\n    </li>\n\n  </ul>\n</nav>"
+module.exports = "<!-- Navigation -->\n<a id=\"menu-toggle\" href=\"#\" class=\"btn btn-dark btn-lg toggle\">\n  <i class=\"fa fa-bars\"></i>\n</a>\n<nav id=\"sidebar-wrapper\">\n  <ul class=\"sidebar-nav\">\n    <a id=\"menu-close\" href=\"#\" class=\"btn btn-light btn-lg pull-right toggle\">\n      <i class=\"fa fa-times\"></i>\n    </a>\n    <li class=\"sidebar-brand\">\n      <a class=\"js-scroll-trigger\" *ngIf = \"hayAlguienLogueado\">{{usuarioLogueado}}</a>\n      <a class=\"js-scroll-trigger\" *ngIf = \"!hayAlguienLogueado\">Sala de juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" href=\"/Principal#top\">Home</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" href=\"/Principal#about\">Acerca de</a>\n    </li>\n    <li>\n      <!--a class=\"js-scroll-trigger\" href=\"#services\">Services</a-->\n      <a class=\"js-scroll-trigger\" routerLink=\"/Juegos\">Menu de Juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" routerLink=\"/Listado\">Listados</a>\n    </li>    \n    <li>\n      <a routerLink=\"/Registro\">Registrarse <span class=\"fa fa-user fa-fw\"></span></a>\n    </li>\n    <li>\n      <a routerLink=\"/Login\" *ngIf = \"!hayAlguienLogueado\">Ingresar <span class=\"fa fa-sign-in\"></span></a>\n      <a routerLink=\"/Login\" *ngIf = \"hayAlguienLogueado\">Salir <span class=\"fa fa-sign-out\"></span></a>\n    </li>\n\n  </ul>\n</nav>"
 
 /***/ }),
 
@@ -547,6 +786,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
+
+Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_23" /* enableProdMode */])();
 var AppComponent = (function () {
     function AppComponent() {
     }
@@ -588,20 +829,22 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__componentes_quien_soy_quien_soy_component__ = __webpack_require__("../../../../../src/app/componentes/quien-soy/quien-soy.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__componentes_anagrama_anagrama_component__ = __webpack_require__("../../../../../src/app/componentes/anagrama/anagrama.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__Componentes_side_menu_side_menu_component__ = __webpack_require__("../../../../../src/app/Componentes/side-menu/side-menu.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__Componentes_piedra_papel_tijera_piedra_papel_tijera_component__ = __webpack_require__("../../../../../src/app/Componentes/piedra-papel-tijera/piedra-papel-tijera.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__Componentes_memotest_memotest_component__ = __webpack_require__("../../../../../src/app/Componentes/memotest/memotest.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__firebase_firebaseconfig__ = __webpack_require__("../../../../../src/app/firebase/firebaseconfig.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_angularfire2_database__ = __webpack_require__("../../../../angularfire2/database/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__providers_auth_data__ = __webpack_require__("../../../../../src/app/providers/auth-data.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__ruteando_ruteando_module__ = __webpack_require__("../../../../../src/app/ruteando/ruteando.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__servicios_mi_http_service__ = __webpack_require__("../../../../../src/app/servicios/mi-http.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__servicios_juego_service_service__ = __webpack_require__("../../../../../src/app/servicios/juego-service.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__Componentes_side_menu_listado_side_menu_listado_component__ = __webpack_require__("../../../../../src/app/Componentes/side-menu-listado/side-menu-listado.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__Componentes_piedra_papel_tijera_piedra_papel_tijera_component__ = __webpack_require__("../../../../../src/app/Componentes/piedra-papel-tijera/piedra-papel-tijera.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__Componentes_memotest_memotest_component__ = __webpack_require__("../../../../../src/app/Componentes/memotest/memotest.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_angularfire2__ = __webpack_require__("../../../../angularfire2/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_angularfire2_auth__ = __webpack_require__("../../../../angularfire2/auth/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__firebase_firebaseconfig__ = __webpack_require__("../../../../../src/app/firebase/firebaseconfig.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_angularfire2_database_deprecated__ = __webpack_require__("../../../../angularfire2/database-deprecated/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__providers_auth_data__ = __webpack_require__("../../../../../src/app/providers/auth-data.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser__ = __webpack_require__("../../../platform-browser/@angular/platform-browser.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ruteando_ruteando_module__ = __webpack_require__("../../../../../src/app/ruteando/ruteando.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__servicios_mi_http_service__ = __webpack_require__("../../../../../src/app/servicios/mi-http.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__servicios_juego_service_service__ = __webpack_require__("../../../../../src/app/servicios/juego-service.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__servicios_mi_firebase_juego_servicio_service__ = __webpack_require__("../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -609,6 +852,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 //Componentes
+
 
 
 
@@ -658,13 +902,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //Servicios
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     return AppModule;
 }());
 AppModule = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_27__angular_core__["M" /* NgModule */])({
+    Object(__WEBPACK_IMPORTED_MODULE_28__angular_core__["M" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_0__app_component__["a" /* AppComponent */],
             __WEBPACK_IMPORTED_MODULE_1__componentes_adivina_el_numero_adivina_el_numero_component__["a" /* AdivinaElNumeroComponent */],
@@ -685,26 +930,28 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_16__componentes_quien_soy_quien_soy_component__["a" /* QuienSoyComponent */],
             __WEBPACK_IMPORTED_MODULE_17__componentes_anagrama_anagrama_component__["a" /* AnagramaComponent */],
             __WEBPACK_IMPORTED_MODULE_18__Componentes_side_menu_side_menu_component__["a" /* SideMenuComponent */],
-            __WEBPACK_IMPORTED_MODULE_19__Componentes_piedra_papel_tijera_piedra_papel_tijera_component__["a" /* PiedraPapelTijeraComponent */],
-            __WEBPACK_IMPORTED_MODULE_20__Componentes_memotest_memotest_component__["a" /* MemotestComponent */]
+            __WEBPACK_IMPORTED_MODULE_20__Componentes_piedra_papel_tijera_piedra_papel_tijera_component__["a" /* PiedraPapelTijeraComponent */],
+            __WEBPACK_IMPORTED_MODULE_21__Componentes_memotest_memotest_component__["a" /* MemotestComponent */],
+            __WEBPACK_IMPORTED_MODULE_19__Componentes_side_menu_listado_side_menu_listado_component__["a" /* SideMenuListadoComponent */]
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_26__angular_platform_browser__["a" /* BrowserModule */],
-            __WEBPACK_IMPORTED_MODULE_28__angular_forms__["c" /* FormsModule */],
-            __WEBPACK_IMPORTED_MODULE_30__ruteando_ruteando_module__["a" /* RuteandoModule */],
-            __WEBPACK_IMPORTED_MODULE_28__angular_forms__["d" /* ReactiveFormsModule */],
-            __WEBPACK_IMPORTED_MODULE_29__angular_http__["b" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_27__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_forms__["c" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_31__ruteando_ruteando_module__["a" /* RuteandoModule */],
+            __WEBPACK_IMPORTED_MODULE_29__angular_forms__["d" /* ReactiveFormsModule */],
+            __WEBPACK_IMPORTED_MODULE_30__angular_http__["b" /* HttpModule */],
             // NgbModule.forRoot(MiRuteo),
             // importo el ruteo
             // RouterModule.forRoot(MiRuteo)
-            __WEBPACK_IMPORTED_MODULE_21_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_23__firebase_firebaseconfig__["a" /* firebaseconfig */]),
-            __WEBPACK_IMPORTED_MODULE_24_angularfire2_database__["a" /* AngularFireDatabaseModule */],
-            __WEBPACK_IMPORTED_MODULE_22_angularfire2_auth__["b" /* AngularFireAuthModule */],
+            __WEBPACK_IMPORTED_MODULE_22_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_24__firebase_firebaseconfig__["a" /* firebaseconfig */]),
+            __WEBPACK_IMPORTED_MODULE_25_angularfire2_database_deprecated__["b" /* AngularFireDatabaseModule */],
+            __WEBPACK_IMPORTED_MODULE_23_angularfire2_auth__["b" /* AngularFireAuthModule */] //para firebase
         ],
-        providers: [__WEBPACK_IMPORTED_MODULE_32__servicios_juego_service_service__["a" /* JuegoServiceService */],
-            __WEBPACK_IMPORTED_MODULE_31__servicios_mi_http_service__["a" /* MiHttpService */],
-            __WEBPACK_IMPORTED_MODULE_21_angularfire2__["a" /* AngularFireModule */],
-            __WEBPACK_IMPORTED_MODULE_25__providers_auth_data__["a" /* AuthData */]
+        providers: [__WEBPACK_IMPORTED_MODULE_33__servicios_juego_service_service__["a" /* JuegoServiceService */],
+            __WEBPACK_IMPORTED_MODULE_32__servicios_mi_http_service__["a" /* MiHttpService */],
+            __WEBPACK_IMPORTED_MODULE_22_angularfire2__["a" /* AngularFireModule */],
+            __WEBPACK_IMPORTED_MODULE_26__providers_auth_data__["a" /* AuthData */],
+            __WEBPACK_IMPORTED_MODULE_34__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */] //para firebase 
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_0__app_component__["a" /* AppComponent */]]
     })
@@ -1007,7 +1254,8 @@ var JuegoPiedraPapelTijera = (function (_super) {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Juego; });
 var Juego = (function () {
     function Juego(nombre, resultado, jugador) {
-        this.nombre = 'Sin Nombre';
+        this.nombre = 'Sin Nombre'; //nombre del juego
+        this.observacion = 'N/A';
         if (nombre)
             this.nombre = nombre;
         if (resultado)
@@ -1048,7 +1296,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/adivina-el-numero/adivina-el-numero.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n\n<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body>\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n          <form name=\"juego\">\n            <div style=\"text-align:center\">\n               <h1>\n                  {{nuevoJuego.nombre}}!\n               </h1>\n            </div>\n            <br>\n            <h3><label>Ingrese número:  </label></h3>\n            <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:100%\"/>\n          \n            <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar</button></h2>\n            <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\"  class=\"btn btn-info btn-lg\">Nuevo número secreto</button></h2>\n                  \n            <h4><p *ngIf=\"nuevoJuego.numeroSecreto!=0\" ><i class=\"fa fa-spinner fa-spin\"></i>Esperando que ingrese un número</p></h4>\n            <br> \n            <h4 [hidden]=\"!nuevoJuego.resultado\">Usted adivinó el número</h4>\n            <h4 [hidden]=\"nuevoJuego.resultado\">Usted aún no ganó </h4>\t\n          </form>\n        </div>\n        <div class=\"container\">\n            <div id=\"snackbar\">{{Mensajes}}</div>\n        </div> \n\n  </body>\n</html>"
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n\n<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body style=\"font-family:comic sans ms;\">\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n          <form name=\"juego\">\n            <div style=\"text-align:center\">\n               <h1>\n                  {{nuevoJuego.nombre}}!\n               </h1>\n            </div>\n            <br>\n            <h3><label>Ingrese número:  </label></h3>\n            <input [(ngModel)]=\"nuevoJuego.numeroIngresado\" placeholder=\"ingrese numero\" name=\"numeroIngresado\" type=\"text\" class=\"form-control\" style=\"width:100%\"/>\n          \n            <h2 [hidden]=\"ocultarVerificar\"><button  *ngIf=\"nuevoJuego.numeroSecreto!=0\" (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar</button></h2>\n            <h2><button *ngIf=\"nuevoJuego.numeroSecreto==0 \" (click)=\"generarnumero()\"  class=\"btn btn-info btn-lg\">Nuevo número secreto</button></h2>\n                  \n            <h4><p *ngIf=\"nuevoJuego.numeroSecreto!=0\" ><i class=\"fa fa-spinner fa-pulse\"></i>Esperando que ingrese un número</p></h4>\n            <br> \n            <h4 [hidden]=\"!nuevoJuego.resultado\">Usted adivinó el número</h4>\n            <h4 [hidden]=\"nuevoJuego.resultado\">Usted aún no ganó </h4>\t\n          </form>\n        </div>\n        <div class=\"container\">\n            <div id=\"snackbar\">{{Mensajes}}</div>\n        </div> \n\n  </body>\n</html>"
 
 /***/ }),
 
@@ -1059,6 +1307,7 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdivinaElNumeroComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clases_juego_adivina__ = __webpack_require__("../../../../../src/app/clases/juego-adivina.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__ = __webpack_require__("../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1070,31 +1319,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AdivinaElNumeroComponent = (function () {
-    function AdivinaElNumeroComponent() {
+    function AdivinaElNumeroComponent(servicioJuego) {
         this.enviarJuego = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
         this.nuevoJuego = new __WEBPACK_IMPORTED_MODULE_1__clases_juego_adivina__["a" /* JuegoAdivina */]("Adivina el número", false, "tito cosa");
-        console.info("numero Secreto:", this.nuevoJuego.numeroSecreto);
+        //console.info("numero Secreto:",this.nuevoJuego.numeroSecreto);  
         this.ocultarVerificar = false;
-        console.log("ocultar Verificar:", this.ocultarVerificar);
-        console.log("Ganó? Constructor componente adivina", this.nuevoJuego.resultado);
+        /*console.log("ocultar Verificar:",this.ocultarVerificar);
+        console.log("Ganó? Constructor componente adivina",this.nuevoJuego.resultado);*/
+        this.miServicioJuego = servicioJuego;
     }
     AdivinaElNumeroComponent.prototype.generarnumero = function () {
         this.nuevoJuego.generarnumero();
-        this.contador = 0;
+        this.nuevoJuego.contador = 0;
     };
     AdivinaElNumeroComponent.prototype.verificar = function () {
-        this.contador++;
+        this.nuevoJuego.contador++;
         this.ocultarVerificar = true;
         console.info("numero Secreto:", this.nuevoJuego.resultado);
         if (this.nuevoJuego.verificar()) {
             this.enviarJuego.emit(this.nuevoJuego);
             this.MostarMensaje("Sos un Genio!!!", true);
             this.nuevoJuego.numeroSecreto = 0;
+            //Se guarda el juego en la base de datos firebase      
+            this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+            var fecha = new Date();
+            this.nuevoJuego.fechajuego = fecha.getDay().toString() + "/" + fecha.getMonth().toString() + "/" + fecha.getFullYear().toString();
+            this.nuevoJuego.horajuego = fecha.getHours().toString() + ":" + fecha.getMinutes().toString() + ":" + fecha.getSeconds().toString();
+            this.nuevoJuego.identificador = "AN";
+            this.nuevoJuego.resultado = "ganó";
+            this.nuevoJuego.observacion = "en " + this.nuevoJuego.contador.toString() + " intentos";
+            console.log("Ganaste!!!", this.nuevoJuego);
+            if (this.nuevoJuego.jugador != null)
+                this.miServicioJuego.guardarJuego(this.nuevoJuego);
         }
         else {
             var mensaje = void 0;
-            switch (this.contador) {
+            switch (this.nuevoJuego.contador) {
                 case 1:
                     mensaje = "No, intento fallido, animo";
                     break;
@@ -1114,10 +1376,10 @@ var AdivinaElNumeroComponent = (function () {
                     mensaje = "Afortunado en el amor";
                     break;
                 default:
-                    mensaje = "Ya le erraste " + this.contador + " veces";
+                    mensaje = "Ya le erraste " + this.nuevoJuego.contador + " veces";
                     break;
             }
-            this.MostarMensaje("#" + this.contador + " " + mensaje + " ayuda :" + this.nuevoJuego.retornarAyuda());
+            this.MostarMensaje("#" + this.nuevoJuego.contador + " " + mensaje + " ayuda :" + this.nuevoJuego.retornarAyuda());
         }
         console.info("numero Secreto:", this.nuevoJuego.resultado);
     };
@@ -1153,10 +1415,10 @@ AdivinaElNumeroComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/componentes/adivina-el-numero/adivina-el-numero.component.html"),
         styles: [__webpack_require__("../../../../../src/app/componentes/adivina-el-numero/estilo.css"), __webpack_require__("../../../../../src/app/componentes/adivina-el-numero/animacion.css"), __webpack_require__("../../../../../src/app/componentes/adivina-el-numero/adivina-el-numero.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */]) === "function" && _b || Object])
 ], AdivinaElNumeroComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=adivina-el-numero.component.js.map
 
 /***/ }),
@@ -1218,7 +1480,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/adivina-mas-listado/adivina-mas-listado.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<app-adivina-el-numero (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-adivina-el-numero> \n<h1> listado </h1>\n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>\n\n"
+module.exports = "\n<app-adivina-el-numero (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-adivina-el-numero> \n<h1> listado </h1>\n<!--app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados-->\n\n"
 
 /***/ }),
 
@@ -1271,7 +1533,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\nform {\r\n    border: 10px solid #f1f1f1;\r\n    /*padding: 10px;\r\n    background:gray;*/\r\n    background:#f0f0f0;\r\n    padding:6% 4%;\r\n    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif; \r\n}\r\n\r\ninput[type=text], input[type=password] {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n    /*background-color: #4CAF50;*/\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n#snackbar.Perdedor {\r\n    background-color: #FF0000;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}", ""]);
+exports.push([module.i, "\r\nform {\r\n    border: 10px solid #f1f1f1;\r\n    /*padding: 10px;\r\n    background:gray;*/\r\n    background:#f0f0f0;\r\n    padding:6% 4%;\r\n    /*font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif; */\r\n}\r\n\r\ninput[type=text], input[type=password] {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n    /*background-color: #4CAF50;*/\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n#snackbar.Perdedor {\r\n    background-color: #FF0000;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}", ""]);
 
 // exports
 
@@ -1284,7 +1546,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!--app-menu></app-menu-->\n<!-- index.html -->\n<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body>\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n\n          <form name=\"juego\">\n            <div style=\"text-align:center\">\n              <h2>\n                  {{nuevoJuego.nombre}}!\n              </h2>\n            </div>\n            <br>\n            <ul>\n              <h4>Primer número: </h4>\n              <li> \n                <input [(ngModel)]=\"nuevoJuego.primerNumero\" placeholder=\"\" name=\"primerNumero\" id=\"primerNumero\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/>\n              </li>\n              <h4>Operación:</h4>\n              <li>\n                <input [(ngModel)]=\"nuevoJuego.operacion\" placeholder=\"\" name=\"operacion\" id=\"operacion\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/>\n              </li>\n              <h4>Segundo número:</h4>\n              <li>\n                <input [(ngModel)]=\"nuevoJuego.segundoNumero\" placeholder=\"\" name=\"segundoNumero\" id=\"segundoNumero\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/> \n              </li>\n              <h4>Respuesta:</h4>\n              <input [(ngModel)]=\"nuevoJuego.respuestaOperacion\" placeholder=\"\" name=\"respuestaIngresada\" id=\"respuestaIngresada\" type=\"number\" class=\"form-control\" style=\"width:100%;background:white\"/>\n            </ul>\n            \n            <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{tiempo}}</button></h2>\n            <h2 [hidden]=\"!ocultarVerificar\"><button  (click)=\"NuevoJuego()\"  class=\"btn btn-info btn-lg\">Nueva Operación</button></h2>\n                            \n            <h4 [hidden]=\"ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-spin\"></i>Esperando número...</p></h4>\n            <h4 [hidden]=\"!ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-spin\"></i>Esperando nueva operación...</p></h4>\n            <br>\n            <!--h4 [hidden]=\"!nuevoJuego.gano\">usted calculó el número</h4>\n            <h4 [hidden]=\"nuevoJuego.gano\">usted aún no hizo ningún cálculo </h4-->\n          </form>\n\n          </div>            \n          <!--div style=\"text-align:center\"-->\n          <div class=\"container\">\n            <div id=\"snackbar\">{{Mensajes}}</div>\n          </div> \n  \n    </body>\n  </html>\n              "
+module.exports = "<!--The content below is only a placeholder and can be replaced.-->\n<!--app-menu></app-menu-->\n<!-- index.html -->\n<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body style=\"font-family:comic sans ms;\">\n        \n       <div class=\"CajaUno animated bounceInLeft\" style=\"font-family:comic sans ms;\">\n\n          <form name=\"juego\">\n            <div style=\"text-align:center\">\n              <h2>\n                  {{nuevoJuego.nombre}}!\n              </h2>\n            </div>\n            <br>\n            <ul>\n              <h4>Primer número: </h4>\n              <li> \n                <input [(ngModel)]=\"nuevoJuego.primerNumero\" placeholder=\"\" name=\"primerNumero\" id=\"primerNumero\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/>\n              </li>\n              <h4>Operación:</h4>\n              <li>\n                <input [(ngModel)]=\"nuevoJuego.operacion\" placeholder=\"\" name=\"operacion\" id=\"operacion\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/>\n              </li>\n              <h4>Segundo número:</h4>\n              <li>\n                <input [(ngModel)]=\"nuevoJuego.segundoNumero\" placeholder=\"\" name=\"segundoNumero\" id=\"segundoNumero\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/> \n              </li>\n              <h4>Respuesta:</h4>\n              <input [(ngModel)]=\"nuevoJuego.respuestaOperacion\" placeholder=\"\" name=\"respuestaIngresada\" id=\"respuestaIngresada\" type=\"number\" class=\"form-control\" style=\"width:100%;background:white\"/>\n            </ul>\n            \n            <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\">Verificar {{tiempo}}</button></h2>\n            <h2 [hidden]=\"!ocultarVerificar\"><button  (click)=\"NuevoJuego()\"  class=\"btn btn-info btn-lg\">Nueva Operación</button></h2>\n                            \n            <h4 [hidden]=\"ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-pulse\"></i>Esperando número...</p></h4>\n            <h4 [hidden]=\"!ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-pulse\"></i>Esperando nueva operación...</p></h4>\n            <br>\n            <!--h4 [hidden]=\"!nuevoJuego.gano\">usted calculó el número</h4>\n            <h4 [hidden]=\"nuevoJuego.gano\">usted aún no hizo ningún cálculo </h4-->\n          </form>\n\n          </div>            \n          <!--div style=\"text-align:center\"-->\n          <div class=\"container\">\n            <div id=\"snackbar\">{{Mensajes}}</div>\n          </div> \n  \n    </body>\n  </html>\n              "
 
 /***/ }),
 
@@ -1295,6 +1557,7 @@ module.exports = "<!--The content below is only a placeholder and can be replace
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AgilidadAritmeticaComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clases_juego_agilidad__ = __webpack_require__("../../../../../src/app/clases/juego-agilidad.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__ = __webpack_require__("../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1306,14 +1569,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AgilidadAritmeticaComponent = (function () {
-    function AgilidadAritmeticaComponent() {
+    function AgilidadAritmeticaComponent(servicioJuego) {
         this.enviarJuego = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["x" /* EventEmitter */]();
         //atributos para cronometrar la agilidad del usuario 
         this.tiempo = 0;
         this.timer_is_on = 0;
         this.ocultarVerificar = true;
         this.nuevoJuego = new __WEBPACK_IMPORTED_MODULE_1__clases_juego_agilidad__["a" /* JuegoAgilidad */]("Agilidad Aritmética", false, "tito cosa");
+        this.miServicioJuego = servicioJuego;
     }
     AgilidadAritmeticaComponent.prototype.ngOnInit = function () {
     };
@@ -1332,14 +1597,27 @@ var AgilidadAritmeticaComponent = (function () {
             //alert("Correcto!!");
             this.enviarJuego.emit(this.nuevoJuego);
             this.nuevoJuego.tiempoCalculoSegundos = this.tiempo;
+            this.nuevoJuego.observacion = "con la " + this.nuevoJuego.operacion + " se tardó " + this.nuevoJuego.tiempoCalculoSegundos.toString() + " segundos";
+            this.nuevoJuego.resultado = "ganó";
             this.MostrarMensaje("Correcto!!! Y en solo " + this.nuevoJuego.tiempoCalculoSegundos + " segundos", true);
         }
         else {
             //alert("Incorrecto!!!");
+            this.nuevoJuego.tiempoCalculoSegundos = 0;
+            this.nuevoJuego.observacion = "con la " + this.nuevoJuego.operacion;
+            this.nuevoJuego.resultado = "perdió";
             this.MostrarMensaje("Incorrecto!!! La respuesta era: " + this.nuevoJuego.retornarAyuda(), false);
         }
         this.ocultarVerificar = true;
         this.tiempo = 0; //el cronómetro se tiene que poner en cero
+        //Se guarda el juego en la base de datos firebase      
+        this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+        var fecha = new Date();
+        this.nuevoJuego.fechajuego = fecha.getDay().toString() + "/" + fecha.getMonth().toString() + "/" + fecha.getFullYear().toString();
+        this.nuevoJuego.horajuego = fecha.getHours().toString() + ":" + fecha.getMinutes().toString() + ":" + fecha.getSeconds().toString();
+        this.nuevoJuego.identificador = "AA";
+        if (this.nuevoJuego.jugador != null)
+            this.miServicioJuego.guardarJuego(this.nuevoJuego);
     };
     AgilidadAritmeticaComponent.prototype.MostrarMensaje = function (mensaje, ganador) {
         if (mensaje === void 0) { mensaje = "este es el mensaje"; }
@@ -1387,10 +1665,10 @@ AgilidadAritmeticaComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.html"),
         styles: [__webpack_require__("../../../../../src/app/componentes/agilidad-aritmetica/estilo.css"), __webpack_require__("../../../../../src/app/componentes/agilidad-aritmetica/animacion.css"), __webpack_require__("../../../../../src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */]) === "function" && _b || Object])
 ], AgilidadAritmeticaComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=agilidad-aritmetica.component.js.map
 
 /***/ }),
@@ -1452,7 +1730,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/agilidad-mas-listado/agilidad-mas-listado.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<app-agilidad-aritmetica (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-agilidad-aritmetica> \n<h1> Listado de Resultados </h1>\n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>"
+module.exports = "\n<app-agilidad-aritmetica (enviarJuego)=\"tomarJuegoTerminado($event)\">   </app-agilidad-aritmetica> \n<h1> Listado de Resultados </h1>\n<!--app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados-->"
 
 /***/ }),
 
@@ -1505,7 +1783,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "\r\nform {\r\n    border: 10px solid #f1f1f1;\r\n    /*padding: 10px;\r\n    background:gray;*/\r\n    background:#f0f0f0;\r\n    padding:6% 4%;\r\n    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif; \r\n}\r\n\r\ninput[type=text], input[type=password] {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n    /*background-color: #4CAF50;*/\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n#snackbar.Perdedor {\r\n    background-color: #FF0000;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}", ""]);
+exports.push([module.i, "\r\nform {\r\n    border: 10px solid #f1f1f1;\r\n    /*padding: 10px;\r\n    background:gray;*/\r\n    background:#f0f0f0;\r\n    padding:6% 4%;\r\n    /*font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, sans-serif; */\r\n}\r\n\r\ninput[type=text], input[type=password] {\r\n    width: 100%;\r\n    padding: 12px 20px;\r\n    margin: 8px 0;\r\n    display: inline-block;\r\n    border: 1px solid #ccc;\r\n    box-sizing: border-box;\r\n}\r\n\r\nbutton {\r\n    /*background-color: #4CAF50;*/\r\n    color: white;\r\n    padding: 14px 20px;\r\n    margin: 8px 0;\r\n    border: none;\r\n    cursor: pointer;\r\n    width: 100%;\r\n}\r\n\r\nbutton:hover {\r\n    opacity: 0.8;\r\n}\r\n\r\n.cancelbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #f44336;\r\n}\r\n.aceptbtn {\r\n    width: auto;\r\n    padding: 10px 18px;\r\n    background-color: #3664F4;\r\n}\r\n.imgcontainer {\r\n    text-align: center;\r\n    margin: 24px 0 12px 0;\r\n}\r\n\r\nimg.avatar {\r\n    width: 40%;\r\n    border-radius: 50%;\r\n}\r\n\r\n.container {\r\n    padding: 16px;\r\n}\r\n\r\nspan.psw {\r\n    float: right;\r\n    padding-top: 16px;\r\n}\r\n\r\n/* Change styles for span and cancel button on extra small screens */\r\n@media screen and (max-width: 300px) {\r\n    span.psw {\r\n       display: block;\r\n       float: none;\r\n    }\r\n    .cancelbtn {\r\n       width: 100%;\r\n    }\r\n}\r\n\r\n#snackbar {\r\n    visibility: hidden;\r\n    min-width: 250px;\r\n    margin-left: -125px;\r\n\r\n    color: #fff;\r\n    text-align: center;\r\n    border-radius: 2px;\r\n    padding: 16px;\r\n    position: fixed;\r\n    z-index: 1;\r\n    left: 50%;\r\n    bottom: 30px;\r\n    font-size: 17px;\r\n}\r\n#snackbar.Ganador {\r\n    background-color: #059F2F;\r\n}\r\n#snackbar.Perdedor {\r\n    background-color: #FF0000;\r\n}\r\n\r\n#snackbar.show {\r\n    visibility: visible;\r\n    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n    animation: fadein 0.5s, fadeout 0.5s 2.5s;\r\n}\r\n\r\n@-webkit-keyframes fadein {\r\n    from {bottom: 0; opacity: 0;} \r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@keyframes fadein {\r\n    from {bottom: 0; opacity: 0;}\r\n    to {bottom: 30px; opacity: 1;}\r\n}\r\n\r\n@-webkit-keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;} \r\n    to {bottom: 0; opacity: 0;}\r\n}\r\n\r\n@keyframes fadeout {\r\n    from {bottom: 30px; opacity: 1;}\r\n    to {bottom: 0; opacity: 0;}\r\n}", ""]);
 
 // exports
 
@@ -1518,7 +1796,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/anagrama/anagrama.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body>\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n\n          <form [formGroup]=\"registroFormulario\" name=\"juego\">\n            <div style=\"text-align:center\">\n              <h2>\n                  {{nuevoJuego.nombre}}!\n              </h2>\n            </div>\n            <br>\n            <h4>Anagrama propuesto: </h4> \n            <input [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"palabraDesordenada\" placeholder=\"\" name=\"palabraDesordenada\" id=\"palabraDesordenada\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/>\n              \n            <h4>Respuesta:</h4> \n            <input [formControl]=\"respuesta\" [(ngModel)]=\"nuevoJuego.respuestaPalabra\" placeholder=\"ingresar palabra\" name=\"respuestaPalabra\" id=\"respuestaPalabra\" type=\"text\" class=\"form-control\" style=\"width:100%;background:white\"/>\n\n            <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\" [disabled]=\"!registroFormulario.valid\">Verificar {{tiempo}}</button></h2>\n            <h2 [hidden]=\"!ocultarVerificar\"><button  (click)=\"NuevoJuego()\"  class=\"btn btn-info btn-lg\">Nuevo Anagrama</button></h2>\n                            \n            <h4 [hidden]=\"ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-spin\"></i>Esperando palabra...</p></h4>\n            <h4 [hidden]=\"!ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-spin\"></i>Esperando nuevo anagrama...</p></h4>\n            <br>\n          </form>\n\n          </div>            \n          <div class=\"container\">\n            <div id=\"snackbar\">{{Mensajes}}</div>\n          </div> \n  \n    </body>\n  </html>\n              "
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </head>\n\n    <body style=\"font-family:comic sans ms;\">\n        \n       <div class=\"CajaUno animated bounceInLeft\">\n\n          <form [formGroup]=\"registroFormulario\" name=\"juego\">\n            <div style=\"text-align:center\">\n              <h2>\n                  {{nuevoJuego.nombre}}!\n              </h2>\n            </div>\n            <br>\n            <h4>Anagrama propuesto: </h4> \n            <input [ngModelOptions]=\"{standalone: true}\" [(ngModel)]=\"palabraDesordenada\" placeholder=\"\" name=\"palabraDesordenada\" id=\"palabraDesordenada\" type=\"text\" class=\"form-control\" style=\"width:100%\" readonly/>\n              \n            <h4>Respuesta:</h4> \n            <input [formControl]=\"respuesta\" [(ngModel)]=\"nuevoJuego.respuestaPalabra\" placeholder=\"ingresar palabra\" name=\"respuestaPalabra\" id=\"respuestaPalabra\" type=\"text\" class=\"form-control\" style=\"width:100%;background:white\"/>\n\n            <h2 [hidden]=\"ocultarVerificar\" ><button (click)=\"verificar()\" class=\"btn btn-success btn-lg\" [disabled]=\"!registroFormulario.valid\">Verificar {{tiempo}}</button></h2>\n            <h2 [hidden]=\"!ocultarVerificar\"><button  (click)=\"NuevoJuego()\"  class=\"btn btn-info btn-lg\">Nuevo Anagrama</button></h2>\n                            \n            <h4 [hidden]=\"ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-pulse\"></i>Esperando palabra...</p></h4>\n            <h4 [hidden]=\"!ocultarVerificar\" ><p><i class=\"fa fa-spinner fa-pulse\"></i>Esperando nuevo anagrama...</p></h4>\n            <br>\n          </form>\n\n          </div>            \n          <div class=\"container\">\n            <div id=\"snackbar\">{{Mensajes}}</div>\n          </div> \n  \n    </body>\n  </html>\n              "
 
 /***/ }),
 
@@ -1530,6 +1808,7 @@ module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>    \n\n  </hea
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__clases_juego_anagrama__ = __webpack_require__("../../../../../src/app/clases/juego-anagrama.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__servicios_mi_firebase_juego_servicio_service__ = __webpack_require__("../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1542,10 +1821,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var AnagramaComponent = (function () {
-    function AnagramaComponent(builder) {
+    function AnagramaComponent(builder, servicioJuego) {
         this.builder = builder;
-        //lista = [1,2,3,4,5,6,7,8,9];
         //atributos para cronometrar la agilidad del usuario 
         this.tiempo = 0;
         this.timer_is_on = 0;
@@ -1572,6 +1851,7 @@ var AnagramaComponent = (function () {
         this.palabraDesordenada = this.palabraDesordenada.replace(re,"");
         console.log(this.palabraDesordenada);
         //alert(this.lista); // imprime por ejemplo: 7,9,1,5,2,3,6,4,8*/
+        this.miServicioJuego = servicioJuego;
     }
     AnagramaComponent.prototype.ngOnInit = function () {
     };
@@ -1589,14 +1869,26 @@ var AnagramaComponent = (function () {
             //alert("Correcto!!");
             this.stopCount();
             this.nuevoJuego.tiempoCalculoSegundos = this.tiempo;
+            this.nuevoJuego.resultado = "ganó";
+            this.nuevoJuego.observacion = "en " + this.nuevoJuego.tiempoCalculoSegundos + " segundos";
             this.MostrarMensaje("Correcto!!! Y en solo " + this.nuevoJuego.tiempoCalculoSegundos + " segundos", true);
         }
         else {
             //alert("Incorrecto!!!");
+            this.nuevoJuego.tiempoCalculoSegundos = 0;
+            this.nuevoJuego.resultado = "perdió";
             this.MostrarMensaje("Incorrecto!!! La respuesta era: " + this.nuevoJuego.retornarAyuda(), false);
         }
         this.ocultarVerificar = true;
         this.tiempo = 0; //el cronómetro se tiene que poner en cero
+        //Se guarda el juego en la base de datos firebase      
+        this.nuevoJuego.jugador = localStorage.usuarioLogueado;
+        var fecha = new Date();
+        this.nuevoJuego.fechajuego = fecha.getDay().toString() + "/" + fecha.getMonth().toString() + "/" + fecha.getFullYear().toString();
+        this.nuevoJuego.horajuego = fecha.getHours().toString() + ":" + fecha.getMinutes().toString() + ":" + fecha.getSeconds().toString();
+        this.nuevoJuego.identificador = "AG";
+        if (this.nuevoJuego.jugador != null)
+            this.miServicioJuego.guardarJuego(this.nuevoJuego);
     };
     AnagramaComponent.prototype.MostrarMensaje = function (mensaje, ganador) {
         if (mensaje === void 0) { mensaje = "este es el mensaje"; }
@@ -1640,10 +1932,10 @@ AnagramaComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/componentes/anagrama/anagrama.component.html"),
         styles: [__webpack_require__("../../../../../src/app/componentes/anagrama/estilo.css"), __webpack_require__("../../../../../src/app/componentes/anagrama/animacion.css"), __webpack_require__("../../../../../src/app/componentes/anagrama/anagrama.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */]) === "function" && _b || Object])
 ], AnagramaComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=anagrama.component.js.map
 
 /***/ }),
@@ -1692,7 +1984,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/*.panel\r\n{\r\n    height: 200px;\r\n    background-image: url(\"/TP_LAV4_2017/assets/imagenes/cabecera.png\");\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    position: relative;\r\n}\r\n\r\n\r\n.hero-text {\r\ntext-align: center;\r\nposition: absolute;\r\ntop: 50%;\r\nleft: 50%;\r\ntransform: translate(-50%, -50%);\r\ncolor: #3E06B0;\r\n}\r\n\r\n.hero-text a {\r\nborder: none;\r\noutline: 0;\r\ndisplay: inline-block;\r\npadding: 10px 25px;\r\ncolor: black;\r\nbackground-color: #ddd;\r\ntext-align: center;\r\ncursor: pointer;\r\n}\r\n\r\n.hero-text a:hover {\r\nbackground-color: #555;\r\ncolor: white;\r\n}*/\r\n\r\nhtml, body {\r\n    width: 100%;\r\n    height: 100%;\r\n  }\r\n  \r\n  body {\r\n    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  }\r\n  \r\n  .text-vertical-center {\r\n    display: table-cell;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n  }\r\n  \r\n  .text-vertical-center h1 {\r\n    font-size: 4.5em;\r\n    font-weight: 700;\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n  \r\n  \r\n  /* Custom Button Styles */\r\n  \r\n  .btn-dark {\r\n    color: #fff;\r\n    border: none;\r\n    border-radius: 0;\r\n    background-color: rgba(0, 0, 0, .4);\r\n  }\r\n  \r\n  .btn-dark:hover, .btn-dark:focus, .btn-dark:active {\r\n    color: #fff;\r\n    background-color: rgba(0, 0, 0, .7);\r\n  }\r\n  \r\n  .btn-light {\r\n    color: #333;\r\n    border: none;\r\n    border-radius: 0;\r\n    background-color: rgb(255, 255, 255);\r\n  }\r\n  \r\n  .btn-light:hover, .btn-light:focus, .btn-light:active {\r\n    color: #333;\r\n    background-color: rgba(255, 255, 255, .8);\r\n  }\r\n  \r\n  \r\n  /* Custom Horizontal Rule */\r\n  \r\n  hr.small {\r\n    max-width: 100px;\r\n  }\r\n  \r\n  \r\n  /* Side Menu */\r\n  \r\n  #sidebar-wrapper {\r\n    position: fixed;\r\n    z-index: 1000;\r\n    right: 0;\r\n    overflow-y: auto;\r\n    width: 250px;\r\n    height: 100%;\r\n    transition: all .4s ease 0s;\r\n    -webkit-transform: translateX(250px);\r\n            transform: translateX(250px);\r\n    background: #222;\r\n  }\r\n  \r\n  .sidebar-nav {\r\n    position: absolute;\r\n    top: 0;\r\n    width: 250px;\r\n    margin: 0;\r\n    padding: 0;\r\n    list-style: none;\r\n  }\r\n  \r\n  .sidebar-nav li {\r\n    line-height: 40px;\r\n    text-indent: 20px;\r\n  }\r\n  \r\n  .sidebar-nav li a {\r\n    display: block;\r\n    text-decoration: none;\r\n    color: #999;\r\n  }\r\n  \r\n  .sidebar-nav li a:hover {\r\n    text-decoration: none;\r\n    color: #fff;\r\n    background: rgba(255, 255, 255, .2);\r\n  }\r\n  \r\n  .sidebar-nav li a:active, .sidebar-nav li a:focus {\r\n    text-decoration: none;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand {\r\n    font-size: 18px;\r\n    line-height: 55px;\r\n    height: 55px;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand a {\r\n    color: #999;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand a:hover {\r\n    color: #fff;\r\n    background: none;\r\n  }\r\n  \r\n  #menu-toggle {\r\n    position: fixed;\r\n    z-index: 1;\r\n    top: 0;\r\n    right: 0;\r\n  }\r\n  \r\n  #sidebar-wrapper.active {\r\n    right: 250px;\r\n    width: 250px;\r\n    transition: all .4s ease 0s;\r\n  }\r\n  \r\n  .toggle {\r\n    font-size: 1em;\r\n    margin: 5px 5px 0 0;\r\n    padding: 15px 20px;\r\n  }\r\n  \r\n  /* About */\r\n  \r\n  .about {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  \r\n  /* Services */\r\n  \r\n  .services {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  .service-item {\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  \r\n  /* Portfolio */\r\n  \r\n  .portfolio {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  .portfolio-item {\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  .img-portfolio {\r\n    margin: 0 auto;\r\n  }\r\n  \r\n  .img-portfolio:hover {\r\n    opacity: .8;\r\n  }\r\n  \r\n  \r\n  /* Call to Action */\r\n  \r\n  .call-to-action {\r\n    padding: 50px 0;\r\n    position: relative;\r\n    display: table;\r\n    width: 100%;\r\n    height: 100%;\r\n    /*background-image: url(\"/TP_LAV4_2017/assets/img/portfolio-1.jpg\");*/\r\n    background-size: cover;\r\n    \r\n  }\r\n  \r\n  .call-to-action .btn {\r\n    margin: 10px;\r\n  }\r\n  \r\n  \r\n  /* Map */\r\n  \r\n  .map {\r\n    height: 500px;\r\n  }\r\n  \r\n  @media(max-width:768px) {\r\n    .map {\r\n      height: 75%;\r\n    }\r\n  }\r\n  \r\n  .map iframe {\r\n    pointer-events: none;\r\n  }\r\n  \r\n  \r\n  /* Footer */\r\n  \r\n  footer {\r\n    padding: 100px 0;\r\n  }\r\n  \r\n  #to-top {\r\n    font-size: 1em;\r\n    position: fixed;\r\n    right: 5px;\r\n    bottom: 5px;\r\n    display: none;\r\n    padding: 15px 20px;\r\n  }\r\n  \r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6AWFB719wL-IHEnSF8-2rFs.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6OVZ3CCwM_Xw90386HKrPvM.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Lx9L3-3Kr6jyUBO7E3vK30.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6C_jRg-drP9kJc3iu_jpocg.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6E78GtRp3lhchupCJNw8t58.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Lpx497t94oDua8KfAL9f-E.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6MAjkyiewWYrWZc50I8hK7I.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMzH9_sidkFTxRpx-nVOZt1g.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMywVDUTj8DgJRSuHEKdySfs.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM7Y_mfr7j0PatIrZBoJCV9E.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM2qPyaMejTZ925Ro5CnyJwc.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM7YHq4FgHI02B8rPccK0FJQ.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM40tgx99jmYGv_xzYuwd1rU.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMxgy2Fsj5sj3EzlXpqVXRKo.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6JqP6xWf9Yk-m0jBjmerUXc.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6EV4woOUTFhIhLb1QSWCKuw.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6B697u9NcGP3e5023qcgQ9Y.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6C68B3wi5NSSuXaI5ma6QYk.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6J-EY3txTwhUdSs_eHhDaJM.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Kr3NmSntz3GE6rIpxOPZGY.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Nnl6YROR5rHLkdLoHwoOWA.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGKhisFFF-0ifc-Simo8uwJs.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGNJvocFWY_5VFjYFbAOOIik.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGLGN1mc631ObjHzqJB_dFFA.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGI3P6ux3HwbL10a8ofNXGLA.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGD_j0nMiB9fPhg_k1wdK2h0.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGDRVvBvQIc1z78c__uoBcyI.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlAC5S7WFEeHRqL6ObGQGT8o.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMgmx_L9kV4w6g8dYQOLFUI.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMODs9238LZG2v64UiBIjng.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlFjqPhnWKseBf12Mt9_m7kc.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNOAHFN6BivSraYkjhveRHY.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlC2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGH2tx1iQUBYLA4fTJZSoO3U.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGJaoTU19aO7Bfv-FLfOt5YM.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGHvBSgOUtlSCpvi6_8Wv308.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGO4f2SQTi4oYi3kh3bYmG2Y.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGDovqjS_dXPZszO_XltPdNg.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGFxe-GPfKKFmiXaJ_Q0GFr8.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGEo0As1BFRXtCDhS66znb_k.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }", ""]);
+exports.push([module.i, "/*.panel\r\n{\r\n    height: 200px;\r\n    background-image: url(\"/assets/imagenes/cabecera.png\");\r\n    background-position: center;\r\n    background-repeat: no-repeat;\r\n    background-size: cover;\r\n    position: relative;\r\n}\r\n\r\n\r\n.hero-text {\r\ntext-align: center;\r\nposition: absolute;\r\ntop: 50%;\r\nleft: 50%;\r\ntransform: translate(-50%, -50%);\r\ncolor: #3E06B0;\r\n}\r\n\r\n.hero-text a {\r\nborder: none;\r\noutline: 0;\r\ndisplay: inline-block;\r\npadding: 10px 25px;\r\ncolor: black;\r\nbackground-color: #ddd;\r\ntext-align: center;\r\ncursor: pointer;\r\n}\r\n\r\n.hero-text a:hover {\r\nbackground-color: #555;\r\ncolor: white;\r\n}*/\r\n\r\nhtml, body {\r\n    width: 100%;\r\n    height: 100%;\r\n  }\r\n  \r\n  body {\r\n    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;\r\n  }\r\n  \r\n  .text-vertical-center {\r\n    display: table-cell;\r\n    text-align: center;\r\n    vertical-align: middle;\r\n  }\r\n  \r\n  .text-vertical-center h1 {\r\n    font-size: 4.5em;\r\n    font-weight: 700;\r\n    margin: 0;\r\n    padding: 0;\r\n  }\r\n  \r\n  \r\n  /* Custom Button Styles */\r\n  \r\n  .btn-dark {\r\n    color: #fff;\r\n    border: none;\r\n    border-radius: 0;\r\n    background-color: rgba(0, 0, 0, .4);\r\n  }\r\n  \r\n  .btn-dark:hover, .btn-dark:focus, .btn-dark:active {\r\n    color: #fff;\r\n    background-color: rgba(0, 0, 0, .7);\r\n  }\r\n  \r\n  .btn-light {\r\n    color: #333;\r\n    border: none;\r\n    border-radius: 0;\r\n    background-color: rgb(255, 255, 255);\r\n  }\r\n  \r\n  .btn-light:hover, .btn-light:focus, .btn-light:active {\r\n    color: #333;\r\n    background-color: rgba(255, 255, 255, .8);\r\n  }\r\n  \r\n  \r\n  /* Custom Horizontal Rule */\r\n  \r\n  hr.small {\r\n    max-width: 100px;\r\n  }\r\n  \r\n  \r\n  /* Side Menu */\r\n  \r\n  #sidebar-wrapper {\r\n    position: fixed;\r\n    z-index: 1000;\r\n    right: 0;\r\n    overflow-y: auto;\r\n    width: 250px;\r\n    height: 100%;\r\n    transition: all .4s ease 0s;\r\n    -webkit-transform: translateX(250px);\r\n            transform: translateX(250px);\r\n    background: #222;\r\n  }\r\n  \r\n  .sidebar-nav {\r\n    position: absolute;\r\n    top: 0;\r\n    width: 250px;\r\n    margin: 0;\r\n    padding: 0;\r\n    list-style: none;\r\n  }\r\n  \r\n  .sidebar-nav li {\r\n    line-height: 40px;\r\n    text-indent: 20px;\r\n  }\r\n  \r\n  .sidebar-nav li a {\r\n    display: block;\r\n    text-decoration: none;\r\n    color: #999;\r\n  }\r\n  \r\n  .sidebar-nav li a:hover {\r\n    text-decoration: none;\r\n    color: #fff;\r\n    background: rgba(255, 255, 255, .2);\r\n  }\r\n  \r\n  .sidebar-nav li a:active, .sidebar-nav li a:focus {\r\n    text-decoration: none;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand {\r\n    font-size: 18px;\r\n    line-height: 55px;\r\n    height: 55px;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand a {\r\n    color: #999;\r\n  }\r\n  \r\n  .sidebar-nav>.sidebar-brand a:hover {\r\n    color: #fff;\r\n    background: none;\r\n  }\r\n  \r\n  #menu-toggle {\r\n    position: fixed;\r\n    z-index: 1;\r\n    top: 0;\r\n    right: 0;\r\n  }\r\n  \r\n  #sidebar-wrapper.active {\r\n    right: 250px;\r\n    width: 250px;\r\n    transition: all .4s ease 0s;\r\n  }\r\n  \r\n  .toggle {\r\n    font-size: 1em;\r\n    margin: 5px 5px 0 0;\r\n    padding: 15px 20px;\r\n  }\r\n  \r\n  /* About */\r\n  \r\n  .about {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  \r\n  /* Services */\r\n  \r\n  .services {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  .service-item {\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  \r\n  /* Portfolio */\r\n  \r\n  .portfolio {\r\n    padding: 50px 0;\r\n  }\r\n  \r\n  .portfolio-item {\r\n    margin-bottom: 30px;\r\n  }\r\n  \r\n  .img-portfolio {\r\n    margin: 0 auto;\r\n  }\r\n  \r\n  .img-portfolio:hover {\r\n    opacity: .8;\r\n  }\r\n  \r\n  \r\n  /* Call to Action */\r\n  \r\n  .call-to-action {\r\n    padding: 50px 0;\r\n    position: relative;\r\n    display: table;\r\n    width: 100%;\r\n    height: 100%;\r\n    /*background-image: url(\"/TP_LAV4_2017/assets/img/portfolio-1.jpg\");*/\r\n    background-size: cover;\r\n    \r\n  }\r\n  \r\n  .call-to-action .btn {\r\n    margin: 10px;\r\n  }\r\n  \r\n  \r\n  /* Map */\r\n  \r\n  .map {\r\n    height: 500px;\r\n  }\r\n  \r\n  @media(max-width:768px) {\r\n    .map {\r\n      height: 75%;\r\n    }\r\n  }\r\n  \r\n  .map iframe {\r\n    pointer-events: none;\r\n  }\r\n  \r\n  \r\n  /* Footer */\r\n  \r\n  footer {\r\n    padding: 100px 0;\r\n  }\r\n  \r\n  #to-top {\r\n    font-size: 1em;\r\n    position: fixed;\r\n    right: 5px;\r\n    bottom: 5px;\r\n    display: none;\r\n    padding: 15px 20px;\r\n  }\r\n  \r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6AWFB719wL-IHEnSF8-2rFs.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6OVZ3CCwM_Xw90386HKrPvM.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Lx9L3-3Kr6jyUBO7E3vK30.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6C_jRg-drP9kJc3iu_jpocg.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6E78GtRp3lhchupCJNw8t58.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Lpx497t94oDua8KfAL9f-E.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6MAjkyiewWYrWZc50I8hK7I.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMzH9_sidkFTxRpx-nVOZt1g.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMywVDUTj8DgJRSuHEKdySfs.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM7Y_mfr7j0PatIrZBoJCV9E.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM2qPyaMejTZ925Ro5CnyJwc.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM7YHq4FgHI02B8rPccK0FJQ.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoM40tgx99jmYGv_xzYuwd1rU.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Italic'), local('SourceSansPro-Italic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/M2Jd71oPJhLKp0zdtTvoMxgy2Fsj5sj3EzlXpqVXRKo.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6JqP6xWf9Yk-m0jBjmerUXc.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6EV4woOUTFhIhLb1QSWCKuw.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6B697u9NcGP3e5023qcgQ9Y.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6C68B3wi5NSSuXaI5ma6QYk.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6J-EY3txTwhUdSs_eHhDaJM.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Kr3NmSntz3GE6rIpxOPZGY.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: italic;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold Italic'), local('SourceSansPro-BoldItalic'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/fpTVHK8qsXbIeTHTrnQH6Nnl6YROR5rHLkdLoHwoOWA.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGKhisFFF-0ifc-Simo8uwJs.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGNJvocFWY_5VFjYFbAOOIik.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGLGN1mc631ObjHzqJB_dFFA.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGI3P6ux3HwbL10a8ofNXGLA.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGD_j0nMiB9fPhg_k1wdK2h0.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGDRVvBvQIc1z78c__uoBcyI.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 300;\r\n    src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlAC5S7WFEeHRqL6ObGQGT8o.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMgmx_L9kV4w6g8dYQOLFUI.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlMODs9238LZG2v64UiBIjng.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlFjqPhnWKseBf12Mt9_m7kc.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNOAHFN6BivSraYkjhveRHY.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlC2Q8seG17bfDXYR_jUsrzg.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    src: local('Source Sans Pro Regular'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }\r\n  /* cyrillic-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGH2tx1iQUBYLA4fTJZSoO3U.woff2) format('woff2');\r\n    unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;\r\n  }\r\n  /* cyrillic */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGJaoTU19aO7Bfv-FLfOt5YM.woff2) format('woff2');\r\n    unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;\r\n  }\r\n  /* greek-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGHvBSgOUtlSCpvi6_8Wv308.woff2) format('woff2');\r\n    unicode-range: U+1F00-1FFF;\r\n  }\r\n  /* greek */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGO4f2SQTi4oYi3kh3bYmG2Y.woff2) format('woff2');\r\n    unicode-range: U+0370-03FF;\r\n  }\r\n  /* vietnamese */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGDovqjS_dXPZszO_XltPdNg.woff2) format('woff2');\r\n    unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;\r\n  }\r\n  /* latin-ext */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGFxe-GPfKKFmiXaJ_Q0GFr8.woff2) format('woff2');\r\n    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\r\n  }\r\n  /* latin */\r\n  @font-face {\r\n    font-family: 'Source Sans Pro';\r\n    font-style: normal;\r\n    font-weight: 700;\r\n    src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v11/toadOcfmlt9b38dHJxOBGEo0As1BFRXtCDhS66znb_k.woff2) format('woff2');\r\n    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;\r\n  }", ""]);
 
 // exports
 
@@ -1705,7 +1997,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/cabecera/cabecera.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--div class=\"panel panel-default\">\n  <div class=\"hero-text\">\n      <h1 style=\"font-size:50px\">Acerca de</h1>\n      <p>Cristian Witt</p>\n      <a href=\"https://github.com/octaviovillegas\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\n      <a  routerLink=\"/QuienSoy\" >Quien Soy? <i class=\"fa fa-user\"></i></a>\n  </div>\n  <ul class=\"nav navbar-nav navbar-right\">\n          <li><a routerLink=\"/Registro\"><span class=\"glyphicon glyphicon-user\"></span>Registrarse</a></li>\n          <li><a  routerLink=\"/Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Ingresar</a></li>\n  </ul>\n</div-->\n\n<aside class=\"call-to-action bg-primary text-white\">\n    <div class=\"container text-center\">\n      <h1>Acerca de</h1>\n      <h3>Cristian Witt</h3>\n      <a href=\"https://github.com/ccwittv\" class=\"btn btn-lg btn-light\" target=\"_blank\">en Github <i class=\"fa fa-github\"></i></a>\n      <a routerLink=\"/QuienSoy\" class=\"btn btn-lg btn-dark\">Quién Soy? <i class=\"fa fa-user\"></i></a>\n    </div>\n</aside>\n"
+module.exports = "<!--div class=\"panel panel-default\">\n  <div class=\"hero-text\">\n      <h1 style=\"font-size:50px\">Acerca de</h1>\n      <p>Cristian Witt</p>\n      <a href=\"https://github.com/octaviovillegas\"target=\"_blank\">en GitHub <i class=\"fa fa-github\"></i></a>\n      <a  routerLink=\"/QuienSoy\" >Quien Soy? <i class=\"fa fa-user\"></i></a>\n  </div>\n  <ul class=\"nav navbar-nav navbar-right\">\n          <li><a routerLink=\"/Registro\"><span class=\"glyphicon glyphicon-user\"></span>Registrarse</a></li>\n          <li><a  routerLink=\"/Login\"><span class=\"glyphicon glyphicon-log-in\"></span> Ingresar</a></li>\n  </ul>\n</div-->\n\n<aside class=\"call-to-action bg-primary text-white\">\n    <div class=\"container text-center\">\n      <h1>Acerca de</h1>\n      <h3>Cristian Witt</h3>\n      <a href=\"https://github.com/ccwittv\" class=\"btn btn-lg btn-light\" target=\"_blank\">en Github <i class=\"fa fa-github\"></i></a>\n      <!--a routerLink=\"/QuienSoy\" class=\"btn btn-lg btn-dark\">Quién Soy? <i class=\"fa fa-user\"></i></a-->\n      <a href=\"/QuienSoy#mainNav\" class=\"btn btn-lg btn-dark\">Quién Soy? <i class=\"fa fa-user\"></i></a>\n    </div>\n</aside>\n"
 
 /***/ }),
 
@@ -1890,7 +2182,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/listado-de-resultados/listado-de-resultados.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--div *ngFor=\"let juego of listado\">\n\n<p> {{juego.nombre}} </p>\n<p> {{juego.jugador}} </p>\n\n</div-->\n\n<table class=\"table table-condensed\">\n    <thead>\n      <tr>\n        <th>Juego</th>\n        <th>Jugador</th>\n        <th>Resultado</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let juego of listado\">\n        <td>{{juego.nombre}} </td>\n        <td>{{juego.jugador}} </td> \n        <td *ngIf=\"juego.resultado\">Gano </td>   \n        <td *ngIf=\"!juego.resultado\">Perdio</td>     \n      </tr>\n     \n    </tbody>\n  </table>"
+module.exports = "<!--div *ngFor=\"let juego of listado\">\n\n<p> {{juego.nombre}} </p>\n<p> {{juego.jugador}} </p>\n\n</div-->\n\n<table class=\"table table-condensed\" style=\"font-family:comic sans ms;\">\n    <thead>\n      <tr>\n        <th>Juego</th>\n        <th>Jugador</th>\n        <th>Resultado</th>\n        <th>Observación</th>\n        <th>Fecha de juego</th>\n        <th>Hora de juego</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let juego of listadoTodo | async\">\n        <td>{{juego.nombre}} </td>\n        <td>{{juego.jugador}} </td> \n        <td>{{juego.resultado}} </td> \n        <td>{{juego.observacion}} </td> \n        <td>{{juego.fechajuego}} </td> \n        <td>{{juego.horajuego}} </td>   \n      </tr>\n      <tr *ngFor=\"let juego of listadoPPT | async\">\n        <td *ngIf=\"juego.identificador == 'PPT'\">{{juego.nombre}} </td>\n        <td *ngIf=\"juego.identificador == 'PPT'\">{{juego.jugador}} </td> \n        <td *ngIf=\"juego.identificador == 'PPT'\">{{juego.resultado}} </td> \n        <td *ngIf=\"juego.identificador == 'PPT'\">{{juego.observacion}} </td> \n        <td *ngIf=\"juego.identificador == 'PPT'\">{{juego.fechajuego}} </td> \n        <td *ngIf=\"juego.identificador == 'PPT'\">{{juego.horajuego}} </td>   \n      </tr>\n      <tr *ngFor=\"let juego of listadoAA | async\">\n        <td *ngIf=\"juego.identificador == 'AA'\">{{juego.nombre}} </td>\n        <td *ngIf=\"juego.identificador == 'AA'\">{{juego.jugador}} </td> \n        <td *ngIf=\"juego.identificador == 'AA'\">{{juego.resultado}} </td> \n        <td *ngIf=\"juego.identificador == 'AA'\">{{juego.observacion}} </td> \n        <td *ngIf=\"juego.identificador == 'AA'\">{{juego.fechajuego}} </td> \n        <td *ngIf=\"juego.identificador == 'AA'\">{{juego.horajuego}} </td>   \n      </tr>\n      <tr *ngFor=\"let juego of listadoAN | async\">\n        <td *ngIf=\"juego.identificador == 'AN'\">{{juego.nombre}} </td>\n        <td *ngIf=\"juego.identificador == 'AN'\">{{juego.jugador}} </td> \n        <td *ngIf=\"juego.identificador == 'AN'\">{{juego.resultado}} </td> \n        <td *ngIf=\"juego.identificador == 'AN'\">{{juego.observacion}} </td> \n        <td *ngIf=\"juego.identificador == 'AN'\">{{juego.fechajuego}} </td> \n        <td *ngIf=\"juego.identificador == 'AN'\">{{juego.horajuego}} </td>   \n      </tr>\n      <tr *ngFor=\"let juego of listadoAG | async\">\n        <td *ngIf=\"juego.identificador == 'AG'\">{{juego.nombre}} </td>\n        <td *ngIf=\"juego.identificador == 'AG'\">{{juego.jugador}} </td> \n        <td *ngIf=\"juego.identificador == 'AG'\">{{juego.resultado}} </td> \n        <td *ngIf=\"juego.identificador == 'AG'\">{{juego.observacion}} </td> \n        <td *ngIf=\"juego.identificador == 'AG'\">{{juego.fechajuego}} </td> \n        <td *ngIf=\"juego.identificador == 'AG'\">{{juego.horajuego}} </td>   \n      </tr>\n      <tr *ngFor=\"let juego of listadoMT | async\">\n        <td *ngIf=\"juego.identificador == 'MT'\">{{juego.nombre}} </td>\n        <td *ngIf=\"juego.identificador == 'MT'\">{{juego.jugador}} </td> \n        <td *ngIf=\"juego.identificador == 'MT'\">{{juego.resultado}} </td> \n        <td *ngIf=\"juego.identificador == 'MT'\">{{juego.observacion}} </td> \n        <td *ngIf=\"juego.identificador == 'MT'\">{{juego.fechajuego}} </td> \n        <td *ngIf=\"juego.identificador == 'MT'\">{{juego.horajuego}} </td>   \n      </tr>\n     \n    </tbody>\n  </table>"
 
 /***/ }),
 
@@ -1916,14 +2208,34 @@ var ListadoDeResultadosComponent = (function () {
     ListadoDeResultadosComponent.prototype.ngOnInit = function () {
     };
     ListadoDeResultadosComponent.prototype.ver = function () {
-        console.info(this.listado);
+        //console.info(this.listado);
     };
     return ListadoDeResultadosComponent;
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
     __metadata("design:type", Object)
-], ListadoDeResultadosComponent.prototype, "listado", void 0);
+], ListadoDeResultadosComponent.prototype, "listadoPPT", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], ListadoDeResultadosComponent.prototype, "listadoAA", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], ListadoDeResultadosComponent.prototype, "listadoAN", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], ListadoDeResultadosComponent.prototype, "listadoAG", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], ListadoDeResultadosComponent.prototype, "listadoMT", void 0);
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["F" /* Input */])(),
+    __metadata("design:type", Object)
+], ListadoDeResultadosComponent.prototype, "listadoTodo", void 0);
 ListadoDeResultadosComponent = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["o" /* Component */])({
         selector: 'app-listado-de-resultados',
@@ -1958,7 +2270,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/listado/listado.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<!--input type=\"button\" (click)=\"llamaService()\" class=\"btn btn-info\" value=\"Pulsame\" > \n<input type=\"button\" (click)=\"llamaServicePromesa()\" class=\"btn btn-info\" value=\"Pulsame Promesa\" --> \n\n<!-- Centered Pills -->\n<ul class=\"nav nav-pills nav-justified\">\n    <li class=\"active\"><a routerLink=\"/Principal\">Sala de Juegos</a></li>\n    <li><a (click)=\"llamaService()\">Servicio</a></li>\n    <li><a (click)=\"llamaServicePromesa()\">Serv Promesa</a></li>\n    <li><a (click)=\"llamaServicePromesa()\">Serv observable</a></li>\n  </ul>\n  \n<app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados>\n\n"
+module.exports = "\n<!--input type=\"button\" (click)=\"llamaService()\" class=\"btn btn-info\" value=\"Pulsame\" > \n<input type=\"button\" (click)=\"llamaServicePromesa()\" class=\"btn btn-info\" value=\"Pulsame Promesa\" --> \n\n<!-- Centered Pills -->\n<ul class=\"nav nav-pills nav-justified\">\n    <li class=\"active\"><a routerLink=\"/Principal\">Sala de Juegos</a></li>\n    <li><a (click)=\"llamaService()\">Servicio</a></li>\n    <li><a (click)=\"llamaServicePromesa()\">Serv Promesa</a></li>\n    <li><a (click)=\"llamaServicePromesa()\">Serv observable</a></li>\n  </ul>\n<!--app-listado-de-resultados [listado]=\"listadoParaCompartir\"> </app-listado-de-resultados-->"
 
 /***/ }),
 
@@ -2021,7 +2333,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "", ""]);
+exports.push([module.i, "/* Style all font awesome icons */\r\n.fa {\r\n    padding: 20px;\r\n    font-size: 30px;\r\n    width: 50px;\r\n    text-align: center;\r\n    text-decoration: none;\r\n    border-radius: 50%;\r\n}\r\n\r\n/* Add a hover effect if you want */\r\n.fa:hover {\r\n    opacity: 0.7;\r\n}\r\n\r\n/* Set a specific color for each brand */\r\n\r\n/* Facebook */\r\n.fa-facebook {\r\n    background: #3B5998;\r\n    color: white;\r\n}\r\n\r\n/* Twitter */\r\n.fa-twitter {\r\n    background: #55ACEE;\r\n    color: white;\r\n}", ""]);
 
 // exports
 
@@ -2034,7 +2346,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/listados/listados.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  listados works!\n</p>\n"
+module.exports = "<!--app-side-menu-listado></app-side-menu-listado-->\n<!-- Navigation -->\n<nav class=\"navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top\">\n    <div class=\"container\">\n      <!--a class=\"navbar-brand\" href=\"index.html\">Sala de Juegos</a-->    \n      <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n        <ul class=\"navbar-nav ml-auto\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/Principal\">Home</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" routerLink=\"/Juegos\">Menu de Juegos</a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link\" (click)=\"listadoTodo()\">Todos los juegos</a>\n          </li>\n          <!--li class=\"nav-item\">\n            <a class=\"nav-link\" href=\"contact.html\">Contact</a>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownPortfolio\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              Portfolio\n            </a>\n            <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownPortfolio\">\n              <a class=\"dropdown-item\" href=\"portfolio-1-col.html\">1 Column Portfolio</a>\n              <a class=\"dropdown-item\" href=\"portfolio-2-col.html\">2 Column Portfolio</a>\n              <a class=\"dropdown-item\" href=\"portfolio-3-col.html\">3 Column Portfolio</a>\n              <a class=\"dropdown-item\" href=\"portfolio-4-col.html\">4 Column Portfolio</a>\n              <a class=\"dropdown-item\" href=\"portfolio-item.html\">Single Portfolio Item</a>\n            </div>\n          </li>\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              Blog\n            </a>\n            <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">\n              <a class=\"dropdown-item\" href=\"blog-home-1.html\">Blog Home 1</a>\n              <a class=\"dropdown-item\" href=\"blog-home-2.html\">Blog Home 2</a>\n              <a class=\"dropdown-item\" href=\"blog-post.html\">Blog Post</a>\n            </div>\n          </li-->\n          <li class=\"nav-item dropdown\">\n            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdownBlog\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              Listados\n            </a>\n            <div class=\"dropdown-menu dropdown-menu-right\" aria-labelledby=\"navbarDropdownBlog\">\n              <a class=\"dropdown-item\" (click)=\"listadoPPT()\">Piedra, papel o tijera</a>\n              <a class=\"dropdown-item\" (click)=\"listadoAA()\">Agilidad Aritmética</a>\n              <a class=\"dropdown-item\" (click)=\"listadoAN()\">Adivina el número</a>\n              <a class=\"dropdown-item\" (click)=\"listadoAG()\">Anagrama</a>\n              <a class=\"dropdown-item\" (click)=\"listadoMT()\">Memotest</a>\n              <!--a class=\"dropdown-item\" href=\"full-width.html\">Full Width Page</a>\n              <a class=\"dropdown-item\" href=\"sidebar.html\">Sidebar Page</a>\n              <a class=\"dropdown-item\" href=\"faq.html\">FAQ</a>\n              <a class=\"dropdown-item\" href=\"404.html\">404</a>\n              <a class=\"dropdown-item\" href=\"pricing.html\">Pricing Table</a-->\n            </div>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <br>  \n  <br>  \n  <br>  \n  <app-listado-de-resultados [listadoPPT]=\"listadoParaCompartirPPT\" \n                             [listadoAA]=\"listadoParaCompartirAA\"\n                             [listadoAN]=\"listadoParaCompartirAN\"\n                             [listadoAG]=\"listadoParaCompartirAG\"\n                             [listadoMT]=\"listadoParaCompartirMT\"\n                             [listadoTodo]=\"listadoParaCompartirTodo\"></app-listado-de-resultados>"
 
 /***/ }),
 
@@ -2044,6 +2356,7 @@ module.exports = "<p>\n  listados works!\n</p>\n"
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListadosComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__servicios_mi_firebase_juego_servicio_service__ = __webpack_require__("../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2054,10 +2367,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ListadosComponent = (function () {
-    function ListadosComponent() {
+    function ListadosComponent(servicioJuego) {
+        this.miServicioJuego = servicioJuego;
     }
     ListadosComponent.prototype.ngOnInit = function () {
+    };
+    ListadosComponent.prototype.borrarTodo = function () {
+        this.listadoParaCompartirAA = this.listadoJuegos;
+        this.listadoParaCompartirAN = this.listadoJuegos;
+        this.listadoParaCompartirAG = this.listadoJuegos;
+        this.listadoParaCompartirPPT = this.listadoJuegos;
+        this.listadoParaCompartirMT = this.listadoJuegos;
+        this.listadoParaCompartirTodo = this.listadoJuegos;
+    };
+    ListadosComponent.prototype.listadoTodo = function () {
+        this.borrarTodo();
+        this.listadoParaCompartirTodo = this.miServicioJuego.dameLosJuegos();
+    };
+    ListadosComponent.prototype.listadoPPT = function () {
+        this.borrarTodo();
+        this.listadoParaCompartirPPT = this.miServicioJuego.dameLosJuegos();
+    };
+    ListadosComponent.prototype.listadoAA = function () {
+        this.borrarTodo();
+        this.listadoParaCompartirAA = this.miServicioJuego.dameLosJuegos();
+    };
+    ListadosComponent.prototype.listadoAN = function () {
+        console.log("paso por listadoAN");
+        this.borrarTodo();
+        this.listadoParaCompartirAN = this.miServicioJuego.dameLosJuegos();
+    };
+    ListadosComponent.prototype.listadoAG = function () {
+        this.borrarTodo();
+        this.listadoParaCompartirAG = this.miServicioJuego.dameLosJuegos();
+    };
+    ListadosComponent.prototype.listadoMT = function () {
+        this.borrarTodo();
+        this.listadoParaCompartirMT = this.miServicioJuego.dameLosJuegos();
     };
     return ListadosComponent;
 }());
@@ -2067,9 +2415,10 @@ ListadosComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/componentes/listados/listados.component.html"),
         styles: [__webpack_require__("../../../../../src/app/componentes/listados/listados.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__servicios_mi_firebase_juego_servicio_service__["a" /* MiFirebaseJuegoServicioService */]) === "function" && _a || Object])
 ], ListadosComponent);
 
+var _a;
 //# sourceMappingURL=listados.component.js.map
 
 /***/ }),
@@ -2275,7 +2624,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/menu-card/menu-card.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">    \n\n<!-- Bootstrap core CSS -->\n    <!--link href=\"./vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\"-->  \n<!-- Bootstrap core JavaScript -->\n     <!--script src=\"./vendor/jquery/jquery.min.js\"></script>\n     <script src=\"./vendor/bootstrap/js/bootstrap.bundle.min.js\"></script-->  \n\n  </head>\n\n  <body>\n<!-- Page Content -->\n<div class=\"container\">\n              \n          <div class=\"row\">\n            <!--div class=\"col-lg-12 animated bounceInDown\" style=\"text-align:center\">\n              <h1 class=\"my-4\">NUESTROS JUEGOS</h1>\n            </div-->\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInRight\">                              \n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/agilidad-1.png\" alt=\"Avatar\">\n              <h4> Velocidad y agilidad aritmética</h4>\n              <h5>Juego de agilidad mental</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Agilidad')\">Jugar !!!</button>\n            </div>\n            \n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInLeft\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/Piedra_papel_tijeras-2.png\" alt=\"Avatar\">\n              <h4> Piedra, Papel o Tijera</h4>\n              <h5>Juega contra la máquina</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('PiedraPapelTijera')\">Jugar !!!</button>\n            </div>\n            \n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInDown\">\n                <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/adivina-1.jpg\" alt=\"Avatar\">\n                <h4> Adivina el número secreto</h4>\n                <h5>Juego de estrategia</h5>              \n                <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Adivina')\">Jugar !!!</button>\n            </div>\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInUp\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/anagrama-1.jpg\" alt=\"Avatar\">\n              <h4> Anagrama</h4>\n              <h5>Juego de habilidad intelectual</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Anagrama')\">Jugar !!!</button>\n            </div>\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInRight\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/memotest-1.jpg\" alt=\"Avatar\">\n              <h4> Memotest</h4>\n              <h5>Juego de recuerdos a corto plazo</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Memotest')\">Jugar !!!</button>\n            </div>\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInLeft\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n              <h4>Nuevo Juego</h4>\n              <h5>Descripción</h5>\n            </div>\n          </div>\n    \n        </div>\n        <!-- /.container -->        \n    \n      </body>\n    \n    </html>\n    \n\n<!--div class=\"container\" >\n    <div class=\"card\">\n      <img class=\"img-thumbnail\"   src=\"/TP_LAV4_2017/assets/imagenes/cerebro.jpg\" alt=\"Avatar\" style=\"width:100%\">\n      <h1>Velocidad y agilidad aritmética </h1>\n      <p class=\"title\">Juego de agilidad mental</p>\n      <p>UTN FRA </p>\n  \n      <a href=\"#\"><i class=\"fa fa-dribbble\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-twitter\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-facebook\"></i></a> \n      <p>           <button class=\"button\"  (click)=\"Juego('Agilidad')\">Jugar</button></p>\n    \n    </div>\n  \n    <div class=\"card\">\n      <img class=\"img-thumbnail\" src=\"/TP_LAV4_2017/assets/imagenes/ppt.jpg\" alt=\"Avatar\" style=\"width:100%\">\n      <h1>Piedra Papel o Tijera</h1>\n      <p class=\"title\">Juega contra la máquina</p>\n      <p>UTN FRA </p>\n      \n      <a href=\"#\"><i class=\"fa fa-dribbble\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-twitter\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-facebook\"></i></a> \n      <p>           <button class=\"button\"  (click)=\"Juego('PPT')\">Jugar</button></p>\n    </div>\n    <div class=\"card\">\n      <img  class=\"img-thumbnail\"  src=\"/TP_LAV4_2017/assets/imagenes/adivina.png\" alt=\"Avatar\" style=\"width:100%\">\n      <h1>Adivina el número secreto</h1>\n      <p class=\"title\">Juega de estrategia</p>\n      <p>UTN FRA </p>\n      \n      <a href=\"#\"><i class=\"fa fa-dribbble\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-twitter\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-facebook\"></i></a> \n      <p>           <button class=\"button\"  (click)=\"Juego('Adivina')\">Jugar</button></p>\n    </div>\n  </div-->"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">    \n\n<!-- Bootstrap core CSS -->\n    <!--link href=\"./vendor/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\"-->  \n<!-- Bootstrap core JavaScript -->\n     <!--script src=\"./vendor/jquery/jquery.min.js\"></script>\n     <script src=\"./vendor/bootstrap/js/bootstrap.bundle.min.js\"></script-->  \n\n  </head>\n\n  <body style=\"font-family:comic sans ms;\">\n<!-- Page Content -->\n<div class=\"container\">\n              \n          <div class=\"row\">\n            <!--div class=\"col-lg-12 animated bounceInDown\" style=\"text-align:center\">\n              <h1 class=\"my-4\">NUESTROS JUEGOS</h1>\n            </div-->\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInRight\">                              \n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/agilidad-1.png\" alt=\"Avatar\">\n              <h4> Velocidad y agilidad aritmética</h4>\n              <h5>Juego de agilidad mental</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Agilidad')\">Jugar !!!</button>\n            </div>\n            \n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInLeft\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/Piedra_papel_tijeras-2.png\" alt=\"Avatar\">\n              <h4> Piedra, Papel o Tijera</h4>\n              <h5>Juega contra la máquina</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('PiedraPapelTijera')\">Jugar !!!</button>\n            </div>\n            \n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInDown\">\n                <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/adivina-1.jpg\" alt=\"Avatar\">\n                <h4> Adivina el número secreto</h4>\n                <h5>Juego de estrategia</h5>              \n                <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Adivina')\">Jugar !!!</button>\n            </div>\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInUp\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/anagrama-1.jpg\" alt=\"Avatar\">\n              <h4> Anagrama</h4>\n              <h5>Juego de habilidad intelectual</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Anagrama')\">Jugar !!!</button>\n            </div>\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInRight\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/memotest-1.jpg\" alt=\"Avatar\">\n              <h4> Memotest</h4>\n              <h5>Juego de recuerdos a corto plazo</h5>              \n              <button type=\"button\" class=\"btn btn-success btn-lg\" (click)=\"Juego('Memotest')\">Jugar !!!</button>\n            </div>\n            <div class=\"col-lg-4 col-sm-6 text-center mb-4 animated zoomInLeft\">\n              <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"http://placehold.it/200x200\" alt=\"\">\n              <h4>Nuevo Juego</h4>\n              <h5>Descripción</h5>\n            </div>\n          </div>\n    \n        </div>\n        <!-- /.container -->        \n    \n      </body>\n    \n    </html>\n    \n\n<!--div class=\"container\" >\n    <div class=\"card\">\n      <img class=\"img-thumbnail\"   src=\"../assets/imagenes/cerebro.jpg\" alt=\"Avatar\" style=\"width:100%\">\n      <h1>Velocidad y agilidad aritmética </h1>\n      <p class=\"title\">Juego de agilidad mental</p>\n      <p>UTN FRA </p>\n  \n      <a href=\"#\"><i class=\"fa fa-dribbble\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-twitter\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-facebook\"></i></a> \n      <p>           <button class=\"button\"  (click)=\"Juego('Agilidad')\">Jugar</button></p>\n    \n    </div>\n  \n    <div class=\"card\">\n      <img class=\"img-thumbnail\" src=\"../assets/imagenes/ppt.jpg\" alt=\"Avatar\" style=\"width:100%\">\n      <h1>Piedra Papel o Tijera</h1>\n      <p class=\"title\">Juega contra la máquina</p>\n      <p>UTN FRA </p>\n      \n      <a href=\"#\"><i class=\"fa fa-dribbble\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-twitter\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-facebook\"></i></a> \n      <p>           <button class=\"button\"  (click)=\"Juego('PPT')\">Jugar</button></p>\n    </div>\n    <div class=\"card\">\n      <img  class=\"img-thumbnail\"  src=\"../assets/imagenes/adivina.png\" alt=\"Avatar\" style=\"width:100%\">\n      <h1>Adivina el número secreto</h1>\n      <p class=\"title\">Juega de estrategia</p>\n      <p>UTN FRA </p>\n      \n      <a href=\"#\"><i class=\"fa fa-dribbble\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-twitter\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a> \n      <a href=\"#\"><i class=\"fa fa-facebook\"></i></a> \n      <p>           <button class=\"button\"  (click)=\"Juego('Adivina')\">Jugar</button></p>\n    </div>\n  </div-->"
 
 /***/ }),
 
@@ -2323,6 +2672,7 @@ var MenuCardComponent = (function () {
                 break;
             case 'Anagrama':
                 this.router.navigate(['/Juegos/Anagrama']);
+                break;
             case 'Memotest':
                 this.router.navigate(['/Juegos/Memotest']);
                 break;
@@ -2365,7 +2715,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/menu/menu.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation -->\n<a id=\"menu-toggle\" href=\"#\" class=\"btn btn-dark btn-lg toggle\">\n  <i class=\"fa fa-bars\"></i>\n</a>\n<nav id=\"sidebar-wrapper\">\n  <ul class=\"sidebar-nav\">\n    <a id=\"menu-close\" href=\"#\" class=\"btn btn-light btn-lg pull-right toggle\">\n      <i class=\"fa fa-times\"></i>\n    </a>\n    <li class=\"sidebar-brand\">\n      <a class=\"js-scroll-trigger\" *ngIf = \"hayAlguienLogueado\">{{usuarioLogueado}}</a>\n      <a class=\"js-scroll-trigger\" *ngIf = \"!hayAlguienLogueado\">Sala de juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" routerLink=\"/Principal\">Home</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" routerLink=\"/Juegos\">Menú de Juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" (click)=\"Juego('Agilidad')\">Agilidad</a>\n    </li>    \n    <li>\n      <a class=\"js-scroll-trigger\" (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</a>\n    </li>\n    <li>\n      <!--a class=\"js-scroll-trigger\" href=\"#services\">Services</a-->\n      <a class=\"js-scroll-trigger\" data-toggle=\"tooltip\" title=\"Hooray!\" (click)=\"Juego('Adivina')\">Adivina</a>\n    </li>    \n    <li>\n      <a class=\"js-scroll-trigger\" (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\"  (click)=\"Juego('PiedraPapelTijera')\">Piedra, Papel o Tijera</a>\n    </li>        \n    <li>\n      <a class=\"js-scroll-trigger\"  (click)=\"Juego('Anagrama')\">Anagrama</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\"  (click)=\"Juego('Memotest')\">Memotest</a>\n    </li>           \n    <li>\n      <a routerLink=\"#\">Registrarse <span class=\"fa fa-user fa-fw\"></span></a>\n    </li>\n    <li>\n      <a routerLink=\"/Login\" *ngIf = \"!hayAlguienLogueado\">Ingresar <span class=\"fa fa-sign-in\"></span></a>\n      <a routerLink=\"/Login\" *ngIf = \"hayAlguienLogueado\">Salir <span class=\"fa fa-sign-out\"></span></a>\n    </li>\n\n  </ul>\n</nav>\n\n  <!--nav class=\"navbar navbar-inverse\">\n      <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n            <span class=\"icon-bar\"></span>\n                                  \n          </button>\n          <a class=\"navbar-brand\" routerLink=\"/Principal\">Inicio</a>\n        </div>\n        <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n            <ul class=\"nav navbar-nav\">\n                <li class=\"active\"><a routerLink=\"/Juegos\">Menú de Juegos</a></li>\n                <li><a data-toggle=\"tooltip\" title=\"Hooray!\" (click)=\"Juego('Adivina')\">Adivina</a></li>\n                <li><a  (click)=\"Juego('Agilidad')\">Agilidad</a></li>\n                <li><a  (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</a></li>\n                <li><a  (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</a></li>\n              </ul>\n              <ul class=\"nav navbar-nav navbar-right\">\n                  <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Mis Datos</a></li>\n                  <li><a href=\"/Login\"><span class=\"glyphicon glyphicon-log-out\"></span> Salir</a></li>\n                </ul>\n        </div>\n      </div>\n    </nav-->\n      \n   "
+module.exports = "<!-- Navigation -->\n<a id=\"menu-toggle\" href=\"#\" class=\"btn btn-dark btn-lg toggle\">\n  <i class=\"fa fa-bars\"></i>\n</a>\n<nav id=\"sidebar-wrapper\">\n  <ul class=\"sidebar-nav\">\n    <a id=\"menu-close\" href=\"#\" class=\"btn btn-light btn-lg pull-right toggle\">\n      <i class=\"fa fa-times\"></i>\n    </a>\n    <li class=\"sidebar-brand\">\n      <a class=\"js-scroll-trigger\" *ngIf = \"hayAlguienLogueado\">{{usuarioLogueado}}</a>\n      <a class=\"js-scroll-trigger\" *ngIf = \"!hayAlguienLogueado\">Sala de juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" routerLink=\"/Principal\">Home</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" routerLink=\"/Juegos\">Menú de Juegos</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\" (click)=\"Juego('Agilidad')\">Agilidad</a>\n    </li>    \n    <!--li>\n      <a class=\"js-scroll-trigger\" (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</a>\n    </li-->\n    <li>\n      <!--a class=\"js-scroll-trigger\" href=\"#services\">Services</a-->\n      <a class=\"js-scroll-trigger\" data-toggle=\"tooltip\" title=\"Hooray!\" (click)=\"Juego('Adivina')\">Adivina</a>\n    </li>    \n    <!--li>\n      <a class=\"js-scroll-trigger\" (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</a>\n    </li-->\n    <li>\n      <a class=\"js-scroll-trigger\"  (click)=\"Juego('PiedraPapelTijera')\">Piedra, Papel o Tijera</a>\n    </li>        \n    <li>\n      <a class=\"js-scroll-trigger\"  (click)=\"Juego('Anagrama')\">Anagrama</a>\n    </li>\n    <li>\n      <a class=\"js-scroll-trigger\"  (click)=\"Juego('Memotest')\">Memotest</a>\n    </li>      \n    <li>\n      <a class=\"js-scroll-trigger\"  routerLink=\"/Listado\">Listados</a>\n    </li>           \n    <li>\n      <a routerLink=\"#\">Registrarse <span class=\"fa fa-user fa-fw\"></span></a>\n    </li>\n    <li>\n      <a routerLink=\"/Login\" *ngIf = \"!hayAlguienLogueado\">Ingresar <span class=\"fa fa-sign-in\"></span></a>\n      <a routerLink=\"/Login\" *ngIf = \"hayAlguienLogueado\">Salir <span class=\"fa fa-sign-out\"></span></a>\n    </li>\n\n  </ul>\n</nav>\n\n  <!--nav class=\"navbar navbar-inverse\">\n      <div class=\"container-fluid\">\n        <div class=\"navbar-header\">\n          <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n            <span class=\"icon-bar\"></span>\n                                  \n          </button>\n          <a class=\"navbar-brand\" routerLink=\"/Principal\">Inicio</a>\n        </div>\n        <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n            <ul class=\"nav navbar-nav\">\n                <li class=\"active\"><a routerLink=\"/Juegos\">Menú de Juegos</a></li>\n                <li><a data-toggle=\"tooltip\" title=\"Hooray!\" (click)=\"Juego('Adivina')\">Adivina</a></li>\n                <li><a  (click)=\"Juego('Agilidad')\">Agilidad</a></li>\n                <li><a  (click)=\"Juego('AdivinaMasListado')\">Adivina+listado</a></li>\n                <li><a  (click)=\"Juego('AgilidadaMasListado')\">Agilidad+listado</a></li>\n              </ul>\n              <ul class=\"nav navbar-nav navbar-right\">\n                  <li><a href=\"#\"><span class=\"glyphicon glyphicon-user\"></span> Mis Datos</a></li>\n                  <li><a href=\"/Login\"><span class=\"glyphicon glyphicon-log-out\"></span> Salir</a></li>\n                </ul>\n        </div>\n      </div>\n    </nav-->\n      \n   "
 
 /***/ }),
 
@@ -2515,7 +2865,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/principal/principal.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "\n<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">    \n\n  </head>\n\n  <body>\n\n    <app-side-menu></app-side-menu>    \n\n    <!-- Header -->\n    <header class=\"header\" id=\"top\">      \n      <div class=\"text-vertical-center\">        \n        <h1>Sala de Juegos</h1>        \n        <h3>Bienvenido</h3>\n        <br>\n        <a href=\"#about\" class=\"btn btn-dark btn-lg js-scroll-trigger\">Acerca de la página</a>\n      </div>\n    </header>    \n\n  <!-- Juegos -->\n  <aside class=\"callout\" id=\"contenidos\" >\n        <div class=\"text-vertical-center\">\n          <h1>Contenidos</h1>\n                <hr class=\"small\">\n                <div class=\"row\">\n                  <div class=\"col-md-6\">\n                    <div class=\"portfolio-item\">\n                      <a routerLink=\"/Juegos\">\n                        <img class=\"img-portfolio img-fluid\" src=\"/TP_LAV4_2017/assets/img/puzzle-1.jpg\">                        \n                      </a>\n                      <h4 class=\"media-heading\">Juegos</h4>\n                      <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6\">\n                      <div class=\"portfolio-item\">\n                        <a routerLink=\"/Listado\">\n                          <img class=\"img-portfolio img-fluid\" src=\"/TP_LAV4_2017/assets/img/listados-1.png\">                        \n                        </a>\n                        <h4 class=\"media-heading\">Listados de resultados</h4>\n                        <p>Los listados de los resultados con ordenamiento y busqueda</p>\n                      </div>\n                    </div>\n                </div>            \n        </div>        \n  </aside>\n\n  <!-- About -->    \n  <section id=\"about\" class=\"about\">              \n      <div class=\"container text-center\">\n          <app-cabecera>  </app-cabecera>        \n      </div>\n      <!-- /.container -->\n  </section>\n\n</body>\n\n</html>"
+module.exports = "\n<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>\n\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <meta name=\"description\" content=\"\">\n    <meta name=\"author\" content=\"\">    \n\n  </head>\n\n  <body>\n\n    <app-side-menu></app-side-menu>    \n\n    <!-- Header -->\n    <header class=\"header\" id=\"top\">      \n      <div class=\"text-vertical-center\">        \n        <h1>Sala de Juegos</h1>        \n        <h3>Bienvenido</h3>\n        <br>\n        <a href=\"/Principal#about\" class=\"btn btn-dark btn-lg js-scroll-trigger\">Acerca de la página</a>\n      </div>\n    </header>    \n\n  <!-- Juegos -->\n  <aside class=\"callout\" id=\"contenidos\" >\n        <div class=\"text-vertical-center\">\n          <h1>Contenidos</h1>\n                <hr class=\"small\">\n                <div class=\"row\">\n                  <div class=\"col-md-6\">\n                    <div class=\"portfolio-item\">\n                      <a routerLink=\"/Juegos\">\n                        <img class=\"img-portfolio img-fluid\" src=\"/TP_LAV4_2017/assets/img/puzzle-1.jpg\">                        \n                      </a>\n                      <h4 class=\"media-heading\">Juegos</h4>\n                      <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6\">\n                      <div class=\"portfolio-item\">\n                        <a routerLink=\"/Listado\">\n                          <img class=\"img-portfolio img-fluid\" src=\"/TP_LAV4_2017/assets/img/listados-1.png\">                        \n                        </a>\n                        <h4 class=\"media-heading\">Listados de resultados</h4>\n                        <p>Los listados de los resultados con ordenamiento y busqueda</p>\n                      </div>\n                    </div>\n                </div>            \n        </div>        \n  </aside>\n\n  <!-- About -->    \n  <section id=\"about\" class=\"about\">              \n      <div class=\"container text-center\">\n          <app-cabecera>  </app-cabecera>        \n      </div>\n      <!-- /.container -->\n  </section>\n\n</body>\n\n</html>"
 
 /***/ }),
 
@@ -2567,7 +2917,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".imagenDeQuienSoy{\r\n    width: 100%;\r\n   \r\n    }\r\nbody {\r\n    font: 20px Montserrat, sans-serif;\r\n    line-height: 1.8;\r\n    color: #f5f6f7;\r\n}\r\np {font-size: 16px;}\r\n.margin {margin-bottom: 45px;}\r\n.bg-1 { \r\n    background-color: #1abc9c; /* Green */\r\n    color: #ffffff;\r\n}\r\n.bg-2 { \r\n    background-color: #474e5d; /* Dark Blue */\r\n    color: #ffffff;\r\n}\r\n.bg-3 { \r\n    background-color: #ffffff; /* White */\r\n    color: #555555;\r\n}\r\n.bg-4 { \r\n    background-color: #2f2f2f; /* Black Gray */\r\n    color: #fff;\r\n}\r\n.container-fluid {\r\n    padding-top: 70px;\r\n    padding-bottom: 70px;\r\n}\r\n.navbar {\r\n    padding-top: 15px;\r\n    padding-bottom: 15px;\r\n    border: 0;\r\n    border-radius: 0;\r\n    margin-bottom: 0;\r\n    font-size: 12px;\r\n    letter-spacing: 5px;\r\n}\r\n.navbar-nav  li a:hover {\r\n    color: #1abc9c !important;\r\n}", ""]);
+exports.push([module.i, "/* Magnific Popup CSS */\r\n.mfp-bg {\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  z-index: 1042;\r\n  overflow: hidden;\r\n  position: fixed;\r\n  background: #0b0b0b;\r\n  opacity: 0.8; }\r\n\r\n.mfp-wrap {\r\n  top: 0;\r\n  left: 0;\r\n  width: 100%;\r\n  height: 100%;\r\n  z-index: 1043;\r\n  position: fixed;\r\n  outline: none !important;\r\n  -webkit-backface-visibility: hidden; }\r\n\r\n.mfp-container {\r\n  text-align: center;\r\n  position: absolute;\r\n  width: 100%;\r\n  height: 100%;\r\n  left: 0;\r\n  top: 0;\r\n  padding: 0 8px;\r\n  box-sizing: border-box; }\r\n\r\n.mfp-container:before {\r\n  content: '';\r\n  display: inline-block;\r\n  height: 100%;\r\n  vertical-align: middle; }\r\n\r\n.mfp-align-top .mfp-container:before {\r\n  display: none; }\r\n\r\n.mfp-content {\r\n  position: relative;\r\n  display: inline-block;\r\n  vertical-align: middle;\r\n  margin: 0 auto;\r\n  text-align: left;\r\n  z-index: 1045; }\r\n\r\n.mfp-inline-holder .mfp-content,\r\n.mfp-ajax-holder .mfp-content {\r\n  width: 100%;\r\n  cursor: auto; }\r\n\r\n.mfp-ajax-cur {\r\n  cursor: progress; }\r\n\r\n.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {\r\n  cursor: zoom-out; }\r\n\r\n.mfp-zoom {\r\n  cursor: pointer;\r\n  cursor: zoom-in; }\r\n\r\n.mfp-auto-cursor .mfp-content {\r\n  cursor: auto; }\r\n\r\n.mfp-close,\r\n.mfp-arrow,\r\n.mfp-preloader,\r\n.mfp-counter {\r\n  -webkit-user-select: none;\r\n  -moz-user-select: none;\r\n  -ms-user-select: none;\r\n      user-select: none; }\r\n\r\n.mfp-loading.mfp-figure {\r\n  display: none; }\r\n\r\n.mfp-hide {\r\n  display: none !important; }\r\n\r\n.mfp-preloader {\r\n  color: #CCC;\r\n  position: absolute;\r\n  top: 50%;\r\n  width: auto;\r\n  text-align: center;\r\n  margin-top: -0.8em;\r\n  left: 8px;\r\n  right: 8px;\r\n  z-index: 1044; }\r\n  .mfp-preloader a {\r\n    color: #CCC; }\r\n    .mfp-preloader a:hover {\r\n      color: #FFF; }\r\n\r\n.mfp-s-ready .mfp-preloader {\r\n  display: none; }\r\n\r\n.mfp-s-error .mfp-content {\r\n  display: none; }\r\n\r\nbutton.mfp-close,\r\nbutton.mfp-arrow {\r\n  overflow: visible;\r\n  cursor: pointer;\r\n  background: transparent;\r\n  border: 0;\r\n  -webkit-appearance: none;\r\n  display: block;\r\n  outline: none;\r\n  padding: 0;\r\n  z-index: 1046;\r\n  box-shadow: none;\r\n  -ms-touch-action: manipulation;\r\n      touch-action: manipulation; }\r\n\r\nbutton::-moz-focus-inner {\r\n  padding: 0;\r\n  border: 0; }\r\n\r\n.mfp-close {\r\n  width: 44px;\r\n  height: 44px;\r\n  line-height: 44px;\r\n  position: absolute;\r\n  right: 0;\r\n  top: 0;\r\n  text-decoration: none;\r\n  text-align: center;\r\n  opacity: 0.65;\r\n  padding: 0 0 18px 10px;\r\n  color: #FFF;\r\n  font-style: normal;\r\n  font-size: 28px;\r\n  font-family: Arial, Baskerville, monospace; }\r\n  .mfp-close:hover,\r\n  .mfp-close:focus {\r\n    opacity: 1; }\r\n  .mfp-close:active {\r\n    top: 1px; }\r\n\r\n.mfp-close-btn-in .mfp-close {\r\n  color: #333; }\r\n\r\n.mfp-image-holder .mfp-close,\r\n.mfp-iframe-holder .mfp-close {\r\n  color: #FFF;\r\n  right: -6px;\r\n  text-align: right;\r\n  padding-right: 6px;\r\n  width: 100%; }\r\n\r\n.mfp-counter {\r\n  position: absolute;\r\n  top: 0;\r\n  right: 0;\r\n  color: #CCC;\r\n  font-size: 12px;\r\n  line-height: 18px;\r\n  white-space: nowrap; }\r\n\r\n.mfp-arrow {\r\n  position: absolute;\r\n  opacity: 0.65;\r\n  margin: 0;\r\n  top: 50%;\r\n  margin-top: -55px;\r\n  padding: 0;\r\n  width: 90px;\r\n  height: 110px;\r\n  -webkit-tap-highlight-color: transparent; }\r\n  .mfp-arrow:active {\r\n    margin-top: -54px; }\r\n  .mfp-arrow:hover,\r\n  .mfp-arrow:focus {\r\n    opacity: 1; }\r\n  .mfp-arrow:before,\r\n  .mfp-arrow:after {\r\n    content: '';\r\n    display: block;\r\n    width: 0;\r\n    height: 0;\r\n    position: absolute;\r\n    left: 0;\r\n    top: 0;\r\n    margin-top: 35px;\r\n    margin-left: 35px;\r\n    border: medium inset transparent; }\r\n  .mfp-arrow:after {\r\n    border-top-width: 13px;\r\n    border-bottom-width: 13px;\r\n    top: 8px; }\r\n  .mfp-arrow:before {\r\n    border-top-width: 21px;\r\n    border-bottom-width: 21px;\r\n    opacity: 0.7; }\r\n\r\n.mfp-arrow-left {\r\n  left: 0; }\r\n  .mfp-arrow-left:after {\r\n    border-right: 17px solid #FFF;\r\n    margin-left: 31px; }\r\n  .mfp-arrow-left:before {\r\n    margin-left: 25px;\r\n    border-right: 27px solid #3F3F3F; }\r\n\r\n.mfp-arrow-right {\r\n  right: 0; }\r\n  .mfp-arrow-right:after {\r\n    border-left: 17px solid #FFF;\r\n    margin-left: 39px; }\r\n  .mfp-arrow-right:before {\r\n    border-left: 27px solid #3F3F3F; }\r\n\r\n.mfp-iframe-holder {\r\n  padding-top: 40px;\r\n  padding-bottom: 40px; }\r\n  .mfp-iframe-holder .mfp-content {\r\n    line-height: 0;\r\n    width: 100%;\r\n    max-width: 900px; }\r\n  .mfp-iframe-holder .mfp-close {\r\n    top: -40px; }\r\n\r\n.mfp-iframe-scaler {\r\n  width: 100%;\r\n  height: 0;\r\n  overflow: hidden;\r\n  padding-top: 56.25%; }\r\n  .mfp-iframe-scaler iframe {\r\n    position: absolute;\r\n    display: block;\r\n    top: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);\r\n    background: #000; }\r\n\r\n/* Main image in popup */\r\nimg.mfp-img {\r\n  width: auto;\r\n  max-width: 100%;\r\n  height: auto;\r\n  display: block;\r\n  line-height: 0;\r\n  box-sizing: border-box;\r\n  padding: 40px 0 40px;\r\n  margin: 0 auto; }\r\n\r\n/* The shadow behind the image */\r\n.mfp-figure {\r\n  line-height: 0; }\r\n  .mfp-figure:after {\r\n    content: '';\r\n    position: absolute;\r\n    left: 0;\r\n    top: 40px;\r\n    bottom: 40px;\r\n    display: block;\r\n    right: 0;\r\n    width: auto;\r\n    height: auto;\r\n    z-index: -1;\r\n    box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);\r\n    background: #444; }\r\n  .mfp-figure small {\r\n    color: #BDBDBD;\r\n    display: block;\r\n    font-size: 12px;\r\n    line-height: 14px; }\r\n  .mfp-figure figure {\r\n    margin: 0; }\r\n\r\n.mfp-bottom-bar {\r\n  margin-top: -36px;\r\n  position: absolute;\r\n  top: 100%;\r\n  left: 0;\r\n  width: 100%;\r\n  cursor: auto; }\r\n\r\n.mfp-title {\r\n  text-align: left;\r\n  line-height: 18px;\r\n  color: #F3F3F3;\r\n  word-wrap: break-word;\r\n  padding-right: 36px; }\r\n\r\n.mfp-image-holder .mfp-content {\r\n  max-width: 100%; }\r\n\r\n.mfp-gallery .mfp-image-holder .mfp-figure {\r\n  cursor: pointer; }\r\n\r\n@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {\r\n  /**\r\n       * Remove all paddings around the image on small screen\r\n       */\r\n  .mfp-img-mobile .mfp-image-holder {\r\n    padding-left: 0;\r\n    padding-right: 0; }\r\n  .mfp-img-mobile img.mfp-img {\r\n    padding: 0; }\r\n  .mfp-img-mobile .mfp-figure:after {\r\n    top: 0;\r\n    bottom: 0; }\r\n  .mfp-img-mobile .mfp-figure small {\r\n    display: inline;\r\n    margin-left: 5px; }\r\n  .mfp-img-mobile .mfp-bottom-bar {\r\n    background: rgba(0, 0, 0, 0.6);\r\n    bottom: 0;\r\n    margin: 0;\r\n    top: auto;\r\n    padding: 3px 5px;\r\n    position: fixed;\r\n    box-sizing: border-box; }\r\n    .mfp-img-mobile .mfp-bottom-bar:empty {\r\n      padding: 0; }\r\n  .mfp-img-mobile .mfp-counter {\r\n    right: 5px;\r\n    top: 3px; }\r\n  .mfp-img-mobile .mfp-close {\r\n    top: 0;\r\n    right: 0;\r\n    width: 35px;\r\n    height: 35px;\r\n    line-height: 35px;\r\n    background: rgba(0, 0, 0, 0.6);\r\n    position: fixed;\r\n    text-align: center;\r\n    padding: 0; } }\r\n\r\n@media all and (max-width: 900px) {\r\n  .mfp-arrow {\r\n    -webkit-transform: scale(0.75);\r\n    transform: scale(0.75); }\r\n  .mfp-arrow-left {\r\n    -webkit-transform-origin: 0;\r\n    transform-origin: 0; }\r\n  .mfp-arrow-right {\r\n    -webkit-transform-origin: 100%;\r\n    transform-origin: 100%; }\r\n  .mfp-container {\r\n    padding-left: 6px;\r\n    padding-right: 6px; } }\r\n    \r\n\r\n/*!\r\n * Start Bootstrap - Freelancer v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/freelancer)\r\n * Copyright 2013-2017 Start Bootstrap\r\n * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-freelancer/blob/master/LICENSE)\r\n */\r\n body {\r\n  font-family: 'Lato'; }\r\n\r\nh1,\r\nh2,\r\nh3,\r\nh4,\r\nh5,\r\nh6 {\r\n  font-weight: 700;\r\n  font-family: 'Montserrat'; }\r\n\r\nhr.star-light,\r\nhr.star-dark {\r\n  max-width: 15rem;\r\n  padding: 0;\r\n  text-align: center;\r\n  border: none;\r\n  border-top: solid 0.25rem;\r\n  margin-top: 2.5rem;\r\n  margin-bottom: 2.5rem; }\r\n\r\nhr.star-light:after,\r\nhr.star-dark:after {\r\n  position: relative;\r\n  top: -.8em;\r\n  display: inline-block;\r\n  padding: 0 0.25em;\r\n  content: '\\F005';\r\n  font-family: FontAwesome;\r\n  font-size: 2em; }\r\n\r\nhr.star-light {\r\n  border-color: #fff; }\r\n\r\nhr.star-light:after {\r\n  color: #fff;\r\n  background-color: #18BC9C; }\r\n\r\nhr.star-dark {\r\n  border-color: #2C3E50; }\r\n\r\nhr.star-dark:after {\r\n  color: #2C3E50;\r\n  background-color: white; }\r\n\r\nsection {\r\n  padding: 6rem 0; }\r\n  section h2 {\r\n    font-size: 2.25rem;\r\n    line-height: 2rem; }\r\n  @media (min-width: 992px) {\r\n    section h2 {\r\n      font-size: 3rem;\r\n      line-height: 2.5rem; } }\r\n\r\n.btn-xl {\r\n  padding: 1rem 1.75rem;\r\n  font-size: 1.25rem; }\r\n\r\n.btn-social {\r\n  width: 3.25rem;\r\n  height: 3.25rem;\r\n  font-size: 1.25rem;\r\n  line-height: 2rem; }\r\n\r\n.scroll-to-top {\r\n  z-index: 1042;\r\n  right: 1rem;\r\n  bottom: 1rem;\r\n  display: none; }\r\n  .scroll-to-top a {\r\n    width: 3.5rem;\r\n    height: 3.5rem;\r\n    background-color: rgba(33, 37, 41, 0.5);\r\n    line-height: 3.1rem; }\r\n\r\n#mainNav {\r\n  padding-top: 1rem;\r\n  padding-bottom: 1rem;\r\n  font-weight: 700;\r\n  font-family: 'Montserrat'; }\r\n  #mainNav .navbar-brand {\r\n    color: #fff; }\r\n  #mainNav .navbar-nav {\r\n    margin-top: 1rem;\r\n    letter-spacing: 0.0625rem; }\r\n    #mainNav .navbar-nav li.nav-item a.nav-link {\r\n      color: #fff; }\r\n      #mainNav .navbar-nav li.nav-item a.nav-link:hover {\r\n        color: #18BC9C; }\r\n      #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {\r\n        color: #fff; }\r\n      #mainNav .navbar-nav li.nav-item a.nav-link.active {\r\n        color: #18BC9C; }\r\n  #mainNav .navbar-toggler {\r\n    font-size: 80%;\r\n    padding: 0.8rem; }\r\n\r\n@media (min-width: 992px) {\r\n  #mainNav {\r\n    padding-top: 1.5rem;\r\n    padding-bottom: 1.5rem;\r\n    transition: padding-top 0.3s, padding-bottom 0.3s; }\r\n    #mainNav .navbar-brand {\r\n      font-size: 2em;\r\n      transition: font-size 0.3s; }\r\n    #mainNav .navbar-nav {\r\n      margin-top: 0; }\r\n    #mainNav .navbar-nav > li.nav-item > a.nav-link.active {\r\n      color: #fff;\r\n      background: #18BC9C; }\r\n      #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {\r\n        color: #fff;\r\n        background: #18BC9C; }\r\n  #mainNav.navbar-shrink {\r\n    padding-top: 0.5rem;\r\n    padding-bottom: 0.5rem; }\r\n    #mainNav.navbar-shrink .navbar-brand {\r\n      font-size: 1.5em; } }\r\n\r\nheader.masthead {\r\n  padding-top: calc(6rem + 72px);\r\n  padding-bottom: 6rem; }\r\n  header.masthead h1 {\r\n    font-size: 3rem;\r\n    line-height: 3rem; }\r\n  header.masthead h2 {\r\n    font-size: 1.3rem;\r\n    font-family: 'Lato'; }\r\n\r\n@media (min-width: 992px) {\r\n  header.masthead {\r\n    padding-top: calc(6rem + 106px);\r\n    padding-bottom: 6rem; }\r\n    header.masthead h1 {\r\n      font-size: 4.75em;\r\n      line-height: 4rem; }\r\n    header.masthead h2 {\r\n      font-size: 1.75em; } }\r\n\r\n.portfolio {\r\n  margin-bottom: -15px; }\r\n  .portfolio .portfolio-item {\r\n    position: relative;\r\n    display: block;\r\n    max-width: 25rem;\r\n    margin-bottom: 15px; }\r\n    .portfolio .portfolio-item .portfolio-item-caption {\r\n      transition: all ease 0.5s;\r\n      opacity: 0;\r\n      background-color: rgba(24, 188, 156, 0.9); }\r\n      .portfolio .portfolio-item .portfolio-item-caption:hover {\r\n        opacity: 1; }\r\n      .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {\r\n        font-size: 1.5rem; }\r\n  @media (min-width: 576px) {\r\n    .portfolio {\r\n      margin-bottom: -30px; }\r\n      .portfolio .portfolio-item {\r\n        margin-bottom: 30px; } }\r\n\r\n.portfolio-modal .portfolio-modal-dialog {\r\n  padding: 3rem 1rem;\r\n  min-height: calc(100vh - 2rem);\r\n  margin: 1rem calc(1rem - 8px);\r\n  position: relative;\r\n  z-index: 2;\r\n  box-shadow: 0 0 3rem 1rem rgba(0, 0, 0, 0.5); }\r\n  .portfolio-modal .portfolio-modal-dialog .close-button {\r\n    position: absolute;\r\n    top: 2rem;\r\n    right: 2rem; }\r\n    .portfolio-modal .portfolio-modal-dialog .close-button i {\r\n      line-height: 38px; }\r\n  .portfolio-modal .portfolio-modal-dialog h2 {\r\n    font-size: 2rem; }\r\n\r\n@media (min-width: 768px) {\r\n  .portfolio-modal .portfolio-modal-dialog {\r\n    min-height: 100vh;\r\n    padding: 5rem;\r\n    margin: 3rem calc(3rem - 8px); }\r\n    .portfolio-modal .portfolio-modal-dialog h2 {\r\n      font-size: 3rem; } }\r\n\r\n.floating-label-form-group {\r\n  position: relative;\r\n  border-bottom: 1px solid #e9ecef; }\r\n  .floating-label-form-group input,\r\n  .floating-label-form-group textarea {\r\n    font-size: 1.5em;\r\n    position: relative;\r\n    z-index: 1;\r\n    padding-right: 0;\r\n    padding-left: 0;\r\n    resize: none;\r\n    border: none;\r\n    border-radius: 0;\r\n    background: none;\r\n    box-shadow: none !important; }\r\n  .floating-label-form-group label {\r\n    font-size: 0.85em;\r\n    line-height: 1.764705882em;\r\n    position: relative;\r\n    z-index: 0;\r\n    top: 2em;\r\n    display: block;\r\n    margin: 0;\r\n    transition: top 0.3s ease, opacity 0.3s ease;\r\n    vertical-align: middle;\r\n    vertical-align: baseline;\r\n    opacity: 0; }\r\n  .floating-label-form-group:not(:first-child) {\r\n    padding-left: 14px;\r\n    border-left: 1px solid #e9ecef; }\r\n\r\n.floating-label-form-group-with-value label {\r\n  top: 0;\r\n  opacity: 1; }\r\n\r\n.floating-label-form-group-with-focus label {\r\n  color: #18BC9C; }\r\n\r\nform .row:first-child .floating-label-form-group {\r\n  border-top: 1px solid #e9ecef; }\r\n\r\n.footer {\r\n  padding-top: 5rem;\r\n  padding-bottom: 5rem;\r\n  background-color: #2C3E50;\r\n  color: #fff; }\r\n\r\n.copyright {\r\n  background-color: #1a252f; }\r\n\r\na {\r\n  color: #18BC9C; }\r\n  a:focus, a:hover, a:active {\r\n    color: #128f76; }\r\n\r\n.btn {\r\n  border-width: 2px; }\r\n\r\n.bg-primary {\r\n  background-color: #18BC9C !important; }\r\n\r\n.bg-secondary {\r\n  background-color: #2C3E50 !important; }\r\n\r\n.text-primary {\r\n  color: #18BC9C !important; }\r\n\r\n.text-secondary {\r\n  color: #2C3E50 !important; }\r\n\r\n.btn-primary {\r\n  background-color: #18BC9C;\r\n  border-color: #18BC9C; }\r\n  .btn-primary:hover, .btn-primary:focus, .btn-primary:active {\r\n    background-color: #128f76;\r\n    border-color: #128f76; }\r\n\r\n.btn-secondary {\r\n  background-color: #2C3E50;\r\n  border-color: #2C3E50; }\r\n  .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {\r\n    background-color: #1a252f;\r\n    border-color: #1a252f; }", ""]);
 
 // exports
 
@@ -2580,7 +2930,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/componentes/quien-soy/quien-soy.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <nav class=\"navbar navbar-default\">\n    <div class=\"container\">\n      <div class=\"navbar-header\">\n        <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>\n          <span class=\"icon-bar\"></span>                        \n        </button>\n        <a class=\"navbar-brand\" routerLink=\"/Principal\">Sala De Juegos</a>\n      </div>\n      <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n        <ul class=\"nav navbar-nav navbar-right\">\n          <li><a href=\"/QuienSoy#quien\">Quien</a></li>\n          <li><a href=\"/QuienSoy#que\">Ques es</a></li>\n          <li><a href=\"/QuienSoy#donde\">Donde</a></li>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  \n  <!-- First Container -->\n  <div id =\"quien\"class=\"container-fluid bg-1 text-center\">\n    <h3 class=\"margin\">Quién Soy?</h3>\n    <img src=\"/TP_LAV4_2017/assets/imagenes/quiensoy.jpg\" class=\"img-responsive img-circle margin\" style=\"display:inline\" alt=\"Bird\" width=\"350\" height=\"350\">\n    <h3>Soy Un alumno de la UTN FRA</h3>\n  </div>\n  \n  <!-- Second Container -->\n  <div id =\"que\" class=\"container-fluid bg-2 text-center\">\n    <h3 class=\"margin\">Esto es un trabajo práctico</h3>\n    <p>Cada universidad, cada facultad, cada carrera y obviamente cada materia en particular tiene estrategias didácticas y formas de evaluación diferentes. A pesar de que en muchos casos las universidades intentan estandarizar la forma de dictar clase para generar un orden en las planificaciones cuatrimestre a cuatrimestre, las formas de evaluación son elementales tanto para las instituciones y profesores como para los alumnos. A través de la evaluación formativa el educador busca información en el alumno para lograr comprender cómo se está\n      produciendo el proceso de aprendizaje y poder reajustar los objetivos pedagógicos. Y para el alumno es una muestra del progreso que está logrando y si puede aplicar, materializar y darle visibilidad a la comprensión del tema. Según Black y William (1998), la evaluación formativa, ayuda a que los estudiantes sean independientes a la hora del aprendizaje, es decir, se presenta como receptor, autorregulador y centro de esa misma evaluación. </p>\n    <a href=\"#\" class=\"btn btn-default btn-lg\">\n      <span class=\"glyphicon glyphicon-file\"></span> Descargar PDF\n    </a>\n  </div>\n  \n  <!-- Third Container (Grid) -->\n  <div id =\"donde\" class=\"container-fluid bg-3 text-center\">    \n    <h3 class=\"margin\">Dónde Funciona?</h3><br>\n    <div class=\"row\">\n      <div class=\"col-sm-4\">\n        <p>Con las tecnologias WEB que permiten desarrollar aplicaciones multiplataforma</p>\n        <img src=\"/TP_LAV4_2017/assets/imagenes/quiensoy1.png\" class=\"img-responsive margin imagenDeQuienSoy\"  alt=\"Image\">\n      </div>\n      <div class=\"col-sm-4\"> \n        <p>Principalmente orientada a la experiencia del usuario, garantizando que su funcionamieto sea fluido y pensado en el comportamiento del usuario y en la funcionalidad.</p>\n        <img src=\"/TP_LAV4_2017/assets/imagenes/quiensoy2.jpg\" class=\"img-responsive margin imagenDeQuienSoy\" alt=\"Image\">\n      </div>\n      <div class=\"col-sm-4\"> \n        <p>Para los sistemas operativos lideres en el mercado del consumo masivo</p>\n        <img src=\"/TP_LAV4_2017/assets/imagenes/quiensoy3.png\" class=\"img-responsive margin imagenDeQuienSoy\" alt=\"Image\">\n      </div>\n    </div>\n  </div>\n  \n  <!-- Footer -->\n  <footer class=\"container-fluid bg-4 text-center\">\n    <p>Modificado por <a href=\"https://www.octavio.com.ar\">www.octavio.com.ar</a></p> \n  </footer>"
+module.exports = "<!DOCTYPE html>\n<html lang=\"en\">\n\n  <head>\n      <link href=\"https://fonts.googleapis.com/css?family=Montserrat:400,700\" rel=\"stylesheet\" type=\"text/css\">\n      <link href=\"https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic\" rel=\"stylesheet\" type=\"text/css\">\n  </head>\n\n  <body id=\"page-top\">\n\n    <!-- Navigation -->\n    <nav class=\"navbar navbar-expand-lg bg-secondary fixed-top text-uppercase\" id=\"mainNav\">\n      <div class=\"container\">\n        <a class=\"navbar-brand js-scroll-trigger\" routerLink=\"/Principal\">Sala de Juegos</a>\n        <button class=\"navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n          Menu\n          <i class=\"fa fa-bars\"></i>\n        </button>\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\n          <ul class=\"navbar-nav ml-auto\">\n            <li class=\"nav-item mx-0 mx-lg-1\">\n              <a class=\"nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger\" href=\"/QuienSoy#quien\">Quien Soy</a>\n            </li>\n            <li class=\"nav-item mx-0 mx-lg-1\">\n              <a class=\"nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger\" href=\"/QuienSoy#que\">De que se trata el juego</a>\n            </li>\n            <li class=\"nav-item mx-0 mx-lg-1\">\n              <a class=\"nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger\" href=\"/QuienSoy#acerca\">Acerca de</a>\n            </li>\n          </ul>\n        </div>\n      </div>\n    </nav>\n\n    <!-- Header -->\n    <header class=\"masthead bg-primary text-white text-center\" id=\"quien\">\n      <div class=\"container\">\n        <img class=\"img-fluid mb-5 d-block mx-auto\" src=\"/TP_LAV4_2017/assets/img/me.jpg\" alt=\"\">\n        <h3 class=\"text-uppercase mb-0\">Cristian Witt</h3>\n        <hr class=\"star-light\">\n        <h4 class=\"font-weight-light mb-0\">Alumno UTN FRA - Tecnicatura en Programación - 4B - Turno noche</h4>\n      </div>\n    </header>\n\n    <!-- Portfolio Grid Section -->\n    <section class=\"portfolio\" id=\"que\">\n      <div class=\"container\">\n        <br>\n        <h2 class=\"text-center text-uppercase text-secondary mb-0\">Juego Memotest</h2>\n        <hr class=\"star-dark mb-5\">\n        <div class=\"row\">\n          <div class=\"col-md-6 col-lg-7\">\n            <a class=\"portfolio-item d-block mx-auto\" routerLink=\"/Juegos/Memotest\">\n              <div class=\"portfolio-item-caption d-flex position-absolute h-100 w-100\">\n                <div class=\"portfolio-item-caption-content my-auto w-100 text-center text-white\">\n                  <i class=\"fa fa-search-plus fa-3x\"></i>\n                </div>\n              </div>\n              <img class=\"img-fluid\" src=\"assets/img/memotest-2.png\" alt=\"\">\n            </a>\n          </div>\n          <div class=\"col-md-6 col-lg-5\">\n              <p class=\"lead\">\n                  El Memotest es un juego que no sólo permite desarrollar su memoria, orientarse en el espacio, el reconocimiento visual, entre otros, sino que además facilita la incorporación de conocimientos y saberes de la cultura general de manera lúdica.\n                  Las reglas son sencillas: consiste en una grilla o cuadrícula de tamaño variable, en la cual se esconden pares de objetos: en nuestro caso son letras. El jugador deben ir descubriendo las celdas de a una e ir recordando dónde está cada pieza del par, para así reunirlos y hacerlo en el menor tiempo posible. El objetivo es lograr reunir todos de pares. El jugador que termina antes es el ganador. Concluye cuando todos los pares de la grilla son formados.\n                  ¡A ejercitar las neuronas!.</p>\n            </div>\n        </div>\n        </div>  \n    </section>\n\n    <!-- About Section -->\n    <section class=\"bg-primary text-white mb-0\" id=\"acerca\">\n      <div class=\"container\">\n        <br>\n        <h3 class=\"text-center text-uppercase text-white\">Modificado por</h3>\n        <hr class=\"star-light mb-5\">\n        <h4 class=\"text-center text-uppercase text-white\"> \n          <p class=\"text-center text-uppercase text-white\"> \n            <a class=\"text-center text-uppercase text-white\" href=\"https://github.com/ccwittv\">https://github.com/ccwittv </a>\n          </p>\n        </h4>\n      </div>\n    </section>\n\n      <!-- Third Container (Grid) -->\n  <!--div id =\"donde\" class=\"container-fluid bg-3 text-center\">    \n      <h3 class=\"margin\">Dónde Funciona?</h3><br>\n      <div class=\"row\">\n        <div class=\"col-sm-4\">\n          <p>Con las tecnologias WEB que permiten desarrollar aplicaciones multiplataforma</p>\n          <img src=\"/assets/imagenes/quiensoy1.png\" class=\"img-responsive margin imagenDeQuienSoy\"  alt=\"Image\">\n        </div>\n        <div class=\"col-sm-4\"> \n          <p>Principalmente orientada a la experiencia del usuario, garantizando que su funcionamieto sea fluido y pensado en el comportamiento del usuario y en la funcionalidad.</p>\n          <img src=\"/assets/imagenes/quiensoy2.jpg\" class=\"img-responsive margin imagenDeQuienSoy\" alt=\"Image\">\n        </div>\n        <div class=\"col-sm-4\"> \n          <p>Para los sistemas operativos lideres en el mercado del consumo masivo</p>\n          <img src=\"/assets/imagenes/quiensoy3.png\" class=\"img-responsive margin imagenDeQuienSoy\" alt=\"Image\">\n        </div>\n      </div>\n    </div-->\n    \n    <!-- Footer -->\n    <!--footer class=\"container-fluid bg-4 text-center\">\n      <p>Modificado por <a href=\"https://www.octavio.com.ar\">www.octavio.com.ar</a></p> \n    </footer-->\n\n  </body>\n\n</html>\n"
 
 /***/ }),
 
@@ -2783,7 +3133,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__componentes_agilidad_aritmetica_agilidad_aritmetica_component__ = __webpack_require__("../../../../../src/app/componentes/agilidad-aritmetica/agilidad-aritmetica.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__componentes_adivina_mas_listado_adivina_mas_listado_component__ = __webpack_require__("../../../../../src/app/componentes/adivina-mas-listado/adivina-mas-listado.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__componentes_agilidad_mas_listado_agilidad_mas_listado_component__ = __webpack_require__("../../../../../src/app/componentes/agilidad-mas-listado/agilidad-mas-listado.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__componentes_listado_listado_component__ = __webpack_require__("../../../../../src/app/componentes/listado/listado.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__componentes_listados_listados_component__ = __webpack_require__("../../../../../src/app/componentes/listados/listados.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__componentes_juegos_juegos_component__ = __webpack_require__("../../../../../src/app/componentes/juegos/juegos.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__componentes_registro_registro_component__ = __webpack_require__("../../../../../src/app/componentes/registro/registro.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__componentes_menu_card_menu_card_component__ = __webpack_require__("../../../../../src/app/componentes/menu-card/menu-card.component.ts");
@@ -2822,7 +3172,7 @@ var MiRuteo = [
     { path: 'QuienSoy', component: __WEBPACK_IMPORTED_MODULE_13__componentes_quien_soy_quien_soy_component__["a" /* QuienSoyComponent */] },
     { path: 'Registro', component: __WEBPACK_IMPORTED_MODULE_11__componentes_registro_registro_component__["a" /* RegistroComponent */] },
     { path: 'Principal', component: __WEBPACK_IMPORTED_MODULE_5__componentes_principal_principal_component__["a" /* PrincipalComponent */] },
-    { path: 'Listado', component: __WEBPACK_IMPORTED_MODULE_9__componentes_listado_listado_component__["a" /* ListadoComponent */] },
+    { path: 'Listado', component: __WEBPACK_IMPORTED_MODULE_9__componentes_listados_listados_component__["a" /* ListadosComponent */] },
     { path: 'Juegos',
         component: __WEBPACK_IMPORTED_MODULE_10__componentes_juegos_juegos_component__["a" /* JuegosComponent */],
         children: [{ path: '', component: __WEBPACK_IMPORTED_MODULE_12__componentes_menu_card_menu_card_component__["a" /* MenuCardComponent */] },
@@ -2922,6 +3272,51 @@ JuegoServiceService = __decorate([
 
 var _a;
 //# sourceMappingURL=juego-service.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/servicios/mi-firebase-juego-servicio.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MiFirebaseJuegoServicioService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_deprecated__ = __webpack_require__("../../../../angularfire2/database-deprecated/index.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var MiFirebaseJuegoServicioService = (function () {
+    function MiFirebaseJuegoServicioService(af) {
+        this.af = af;
+        this.dato = this.af.list('/juego');
+    }
+    MiFirebaseJuegoServicioService.prototype.dameLosJuegos = function () {
+        //console.log(this.dato);
+        return this.dato;
+    };
+    MiFirebaseJuegoServicioService.prototype.guardarJuego = function (nuevoJuego) {
+        console.log("estoy en guardarJuego, el objeto nuevoJuego es ", nuevoJuego);
+        /*console.log("estoy en guardarJuego, el json strubguify es", JSON.stringify(nuevoJuego));
+        console.log("estoy en guardarJuego, el json parse es", JSON.parse(JSON.stringify(nuevoJuego)));*/
+        this.dato.push(nuevoJuego);
+    };
+    return MiFirebaseJuegoServicioService;
+}());
+MiFirebaseJuegoServicioService = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["C" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_deprecated__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database_deprecated__["a" /* AngularFireDatabase */]) === "function" && _a || Object])
+], MiFirebaseJuegoServicioService);
+
+var _a;
+//# sourceMappingURL=mi-firebase-juego-servicio.service.js.map
 
 /***/ }),
 

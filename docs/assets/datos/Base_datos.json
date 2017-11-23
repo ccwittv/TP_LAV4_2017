@@ -1,0 +1,9 @@
+{"juego":[{"id":1,"usuario":"j1@mail.com","fechajuego":"2016-11-03","horajuego":"02:44:46","nombrejuego":"PiedarPapelTijera","resultado":"gano","observacion":""}
+	   ],
+ "usuarios":[{"id":1,"nombre":"admin@mail.com","clave":11,"perfil":"admin","sexo":"Female"},
+			 {"id":2,"nombre":"invitado@mail.com","clave":22,"perfil":"invitado","sexo":"Female"},
+			 {"id":3,"nombre":"usuario@mail.com","clave":33,"perfil":"usuario","sexo":"Male"},
+			 {"id":4,"nombre":"j1@mail.com","clave":44,"perfil":"jugador","sexo":"Male"},
+			 {"id":5,"nombre":"j2@mail.com","clave":55,"perfil":"jugador","sexo":"Female"}
+   ]
+}	   
